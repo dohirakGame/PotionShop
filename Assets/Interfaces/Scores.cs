@@ -6,13 +6,8 @@ public interface Scores
 {
     int Score {get; set;}
 
-    public void Increase()
+    public void Modify(int value)
     {
-        Score++;
-    }
-
-    public void Decrease()
-    {
-        Score--;
+        Score+= value;
     }
 }
