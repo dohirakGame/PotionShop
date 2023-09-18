@@ -9,10 +9,7 @@ using System;
 public class MenuScript : MonoBehaviour
 {
     
-    void Start()
-    {
-        
-    }
+
     // Стартует игру(переходит на сцену игры по счелчку на соответствующую кнопку)
     public void Play()
     {
@@ -22,6 +19,15 @@ public class MenuScript : MonoBehaviour
     public void QuitGame()
     {
         Application.Quit();
+    }
+
+    public void ToMenu()
+    {
+        SceneManager.LoadScene(0);
+    }
+    public void LevelSelect(int level)
+    {
+        SceneManager.LoadScene(level);
     }
 
 }
