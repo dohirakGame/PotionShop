@@ -4,7 +4,7 @@ using UnityEngine;
 
 public interface Order
 {
-    public void Check_Score(){
+    public bool Check_Score(){
         if(GameObject.Find("Score").GetComponent<Scores>().Score > 0)
         {
             return true;
