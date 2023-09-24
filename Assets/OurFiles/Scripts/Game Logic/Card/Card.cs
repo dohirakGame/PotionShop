@@ -1,9 +1,8 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UIElements;
 
-public class Card : MonoBehaviour
+[System.Serializable]
+public class Card
 {
     public enum CardState
     {
@@ -12,13 +11,22 @@ public class Card : MonoBehaviour
         BeforeCreate
     }
 
-    public enum CardBonus
+    /*public enum CardBonus
     {
         Left,
         Right,
         Center
     }
 
+    public enum BonusColor
+    {
+        Red,
+        Green,
+        Blue,
+        Yellow,
+        Black
+    }*/
+/*
     public enum CardColor
     {
         Red,
@@ -26,15 +34,24 @@ public class Card : MonoBehaviour
         Blue,
         Yellow,
         Black
-    }
+    }*/
 
     [SerializeField] private Image _image;
     [SerializeField] private int _point;
-    [SerializeField] private CardState _state;
-    [SerializeField] private CardBonus _bonus;
-    [SerializeField] private CardColor _color;
-    
+    private CardState _state;
+	//public CardColor _color;
+	[SerializeField] private CardColor _color;
+	[SerializeField] private CardBonus _bonus;
+    [SerializeField] private BonusColor _bonusColor;
+  
     public void SetState(CardState state) => _state = state;
-    public void SetBonus(CardBonus bonus) => _bonus = bonus;
     public void SetColor(CardColor color) => _color = color; 
+    public void SetBonus(CardBonus bonus) => _bonus = bonus;
+    public void SetBonusColor(BonusColor bonusColor) => _bonusColor = bonusColor;
+
+    public CardColor GetColor() => _color;
+    public CardBonus GetBonus() => _bonus;
+    public BonusColor GetBonusColor() => _bonusColor;
+
+    public int GetPoint() => _point;
 }

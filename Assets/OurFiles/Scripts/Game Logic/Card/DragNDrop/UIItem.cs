@@ -17,7 +17,7 @@ public class UIItem : MonoBehaviour, IDragHandler, IBeginDragHandler, IEndDragHa
 	{
 		/*var slotTransform = _rectTransfrom.parent;
 		slotTransform.SetAsLastSibling();*/
-		_canvasGroup.blocksRaycasts = false;
+		//_canvasGroup.blocksRaycasts = false;
 	}
 
 	public void OnDrag(PointerEventData eventData)
@@ -30,6 +30,6 @@ public class UIItem : MonoBehaviour, IDragHandler, IBeginDragHandler, IEndDragHa
 		/*var slotTransform = _rectTransfrom.parent;
 		slotTransform.SetAsFirstSibling();*/
 		transform.localPosition = Vector3.zero;
-		_canvasGroup.blocksRaycasts = true;
+		//_canvasGroup.blocksRaycasts = true;
 	}
 }
