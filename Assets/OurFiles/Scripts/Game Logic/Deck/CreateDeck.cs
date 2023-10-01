@@ -5,8 +5,8 @@ using UnityEngine;
 
 public class CreateDeck : MonoBehaviour
 {
-	[SerializeField] private List<Card> _cards;
 	[SerializeField] private int _requaredCount;
+	[SerializeField] private List<Card> _cards;
 
 	private void OnValidate()
 	{
@@ -29,6 +29,8 @@ public class CreateDeck : MonoBehaviour
 					for (int i = _requaredCount; i < _cards.Count; i++)
 					{
 						_cards[i].SetColor(CardColor.Black);
+						if (_cards[i].GetPoint() > 0)
+							_cards[i].SetPointMinus();
 					}
 				}
 				break;
@@ -49,6 +51,8 @@ public class CreateDeck : MonoBehaviour
 					for (int i = _requaredCount; i < _cards.Count; i++)
 					{
 						_cards[i].SetColor(CardColor.Black);
+						if (_cards[i].GetPoint() > 0)
+							_cards[i].SetPointMinus();
 					}
 				}
 				break;
@@ -69,6 +73,8 @@ public class CreateDeck : MonoBehaviour
 					for (int i = _requaredCount; i < _cards.Count; i++)
 					{
 						_cards[i].SetColor(CardColor.Black);
+						if (_cards[i].GetPoint() > 0)
+							_cards[i].SetPointMinus();
 					}
 				}
 				break;
@@ -89,6 +95,8 @@ public class CreateDeck : MonoBehaviour
 					for (int i = _requaredCount; i < _cards.Count; i++)
 					{
 						_cards[i].SetColor(CardColor.Black);
+						if (_cards[i].GetPoint() > 0)
+							_cards[i].SetPointMinus();
 					}
 				}
 				break;

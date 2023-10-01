@@ -27,7 +27,7 @@ public class TopCard : MonoBehaviour
 		FlipCardOnTopDeck();
 	}
 
-	public void FlipTest() => FlipCardOnTopDeck();
+	public void FlipCard() => FlipCardOnTopDeck();
 	private void FlipCardOnTopDeck()
 	{
 		if (_createDeck.CountCardsInList() > 0)
@@ -46,8 +46,6 @@ public class TopCard : MonoBehaviour
     {
         int cardIndex = Random.Range(0, _createDeck.CountCardsInList());
         Card card = _createDeck.GetCard(cardIndex);
-
-        Debug.Log(cardIndex);
 
         LoadImage(card);
         LoadColor(card);
@@ -92,7 +90,6 @@ public class TopCard : MonoBehaviour
 				{
 					if (item.name == "Red")
 					{
-                        Debug.Log($"RedDeck = {item.name}");
 						_cardColorImage = item;
 					}
 				}
@@ -102,7 +99,6 @@ public class TopCard : MonoBehaviour
 				{
 					if (item.name == "Green")
 					{
-						Debug.Log($"GreenDeck = {item.name}");
 						_cardColorImage = item;
 					}
 				}
@@ -112,7 +108,6 @@ public class TopCard : MonoBehaviour
 				{
 					if (item.name == "Blue")
 					{
-						Debug.Log($"BlueDeck = {item.name}");
 						_cardColorImage = item;
 					}
 				}
@@ -122,7 +117,6 @@ public class TopCard : MonoBehaviour
 				{
 					if (item.name == "Yellow")
 					{
-						Debug.Log($"YellowDeck = {item.name}");
 						_cardColorImage = item;
 					}
 				}
@@ -132,7 +126,6 @@ public class TopCard : MonoBehaviour
                 {
                     if (item.name == "Black")
                     {
-						Debug.Log($"BlackDeck = {item.name}");
 						_cardColorImage = item;
                     }
                 }
@@ -151,7 +144,6 @@ public class TopCard : MonoBehaviour
 				{
 					if (item.name == "Red")
 					{
-						Debug.Log($"RedDeck = {item.name}");
 						_bonusImage = item;
 					}
 				}
@@ -161,7 +153,6 @@ public class TopCard : MonoBehaviour
 				{
 					if (item.name == "Green")
 					{
-						Debug.Log($"RedDeck = {item.name}");
 						_bonusImage = item;
 					}
 				}
@@ -171,7 +162,6 @@ public class TopCard : MonoBehaviour
 				{
 					if (item.name == "Blue")
 					{
-						Debug.Log($"RedDeck = {item.name}");
 						_bonusImage = item;
 					}
 				}
@@ -181,7 +171,6 @@ public class TopCard : MonoBehaviour
 				{
 					if (item.name == "Yellow")
 					{
-						Debug.Log($"RedDeck = {item.name}");
 						_bonusImage = item;
 					}
 				}
@@ -191,7 +180,6 @@ public class TopCard : MonoBehaviour
 				{
 					if (item.name == "Black")
 					{
-						Debug.Log($"RedDeck = {item.name}");
 						_bonusImage = item;
 					}
 				}

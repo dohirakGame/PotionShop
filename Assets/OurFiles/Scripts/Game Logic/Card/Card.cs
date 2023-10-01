@@ -48,6 +48,7 @@ public class Card
     public void SetColor(CardColor color) => _color = color; 
     public void SetBonus(CardBonus bonus) => _bonus = bonus;
     public void SetBonusColor(BonusColor bonusColor) => _bonusColor = bonusColor;
+    public void SetPointMinus() => _point *= -1;
 
     public CardColor GetColor() => _color;
     public CardBonus GetBonus() => _bonus;

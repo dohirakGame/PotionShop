@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 5406056348610543356}
   - component: {fileID: 6272978104275736147}
   - component: {fileID: 6883799989936301133}
-  m_Layer: 5
+  m_Layer: 7
   m_Name: PointText
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -145,7 +145,7 @@ GameObject:
   - component: {fileID: 6530038624193066703}
   - component: {fileID: 318257554448303946}
   - component: {fileID: 2277379201002504355}
-  m_Layer: 5
+  m_Layer: 7
   m_Name: BaffRight
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -221,7 +221,9 @@ GameObject:
   - component: {fileID: 6411730904977794856}
   - component: {fileID: 4578448345674265965}
   - component: {fileID: 4774483195597603180}
-  m_Layer: 5
+  - component: {fileID: 4386133164637016101}
+  - component: {fileID: 8655834109571037896}
+  m_Layer: 7
   m_Name: Card
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -250,7 +252,7 @@ RectTransform:
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
   m_AnchoredPosition: {x: -751, y: -778}
-  m_SizeDelta: {x: 190, y: 280}
+  m_SizeDelta: {x: 190, y: 250}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &6411730904977794856
 CanvasRenderer:
@@ -297,9 +299,43 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 5784846628536227496}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: f1c5d7959adcb3841944e34d17828144, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _currentCollider: {fileID: 0}
+--- !u!65 &4386133164637016101
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5784846628536227496}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 0
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Size: {x: 190, y: 250, z: 1}
+  m_Center: {x: 0, y: 0, z: 0}
+--- !u!114 &8655834109571037896
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5784846628536227496}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 51b274a0c7691f448a5847bbec5a1469, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
 --- !u!1 &6275404185562064996
@@ -313,7 +349,7 @@ GameObject:
   - component: {fileID: 2929364973214054265}
   - component: {fileID: 6316297859051733992}
   - component: {fileID: 1868918389321042404}
-  m_Layer: 5
+  m_Layer: 7
   m_Name: BaffLeft
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -388,7 +424,7 @@ GameObject:
   - component: {fileID: 2580566032196943071}
   - component: {fileID: 1040599193963182074}
   - component: {fileID: 4490491783246463533}
-  m_Layer: 5
+  m_Layer: 7
   m_Name: Point
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -464,7 +500,7 @@ GameObject:
   - component: {fileID: 3981061089322360029}
   - component: {fileID: 9106074005478639135}
   - component: {fileID: 1261716660982441159}
-  m_Layer: 5
+  m_Layer: 7
   m_Name: BaffCenter
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -539,7 +575,7 @@ GameObject:
   - component: {fileID: 8429433410749420372}
   - component: {fileID: 7908045738362339465}
   - component: {fileID: 6925541402739901842}
-  m_Layer: 5
+  m_Layer: 7
   m_Name: TypeImage
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -560,10 +596,10 @@ RectTransform:
   m_Children: []
   m_Father: {fileID: 2621720331305963472}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0, y: 0}
-  m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: -60, y: 105}
-  m_SizeDelta: {x: -120, y: -210}
+  m_AnchorMin: {x: 0, y: 1}
+  m_AnchorMax: {x: 0, y: 1}
+  m_AnchoredPosition: {x: 35, y: -35}
+  m_SizeDelta: {x: 70, y: 70}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &7908045738362339465
 CanvasRenderer:
