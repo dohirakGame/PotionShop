@@ -3769,8 +3769,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d7eb27b6234df774685870f11b1588d4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  clientSprite: []
-  requestSprite: []
+  clientSprite:
+  - {fileID: 7482667652216324306, guid: 3f200c04bb6bbef40938ed9c9484ff5d, type: 3}
+  requestSprite:
+  - {fileID: -2413806693520163455, guid: 3451ee5525384f540b6e7a4cea37ed64, type: 3}
 --- !u!1 &1497769396
 GameObject:
   m_ObjectHideFlags: 0
@@ -4392,8 +4394,9 @@ GameObject:
   m_Component:
   - component: {fileID: 1634473451}
   - component: {fileID: 1634473452}
+  - component: {fileID: 1634473453}
   m_Layer: 5
-  m_Name: Clientel
+  m_Name: Clientele
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -4430,7 +4433,40 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3ab6bc37e9f374d4a8fa4cbe07aed2fb, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _clients: []
+  _clients:
+  - _mainReq: 0
+    _addReq: 1
+  - _mainReq: 0
+    _addReq: 2
+  - _mainReq: 1
+    _addReq: 0
+  - _mainReq: 1
+    _addReq: 2
+  - _mainReq: 2
+    _addReq: 0
+  - _mainReq: 2
+    _addReq: 1
+  - _mainReq: 2
+    _addReq: 3
+  - _mainReq: 3
+    _addReq: 0
+  - _mainReq: 3
+    _addReq: 1
+--- !u!114 &1634473453
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1634473450}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d958c7f0cc32e2446b3806b6667fef03, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _clientPrefab: {fileID: 695645859945445499, guid: bb8c72fd7066c83458092a140e75909e, type: 3}
+  _reqPrefab: {fileID: 6234578311032212347, guid: d25473212d78362458aab8a38444df63, type: 3}
+  _dataClient: {fileID: 1493780955}
 --- !u!1 &1642988349
 GameObject:
   m_ObjectHideFlags: 0

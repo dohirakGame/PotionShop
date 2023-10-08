@@ -1,26 +1,22 @@
 using UnityEngine;
 
+public enum Req
+{
+    Red,
+    Green,
+    Blue,
+    Yellow,
+    Black
+}
+
 [System.Serializable]
 public class Client
 {
-    public enum MainReq
-    {
-        Red,
-        Green,
-        Blue,
-        Yellow,
-        Black
-    }
 
-    public enum AddReq
-    {
-        Red,
-        Green,
-        Blue,
-        Yellow,
-        Black
-    }
 
-    [SerializeField] private MainReq _mainReq;
-    [SerializeField] private AddReq _addReq;
+    [SerializeField] private Req _mainReq;
+    [SerializeField] private Req _addReq;
+
+    public Req GetMain() => _mainReq;
+    public Req GetAdd() => _addReq;
 }
