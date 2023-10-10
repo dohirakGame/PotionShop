@@ -25,6 +25,8 @@ public class CreateDeck : MonoBehaviour
 					for (int i = 0; i < _requaredCount; i++)
 					{
 						_cards[i].SetColor(CardColor.Red);
+						if (_cards[i].GetPoint() < 0)
+							_cards[i].SetPointMinus();
 					}
 					for (int i = _requaredCount; i < _cards.Count; i++)
 					{
@@ -47,6 +49,8 @@ public class CreateDeck : MonoBehaviour
 					for (int i = 0; i < _requaredCount; i++)
 					{
 						_cards[i].SetColor(CardColor.Green);
+						if (_cards[i].GetPoint() < 0)
+							_cards[i].SetPointMinus();
 					}
 					for (int i = _requaredCount; i < _cards.Count; i++)
 					{
@@ -69,6 +73,8 @@ public class CreateDeck : MonoBehaviour
 					for (int i = 0; i < _requaredCount; i++)
 					{
 						_cards[i].SetColor(CardColor.Blue);
+						if (_cards[i].GetPoint() < 0)
+							_cards[i].SetPointMinus();
 					}
 					for (int i = _requaredCount; i < _cards.Count; i++)
 					{
@@ -91,6 +97,8 @@ public class CreateDeck : MonoBehaviour
 					for (int i = 0; i < _requaredCount; i++)
 					{
 						_cards[i].SetColor(CardColor.Yellow);
+						if (_cards[i].GetPoint() < 0)
+							_cards[i].SetPointMinus();
 					}
 					for (int i = _requaredCount; i < _cards.Count; i++)
 					{
