@@ -2,54 +2,57 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class TablePositions : MonoBehaviour
+namespace Game_Logic.Table
 {
-    [SerializeField] private List<Transform> _positions;
-    [SerializeField] private List<GameObject> _cards;
+    public class TablePositions : MonoBehaviour
+    {
+        [SerializeField] private List<Transform> _positions;
+        [SerializeField] private List<GameObject> _cards;
 
-    private int _indexFreePosition;
-    
-    public Transform GetFreePosition()
-    {
-        _positions[_indexFreePosition].GetComponent<PositionData>().SetFreeStatus(false);
-        return _positions[_indexFreePosition];
-    }
-    public bool IsThereFreePosition()
-    {
-        for (int i=0;i < _positions.Count;i++)
+        private int _indexFreePosition;
+
+        public Transform GetFreePosition()
         {
-            if (_positions[i].GetComponent<PositionData>().GetFreeStatus())
+            _positions[_indexFreePosition].GetComponent<PositionData>().SetFreeStatus(false);
+            return _positions[_indexFreePosition];
+        }
+        public bool IsThereFreePosition()
+        {
+            for (int i = 0; i < _positions.Count; i++)
             {
-                _indexFreePosition = i;
-                return true;
+                if (_positions[i].GetComponent<PositionData>().GetFreeStatus())
+                {
+                    _indexFreePosition = i;
+                    return true;
+                }
             }
+            return false;
         }
-        return false;
-    }
 
-    public void AddCardInList(GameObject card)
-    {
-        _cards.Add(card);
-    }
-
-    public void ClearCardsInList()
-    {
-        for (int i = 0; i < _cards.Count;i++)
+        public void AddCardInList(GameObject card)
         {
-            Destroy(_cards[i]);
-            _positions[i].GetComponent<PositionData>().SetFreeStatus(true);
+            _cards.Add(card);
         }
-        StartCoroutine(DelayClear());
-    }
 
-    private IEnumerator DelayClear()
-    {
-        yield return new WaitForSeconds(0.3f);
-        _cards.Clear();
-    }
+        public void ClearCardsInList()
+        {
+            for (int i = 0; i < _cards.Count; i++)
+            {
+                Destroy(_cards[i]);
+                _positions[i].GetComponent<PositionData>().SetFreeStatus(true);
+            }
+            StartCoroutine(DelayClear());
+        }
 
-    public int CurrentListCount()
-    {
-        return _cards.Count;
+        private IEnumerator DelayClear()
+        {
+            yield return new WaitForSeconds(0.3f);
+            _cards.Clear();
+        }
+
+        public int CurrentListCount()
+        {
+            return _cards.Count;
+        }
     }
 }

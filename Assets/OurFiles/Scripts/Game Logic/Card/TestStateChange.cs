@@ -2,12 +2,15 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class TestStateChange : MonoBehaviour
+namespace Game_Logic.CardLogic
 {
-	private void Start()
+	public class TestStateChange : MonoBehaviour
 	{
-		CurrentState currentStateInDeck = new CurrentState(new StateInDeck());
+		private void Start()
+		{
+			CurrentState currentStateInDeck = new CurrentState(new StateInDeck());
 
-		currentStateInDeck.InDeck();
+			currentStateInDeck.InDeck();
+		}
 	}
 }

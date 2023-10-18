@@ -1,71 +1,84 @@
-using TMPro;
+using Game_Logic.Deck;
+using Game_Logic.General;
+using Game_Logic.Table;
 using UnityEngine;
 using UnityEngine.EventSystems;
 
-public class DragAndDrop : MonoBehaviour, IDragHandler, IBeginDragHandler, IEndDragHandler
+namespace Game_Logic.CardLogic.DragNDrop
 {
-	[Header("Буфер элементов")]
-	[SerializeField] private ElementsBufer _elementsBufer;
-
-	private Canvas _mainCanvas;
-	private Transform _parentForRetun;
-	
-	// Переделать потом под паттерн State
-	private bool _onTable;
-
-	private void Start()
+	public class DragAndDrop : MonoBehaviour, IDragHandler, IBeginDragHandler, IEndDragHandler
 	{
-		_onTable = false;
-		_elementsBufer = FindObjectOfType<ElementsBufer>();
-		_mainCanvas = _elementsBufer.GetMainCanvas();
-	}
+		[Header("Буфер элементов")]
+		[SerializeField] private ElementsBufer _elementsBufer;
 
-	public void OnBeginDrag(PointerEventData eventData)
-	{
-		if (!_onTable)
+		private Canvas _mainCanvas;
+		private Transform _parentForRetun;
+
+		// Переделать потом под паттерн State
+		private bool _onTable;
+
+		private void Start()
 		{
-			_parentForRetun = transform.parent;
-			transform.parent = _mainCanvas.transform;
+			_onTable = false;
+			_elementsBufer = FindObjectOfType<ElementsBufer>();
+			_mainCanvas = _elementsBufer.GetMainCanvas();
 		}
-	}
 
-	public void OnDrag(PointerEventData eventData)
-	{
-		if (!_onTable)
+		public void OnBeginDrag(PointerEventData eventData)
 		{
-			GetComponent<RectTransform>().anchoredPosition += eventData.delta / _mainCanvas.scaleFactor;
-		}
-	}
-
-	public void OnEndDrag(PointerEventData eventData)
-	{
-		if (!_onTable)
-		{
-			GetComponent<BoxCollider>().enabled = false;
-
-			RaycastHit hit;
-			Camera mainCamera = Camera.main;
-
-			Ray ray = mainCamera.ScreenPointToRay(Input.mousePosition);
-			Physics.Raycast(ray, out hit);
-
-			if (hit.collider != null)
+			if (!_onTable)
 			{
-				switch (hit.collider.tag)
+				_parentForRetun = transform.parent;
+				transform.parent = _mainCanvas.transform;
+			}
+		}
+
+		public void OnDrag(PointerEventData eventData)
+		{
+			if (!_onTable)
+			{
+				GetComponent<RectTransform>().anchoredPosition += eventData.delta / _mainCanvas.scaleFactor;
+			}
+		}
+
+		public void OnEndDrag(PointerEventData eventData)
+		{
+			if (!_onTable)
+			{
+				GetComponent<BoxCollider>().enabled = false;
+
+				RaycastHit hit;
+				Camera mainCamera = Camera.main;
+
+				Ray ray = mainCamera.ScreenPointToRay(Input.mousePosition);
+				Physics.Raycast(ray, out hit);
+
+				if (hit.collider != null)
 				{
-					case "Table":
-						_parentForRetun.GetComponent<TopCard>().FlipCard();
-						hit.transform.GetComponent<TableLogic>().ProcessTableLogic(transform);
-						_onTable = true;
-						break;
+					switch (hit.collider.tag)
+					{
+						case "Table":
+							_parentForRetun.GetComponent<TopCard>().FlipCard();
+							hit.transform.GetComponent<TableLogic>().ProcessTableLogic(transform);
+							_onTable = true;
+							break;
+						default:
+							ReturnOnBackPosition();
+							break;
+					}
+				}
+				else
+				{
+					ReturnOnBackPosition();
 				}
 			}
-			else
-			{
-				transform.parent = _parentForRetun;
-				transform.position = _parentForRetun.position;
-				GetComponent<BoxCollider>().enabled = true;
-			}
+		}
+
+		private void ReturnOnBackPosition()
+		{
+			transform.parent = _parentForRetun;
+			transform.position = _parentForRetun.position;
+			GetComponent<BoxCollider>().enabled = true;
 		}
 	}
 }

@@ -1,13 +1,14 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.EventSystems;
 
-public class TableDropCard : MonoBehaviour, IDropHandler
+namespace Game_Logic.CardLogic.DragNDrop
 {
-	public void OnDrop(PointerEventData eventData)
+	public class TableDropCard : MonoBehaviour, IDropHandler
 	{
-		var otherItemTransform = eventData.pointerDrag.transform;
-		otherItemTransform.SetParent(transform);
+		public void OnDrop(PointerEventData eventData)
+		{
+			var otherItemTransform = eventData.pointerDrag.transform;
+			otherItemTransform.SetParent(transform);
+		}
 	}
 }

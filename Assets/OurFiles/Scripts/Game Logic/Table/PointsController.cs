@@ -1,7 +1,8 @@
-﻿using System.Collections;
+﻿using Game_Logic.General;
+using System.Collections;
 using UnityEngine;
 
-namespace Assets.OurFiles.Scripts.Game_Logic.Table
+namespace Game_Logic.Table
 {
 	public class PointsController : MonoBehaviour
 	{

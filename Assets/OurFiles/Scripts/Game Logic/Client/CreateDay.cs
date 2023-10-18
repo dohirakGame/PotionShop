@@ -2,18 +2,21 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class CreateDay : MonoBehaviour
+namespace Game_Logic.Client
 {
-    [SerializeField] private List<Client> _clients;
-
-    public Client GetClient(int index)
+    public class CreateDay : MonoBehaviour
     {
-        return _clients[index];
-    }
+        [SerializeField] private List<Client> _clients;
 
-    public int CountClientsInList()
-    {
-        return _clients.Count;
-    }
+        public Client GetClient(int index)
+        {
+            return _clients[index];
+        }
 
+        public int CountClientsInList()
+        {
+            return _clients.Count;
+        }
+
+    }
 }

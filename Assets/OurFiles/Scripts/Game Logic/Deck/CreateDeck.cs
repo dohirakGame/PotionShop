@@ -1,123 +1,125 @@
-using System.Collections;
+using Game_Logic.CardLogic;
 using System.Collections.Generic;
-using System.Linq;
 using UnityEngine;
 
-public class CreateDeck : MonoBehaviour
+namespace Game_Logic.Deck
 {
-	[SerializeField] private int _requaredCount;
-	[SerializeField] private List<Card> _cards;
-
-	private void OnValidate()
+	public class CreateDeck : MonoBehaviour
 	{
-		switch (gameObject.name)
+		[SerializeField] private int _requaredCount;
+		[SerializeField] private List<Card> _cards;
+
+		private void OnValidate()
 		{
-			case "RedDeck":
-				if (_cards.Count <= _requaredCount)
-				{
-					foreach (Card card in _cards)
+			switch (gameObject.name)
+			{
+				case "RedDeck":
+					if (_cards.Count <= _requaredCount)
 					{
-						card.SetColor(CardColor.Red);
+						foreach (Card card in _cards)
+						{
+							card.SetColor(CardColor.Red);
+						}
 					}
-				}
-				else
-				{
-					for (int i = 0; i < _requaredCount; i++)
+					else
 					{
-						_cards[i].SetColor(CardColor.Red);
-						if (_cards[i].GetPoint() < 0)
-							_cards[i].SetPointMinus();
+						for (int i = 0; i < _requaredCount; i++)
+						{
+							_cards[i].SetColor(CardColor.Red);
+							if (_cards[i].GetPoint() < 0)
+								_cards[i].SetPointMinus();
+						}
+						for (int i = _requaredCount; i < _cards.Count; i++)
+						{
+							_cards[i].SetColor(CardColor.Black);
+							if (_cards[i].GetPoint() > 0)
+								_cards[i].SetPointMinus();
+						}
 					}
-					for (int i = _requaredCount; i < _cards.Count; i++)
+					break;
+				case "GreenDeck":
+					if (_cards.Count <= _requaredCount)
 					{
-						_cards[i].SetColor(CardColor.Black);
-						if (_cards[i].GetPoint() > 0)
-							_cards[i].SetPointMinus();
+						foreach (Card card in _cards)
+						{
+							card.SetColor(CardColor.Green);
+						}
 					}
-				}
-				break;
-			case "GreenDeck":
-				if (_cards.Count <= _requaredCount)
-				{
-					foreach (Card card in _cards)
+					else
 					{
-						card.SetColor(CardColor.Green);
+						for (int i = 0; i < _requaredCount; i++)
+						{
+							_cards[i].SetColor(CardColor.Green);
+							if (_cards[i].GetPoint() < 0)
+								_cards[i].SetPointMinus();
+						}
+						for (int i = _requaredCount; i < _cards.Count; i++)
+						{
+							_cards[i].SetColor(CardColor.Black);
+							if (_cards[i].GetPoint() > 0)
+								_cards[i].SetPointMinus();
+						}
 					}
-				}
-				else
-				{
-					for (int i = 0; i < _requaredCount; i++)
+					break;
+				case "BlueDeck":
+					if (_cards.Count <= _requaredCount)
 					{
-						_cards[i].SetColor(CardColor.Green);
-						if (_cards[i].GetPoint() < 0)
-							_cards[i].SetPointMinus();
+						foreach (Card card in _cards)
+						{
+							card.SetColor(CardColor.Blue);
+						}
 					}
-					for (int i = _requaredCount; i < _cards.Count; i++)
+					else
 					{
-						_cards[i].SetColor(CardColor.Black);
-						if (_cards[i].GetPoint() > 0)
-							_cards[i].SetPointMinus();
+						for (int i = 0; i < _requaredCount; i++)
+						{
+							_cards[i].SetColor(CardColor.Blue);
+							if (_cards[i].GetPoint() < 0)
+								_cards[i].SetPointMinus();
+						}
+						for (int i = _requaredCount; i < _cards.Count; i++)
+						{
+							_cards[i].SetColor(CardColor.Black);
+							if (_cards[i].GetPoint() > 0)
+								_cards[i].SetPointMinus();
+						}
 					}
-				}
-				break;
-			case "BlueDeck":
-				if (_cards.Count <= _requaredCount)
-				{
-					foreach (Card card in _cards)
+					break;
+				case "YellowDeck":
+					if (_cards.Count <= _requaredCount)
 					{
-						card.SetColor(CardColor.Blue);
+						foreach (Card card in _cards)
+						{
+							card.SetColor(CardColor.Yellow);
+						}
 					}
-				}
-				else
-				{
-					for (int i = 0; i < _requaredCount; i++)
+					else
 					{
-						_cards[i].SetColor(CardColor.Blue);
-						if (_cards[i].GetPoint() < 0)
-							_cards[i].SetPointMinus();
+						for (int i = 0; i < _requaredCount; i++)
+						{
+							_cards[i].SetColor(CardColor.Yellow);
+							if (_cards[i].GetPoint() < 0)
+								_cards[i].SetPointMinus();
+						}
+						for (int i = _requaredCount; i < _cards.Count; i++)
+						{
+							_cards[i].SetColor(CardColor.Black);
+							if (_cards[i].GetPoint() > 0)
+								_cards[i].SetPointMinus();
+						}
 					}
-					for (int i = _requaredCount; i < _cards.Count; i++)
-					{
-						_cards[i].SetColor(CardColor.Black);
-						if (_cards[i].GetPoint() > 0)
-							_cards[i].SetPointMinus();
-					}
-				}
-				break;
-			case "YellowDeck":
-				if (_cards.Count <= _requaredCount)
-				{
-					foreach (Card card in _cards)
-					{
-						card.SetColor(CardColor.Yellow);
-					}
-				}
-				else
-				{
-					for (int i = 0; i < _requaredCount; i++)
-					{
-						_cards[i].SetColor(CardColor.Yellow);
-						if (_cards[i].GetPoint() < 0)
-							_cards[i].SetPointMinus();
-					}
-					for (int i = _requaredCount; i < _cards.Count; i++)
-					{
-						_cards[i].SetColor(CardColor.Black);
-						if (_cards[i].GetPoint() > 0)
-							_cards[i].SetPointMinus();
-					}
-				}
-				break;
+					break;
+			}
+		}
+
+		public Card GetCard(int index)
+		{
+			return _cards[index];
+		}
+
+		public int CountCardsInList()
+		{
+			return _cards.Count;
 		}
 	}
-
-	public Card GetCard(int index)
-    {
-        return _cards[index];
-    }
-
-    public int CountCardsInList()
-    {
-        return _cards.Count;
-    }
 }

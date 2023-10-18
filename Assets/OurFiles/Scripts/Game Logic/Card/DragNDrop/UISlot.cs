@@ -1,25 +1,26 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.EventSystems;
 
-public class UISlot : MonoBehaviour, IDropHandler
+namespace Game_Logic.CardLogic.DragNDrop
 {
-	public void OnDrop(PointerEventData eventData)
+	public class UISlot : MonoBehaviour, IDropHandler
 	{
-		Debug.Log("EventData " + eventData);
-		Transform otherItemTransform = eventData.pointerDrag.transform;
-		Debug.Log("OtherItemTransfrom " + otherItemTransform);
-		otherItemTransform.SetParent(transform);
-		otherItemTransform.localPosition = Vector3.zero;
-		RaycastHit hit;
-		Ray ray = Camera.main.ScreenPointToRay(Input.mousePosition);
-
-		if (Physics.Raycast(ray, out hit))
+		public void OnDrop(PointerEventData eventData)
 		{
-			if (hit.collider.CompareTag("Table"))
+			Debug.Log("EventData " + eventData);
+			Transform otherItemTransform = eventData.pointerDrag.transform;
+			Debug.Log("OtherItemTransfrom " + otherItemTransform);
+			otherItemTransform.SetParent(transform);
+			otherItemTransform.localPosition = Vector3.zero;
+			RaycastHit hit;
+			Ray ray = Camera.main.ScreenPointToRay(Input.mousePosition);
+
+			if (Physics.Raycast(ray, out hit))
 			{
-				Debug.Log("Table");
+				if (hit.collider.CompareTag("Table"))
+				{
+					Debug.Log("Table");
+				}
 			}
 		}
 	}

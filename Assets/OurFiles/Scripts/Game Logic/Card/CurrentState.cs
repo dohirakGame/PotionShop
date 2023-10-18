@@ -3,39 +3,42 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class CurrentState
+namespace Game_Logic.CardLogic
 {
-	private CardState _state = null;
-
-	public CurrentState(CardState state)
+	public class CurrentState
 	{
-		this.TransitionTo(state);
-	}
+		private CardState _state = null;
 
-	// Контекст позволяет изменять объект Состояния во время выполнения.
-	public void TransitionTo(CardState state)
-	{
-		Debug.Log("State is change");
-		this._state = state;
-		this._state.SetContext(this);
-	}
+		public CurrentState(CardState state)
+		{
+			this.TransitionTo(state);
+		}
 
-	// Контекст делегирует часть своего поведения текущему объекту
-	// Состояния.
-	public void InDeck()
-	{
-		this._state.Handle1();
-		this._state.Handle2();
-		this._state.Handle3();
-	}
+		// Контекст позволяет изменять объект Состояния во время выполнения.
+		public void TransitionTo(CardState state)
+		{
+			Debug.Log("State is change");
+			this._state = state;
+			this._state.SetContext(this);
+		}
 
-	public void OnTable()
-	{
-		this._state.Handle2();
-	}
+		// Контекст делегирует часть своего поведения текущему объекту
+		// Состояния.
+		public void InDeck()
+		{
+			this._state.Handle1();
+			this._state.Handle2();
+			this._state.Handle3();
+		}
 
-	public void BeforeCreate()
-	{
-		this._state.Handle3();
+		public void OnTable()
+		{
+			this._state.Handle2();
+		}
+
+		public void BeforeCreate()
+		{
+			this._state.Handle3();
+		}
 	}
 }

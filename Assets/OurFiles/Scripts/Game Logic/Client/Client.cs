@@ -1,22 +1,25 @@
 using UnityEngine;
 
-public enum Req
+namespace Game_Logic.Client
 {
-    Red,
-    Green,
-    Blue,
-    Yellow,
-    Black
-}
+    public enum Req
+    {
+        Red,
+        Green,
+        Blue,
+        Yellow,
+        Black
+    }
 
-[System.Serializable]
-public class Client
-{
+    [System.Serializable]
+    public class Client
+    {
 
 
-    [SerializeField] private Req _mainReq;
-    [SerializeField] private Req _addReq;
+        [SerializeField] private Req _mainReq;
+        [SerializeField] private Req _addReq;
 
-    public Req GetMain() => _mainReq;
-    public Req GetAdd() => _addReq;
+        public Req GetMain() => _mainReq;
+        public Req GetAdd() => _addReq;
+    }
 }
