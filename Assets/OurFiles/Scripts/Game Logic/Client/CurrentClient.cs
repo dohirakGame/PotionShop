@@ -1,5 +1,6 @@
 using Data;
 using UnityEngine;
+using Game_Logic.CardLogic;
 
 namespace Game_Logic.Client
 {
@@ -12,20 +13,31 @@ namespace Game_Logic.Client
         private Sprite _clientSprite;
         private Sprite _reqSprite;
 
-        private Req _main;
-        private Req _added;
+        private CardColor _main;
+        private CardColor _added;
 
+        private int _currentclient = 0;
 
         private void Start()
         {
             NextClient();
         }
 
-        private void NextClient()
+        public void NextClient()
         {
             if (gameObject.transform.childCount > 0)
-                Destroy(gameObject.transform.GetChild(0).gameObject);
-
+            {
+                _currentclient++;
+                if (_currentclient < 8)
+                {
+                    Destroy(gameObject.transform.GetChild(0).gameObject);
+                }
+                else
+                {
+                    //  Сюда выходит, если клиенты кончились
+                    Debug.Log("А все");
+                }
+            }
             LoadClientIformationFromData();
             InstantiateClient();
 
@@ -76,56 +88,56 @@ namespace Game_Logic.Client
                     clientImage.color = new Color(1, 0, 0, 1);
                     break;
             }
-            Client reqs = this.GetComponent<CreateDay>().GetClient(Random.Range(0, 8));
+            Client reqs = this.GetComponent<CreateDay>().GetClient(_currentclient);
             switch (reqs.GetMain())
             {
-                case Req.Red:
+                case CardColor.Red:
                     mainImage.color = new Color(1, 0, 0, 1);
-                    _main = Req.Red;
+                    _main = CardColor.Red;
                     break;
-                case Req.Green:
+                case CardColor.Green:
                     mainImage.color = new Color(0, 1, 0, 1);
-                    _main = Req.Green;
+                    _main = CardColor.Green;
                     break;
-                case Req.Blue:
+                case CardColor.Blue:
                     mainImage.color = new Color(0, 0, 1, 1);
-                    _main = Req.Blue;
+                    _main = CardColor.Blue;
                     break;
-                case Req.Yellow:
+                case CardColor.Yellow:
                     mainImage.color = new Color(1, 1, 0, 1);
-                    _main = Req.Yellow;
+                    _main = CardColor.Yellow;
                     break;
-                case Req.Black:
+                case CardColor.Black:
                     mainImage.color = new Color(0, 0, 0, 1);
-                    _main = Req.Black;
+                    _main = CardColor.Black;
                     break;
             }
             switch (reqs.GetAdd())
             {
-                case Req.Red:
+                case CardColor.Red:
                     addImage.color = new Color(1, 0, 0, 1);
-                    _added = Req.Red;
+                    _added = CardColor.Red;
                     break;
-                case Req.Green:
+                case CardColor.Green:
                     addImage.color = new Color(0, 1, 0, 1);
-                    _added = Req.Green;
+                    _added = CardColor.Green;
                     break;
-                case Req.Blue:
+                case CardColor.Blue:
                     addImage.color = new Color(0, 0, 1, 1);
-                    _added = Req.Blue;
+                    _added = CardColor.Blue;
                     break;
-                case Req.Yellow:
+                case CardColor.Yellow:
                     addImage.color = new Color(1, 1, 0, 1);
-                    _added = Req.Yellow;
+                    _added = CardColor.Yellow;
                     break;
-                case Req.Black:
+                case CardColor.Black:
                     addImage.color = new Color(0, 0, 0, 1);
-                    _added = Req.Black;
+                    _added = CardColor.Black;
                     break;
             }
         }
 
-        public Req GetMain() => _main;
-        public Req GetAdded() => _added;
+        public CardColor GetMain() => _main;
+        public CardColor GetAdded() => _added;
     }
 }
