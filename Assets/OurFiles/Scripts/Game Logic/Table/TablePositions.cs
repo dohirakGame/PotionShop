@@ -54,5 +54,7 @@ namespace Game_Logic.Table
         {
             return _cards.Count;
         }
+
+        public List<Transform> GetPositions() => _positions;
     }
 }

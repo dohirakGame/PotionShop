@@ -1,25 +1,18 @@
 using UnityEngine;
+using Game_Logic.CardLogic;
 
 namespace Game_Logic.Client
 {
-    public enum Req
-    {
-        Red,
-        Green,
-        Blue,
-        Yellow,
-        Black
-    }
 
     [System.Serializable]
     public class Client
     {
 
 
-        [SerializeField] private Req _mainReq;
-        [SerializeField] private Req _addReq;
+        [SerializeField] private CardColor _mainReq;
+        [SerializeField] private CardColor _addReq;
 
-        public Req GetMain() => _mainReq;
-        public Req GetAdd() => _addReq;
+        public CardColor GetMain() => _mainReq;
+        public CardColor GetAdd() => _addReq;
     }
 }

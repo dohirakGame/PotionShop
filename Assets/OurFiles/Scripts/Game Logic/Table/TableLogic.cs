@@ -2,12 +2,14 @@ using Game_Logic.CardLogic;
 using Game_Logic.General;
 using TMPro;
 using UnityEngine;
+using Game_Logic.Client;
 
 namespace Game_Logic.Table
 {
 	public class TableLogic : MonoBehaviour
     {
         [SerializeField] private ElementsBufer _elementsBufer;
+        [SerializeField] private GameObject _clientele;
 
         public void ProcessTableLogic(Transform card, float xPosition)
         {
@@ -44,17 +46,34 @@ namespace Game_Logic.Table
         {
             if (!GetComponent<TablePositions>().IsThereFreePosition())
             {
-                if (_elementsBufer.GetPointsController().GetPoints() >= 0)
+                CardColor MainReq = _clientele.GetComponent<CurrentClient>().GetMain();
+                bool found = false;
+                foreach(Transform position in GetComponent<TablePositions>().GetPositions())
                 {
-                    _elementsBufer.GetScoresController().ScoresModify(_elementsBufer.GetPointsController().GetPoints());
-                    _elementsBufer.GetScoresController().UpdateScoresText();
-                    _elementsBufer.GetPointsController().ResetPoints();
-                    _elementsBufer.GetPointsController().UpdatePointsText();
+                    Debug.Log(position);
+                    if(position.gameObject.GetComponent<PositionData>().GetColor() == MainReq)
+                    {
+                        found = true;
+                    }
                 }
-                else
+                if(found)
                 {
+                    if (_elementsBufer.GetPointsController().GetPoints() >= 0)
+                    {
+                        _elementsBufer.GetScoresController().ScoresModify(_elementsBufer.GetPointsController().GetPoints());
+                        _clientele.GetComponent<CurrentClient>().NextClient();
+                        _elementsBufer.GetScoresController().UpdateScoresText();
+                        _elementsBufer.GetPointsController().ResetPoints();
+                        _elementsBufer.GetPointsController().UpdatePointsText();
+                    }
+                    else
+                    {
+                        _elementsBufer._textForTests.text = "“€ œ–Œ»√–¿À, «¿ –€¬¿… »√–”";
+                    }
+                }else{
                     _elementsBufer._textForTests.text = "“€ œ–Œ»√–¿À, «¿ –€¬¿… »√–”";
                 }
+
                 return true;
             }
             return false;
