@@ -59,7 +59,7 @@ namespace Game_Logic.CardLogic.DragNDrop
 					{
 						case "Table":
 							_parentForRetun.GetComponent<TopCard>().FlipCard();
-							hit.transform.GetComponent<TableLogic>().ProcessTableLogic(transform);
+							hit.transform.GetComponent<TableLogic>().ProcessTableLogic(transform, Input.mousePosition.x);
 							_onTable = true;
 							break;
 						default:

@@ -9,19 +9,21 @@ namespace Game_Logic.Table
     {
         [SerializeField] private ElementsBufer _elementsBufer;
 
-        public void ProcessTableLogic(Transform card)
+        public void ProcessTableLogic(Transform card, float xPosition)
         {
-            PutReceivedCard(card);
+            PutReceivedCard(card, xPosition);
             // Переделать потом под немного другую логику именно CheckFullTable()
             if (CheckOnFullTable())
             {
                 ClearTable();
             }
         }
-        private void PutReceivedCard(Transform card)
+        private void PutReceivedCard(Transform card, float xPosition)
         {
             if (GetComponent<TablePositions>().IsThereFreePosition())
             {
+                Debug.Log(xPosition);
+
                 Transform newTransform = GetComponent<TablePositions>().GetFreePosition();
 
                 card.transform.parent = newTransform;
