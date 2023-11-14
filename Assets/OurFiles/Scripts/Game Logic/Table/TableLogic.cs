@@ -22,20 +22,20 @@ namespace Game_Logic.Table
         }
         private void PutReceivedCard(Transform card, float xPosition)
         {
-            if (GetComponent<TablePositions>().IsThereFreePosition())
+            TablePositions tablePos = GetComponent<TablePositions>();
+            if (tablePos.IsThereFreePosition())
             {
-                Debug.Log(xPosition);
+                //Transform newTransform = tablePos.GetFreeTransform();
 
-                Transform newTransform = GetComponent<TablePositions>().GetFreePosition();
+                tablePos.Initialize();
 
-                card.transform.parent = newTransform;
-                card.transform.position = newTransform.position;
+                /*card.transform.parent = newTransform;
+                card.transform.position = newTransform.position;*/
 
-                newTransform.GetComponent<PositionData>().SetCardColor(card.GetComponent<CardInformation>().GetCardColor());
-                newTransform.GetComponent<PositionData>().SetBonusType(card.GetComponent<CardInformation>().GetBonusType());
-                newTransform.GetComponent<PositionData>().SetBonusColor(card.GetComponent<CardInformation>().GetBonusColor());
+                tablePos.AddCardInList(card.gameObject, xPosition);
+                //tablePos.SortListWithNewCard(xPosition, card);
+                tablePos.UpdatePositionData();
 
-                GetComponent<TablePositions>().AddCardInList(card.gameObject);
             }
 
             // ѕотом переделать, чтобы вз€ть число, а не через текст
@@ -50,7 +50,7 @@ namespace Game_Logic.Table
                 bool found = false;
                 foreach(Transform position in GetComponent<TablePositions>().GetPositions())
                 {
-                    Debug.Log(position);
+                    //Debug.Log(position);
                     if(position.gameObject.GetComponent<PositionData>().GetColor() == MainReq)
                     {
                         found = true;

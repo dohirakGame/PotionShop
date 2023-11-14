@@ -385,7 +385,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 46514074}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: fe87c0e1cc204ed48ad3b37840f39efc, type: 3}
   m_Name: 
@@ -824,7 +824,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 169657792}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: fe87c0e1cc204ed48ad3b37840f39efc, type: 3}
   m_Name: 
@@ -2856,6 +2856,55 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 802402441}
   m_CullTransparentMesh: 1
+--- !u!1 &919571568
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 919571569}
+  - component: {fileID: 919571570}
+  m_Layer: 6
+  m_Name: Bootstrap
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!224 &919571569
+RectTransform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 919571568}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 1352782453}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_AnchorMin: {x: 0.5, y: 0.5}
+  m_AnchorMax: {x: 0.5, y: 0.5}
+  m_AnchoredPosition: {x: 0, y: 0}
+  m_SizeDelta: {x: 100, y: 100}
+  m_Pivot: {x: 0.5, y: 0.5}
+--- !u!114 &919571570
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 919571568}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c0f24c4de501e04458af81a39035a850, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _tablePositions: {fileID: 1352782456}
 --- !u!1 &945051997
 GameObject:
   m_ObjectHideFlags: 0
@@ -3671,6 +3720,7 @@ RectTransform:
   - {fileID: 1633854863}
   - {fileID: 46514075}
   - {fileID: 1428372348}
+  - {fileID: 919571569}
   m_Father: {fileID: 564201502}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0.177}
@@ -4788,7 +4838,7 @@ RectTransform:
   m_AnchorMin: {x: 0.5, y: 0}
   m_AnchorMax: {x: 0.5, y: 1}
   m_AnchoredPosition: {x: 125, y: 0}
-  m_SizeDelta: {x: 189, y: -90}
+  m_SizeDelta: {x: 190, y: -90}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1633854864
 MonoBehaviour:
@@ -4797,7 +4847,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1633854862}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: fe87c0e1cc204ed48ad3b37840f39efc, type: 3}
   m_Name: 
@@ -6318,6 +6368,7 @@ GameObject:
   - component: {fileID: 2078780385}
   - component: {fileID: 2078780384}
   - component: {fileID: 2078780386}
+  - component: {fileID: 2078780387}
   m_Layer: 6
   m_Name: "Position\u21161"
   m_TagString: Untagged
@@ -6351,7 +6402,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2078780382}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: fe87c0e1cc204ed48ad3b37840f39efc, type: 3}
   m_Name: 
@@ -6399,6 +6450,18 @@ MonoBehaviour:
   _cardColor: 0
   _cardBonusType: 0
   _cardBonusColor: 0
+--- !u!114 &2078780387
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2078780382}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e377a6141a6017945be989f61104004a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &2122881116
 GameObject:
   m_ObjectHideFlags: 0
@@ -6629,32 +6692,32 @@ MonoBehaviour:
   _cards:
   - _point: 1
     _color: 0
-    _bonus: 0
-    _bonusColor: 0
+    _bonus: 2
+    _bonusColor: 3
   - _point: 2
     _color: 0
-    _bonus: 0
-    _bonusColor: 0
+    _bonus: 1
+    _bonusColor: 2
   - _point: 3
     _color: 0
-    _bonus: 0
-    _bonusColor: 0
+    _bonus: 1
+    _bonusColor: 3
   - _point: 4
     _color: 0
-    _bonus: 0
-    _bonusColor: 0
+    _bonus: 1
+    _bonusColor: 4
   - _point: 5
     _color: 0
-    _bonus: 0
-    _bonusColor: 0
+    _bonus: 2
+    _bonusColor: 4
   - _point: 6
     _color: 0
-    _bonus: 0
-    _bonusColor: 0
+    _bonus: 2
+    _bonusColor: 3
   - _point: 7
     _color: 0
-    _bonus: 0
-    _bonusColor: 0
+    _bonus: 1
+    _bonusColor: 2
   - _point: 8
     _color: 0
     _bonus: 0

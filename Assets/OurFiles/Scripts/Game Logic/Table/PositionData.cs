@@ -11,15 +11,16 @@ namespace Game_Logic.Table
         [SerializeField] private CardBonusType _cardBonusType;
         [SerializeField] private BonusColor _cardBonusColor;
 
-        private void Start()
+        public void Initialize()
         {
             SetFreeStatus(true);
         }
-        public void SetFreeStatus(bool status) => _isFree = status;
         public bool GetFreeStatus() => _isFree;
         public float GetXPosition() => _xPosition;
         public CardColor GetColor() => _cardColor;
 
+        public void SetFreeStatus(bool status) => _isFree = status;
+        public void SetXPosition(float xPos) => _xPosition = xPos;
         public void SetCardColor(CardColor color) => _cardColor = color;
         public void SetBonusType(CardBonusType bonusType) => _cardBonusType = bonusType;
         public void SetBonusColor(BonusColor bonusColor) => _cardBonusColor = bonusColor;
