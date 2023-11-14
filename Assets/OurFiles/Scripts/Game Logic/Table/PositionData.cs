@@ -18,6 +18,8 @@ namespace Game_Logic.Table
         public bool GetFreeStatus() => _isFree;
         public float GetXPosition() => _xPosition;
         public CardColor GetColor() => _cardColor;
+        public CardBonusType GetBonusType() => _cardBonusType;
+        public BonusColor GetBonusColor() => _cardBonusColor;
 
         public void SetFreeStatus(bool status) => _isFree = status;
         public void SetXPosition(float xPos) => _xPosition = xPos;

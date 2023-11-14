@@ -27,12 +27,16 @@ namespace Game_Logic.Table
             {
                 //Transform newTransform = tablePos.GetFreeTransform();
 
-                tablePos.Initialize();
 
                 /*card.transform.parent = newTransform;
                 card.transform.position = newTransform.position;*/
 
                 tablePos.AddCardInList(card.gameObject, xPosition);
+				tablePos.SetNewParentTransform(card.gameObject);
+
+                tablePos.CheckForAccrual();
+
+				tablePos.Initialize();
                 //tablePos.SortListWithNewCard(xPosition, card);
                 tablePos.UpdatePositionData();
 

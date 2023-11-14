@@ -13,6 +13,7 @@ namespace Game_Logic.Table
         private float _width = 1080f;
 
         private int _indexFreePosition;
+        private int _lastIndexOfInsertedCard;
         public List<Transform> GetPositions() => _positions;
 
         public void Initialize()
@@ -50,10 +51,9 @@ namespace Game_Logic.Table
             }
             else
             {
-                _cards.Insert(SortListWithNewCard(xPosition), card);
+                _lastIndexOfInsertedCard = SortListWithNewCard(xPosition);
+                _cards.Insert(_lastIndexOfInsertedCard, card);
             }
-
-            SetNewParentTransform(card);
         }
         public int SortListWithNewCard(float xPosition)
         {
@@ -73,7 +73,7 @@ namespace Game_Logic.Table
             }
             return index;
         }
-        private void SetNewParentTransform(GameObject card)
+        public void SetNewParentTransform(GameObject card)
         {
             if (_cards.Count <= 1)
             {
@@ -119,6 +119,53 @@ namespace Game_Logic.Table
                 _positions[i].GetComponent<PositionData>().SetFreeStatus(true);
             }
             StartCoroutine(DelayClear());
+        }
+        public void CheckForAccrual()
+        {
+            for (int i = 0; i < _cards.Count; i++)
+            {
+
+            }
+            PositionData positionData = _positions[_lastIndexOfInsertedCard].GetComponent<PositionData>();
+            switch (positionData.GetBonusType())
+            {
+                case CardBonusType.Left:
+                    if (_indexFreePosition != 0)
+                    {
+                        if (positionData.GetBonusColor().ToString() == _positions[_lastIndexOfInsertedCard-1].GetComponent<PositionData>().GetColor().ToString())
+                        {
+                            Debug.Log("Left + 1");
+                        }
+                    }
+                    break;
+                case CardBonusType.Right:
+                    if (_indexFreePosition !=  _positions.Count - 1)
+                    {
+						if (positionData.GetBonusColor() == _positions[_lastIndexOfInsertedCard+1].GetComponent<PositionData>().GetBonusColor())
+						{
+							Debug.Log("Right + 1");
+						}
+					}
+                    break;
+                case CardBonusType.Center:
+                    int accrual = 0;
+                    for (int i = 0; i < _positions.Count; i++)
+                    {
+                        PositionData indexPositionData = _positions[i].GetComponent<PositionData>();
+                        if (indexPositionData.GetFreeStatus())
+                        {
+                            if (positionData.GetBonusColor() == indexPositionData.GetBonusColor())
+                            {
+                                accrual++;
+                            }
+                        }
+                    }
+                    Debug.Log("Center + " + accrual);
+                    break;
+                case CardBonusType.LeftAndRight:
+
+                    break;
+            }
         }
         private IEnumerator DelayClear()
         {
