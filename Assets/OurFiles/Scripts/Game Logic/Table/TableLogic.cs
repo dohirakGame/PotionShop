@@ -33,12 +33,11 @@ namespace Game_Logic.Table
 
                 tablePos.AddCardInList(card.gameObject, xPosition);
 				tablePos.SetNewParentTransform(card.gameObject);
-
-                tablePos.CheckForAccrual();
-
 				tablePos.Initialize();
                 //tablePos.SortListWithNewCard(xPosition, card);
                 tablePos.UpdatePositionData();
+
+                tablePos.CheckForAccrual(card.gameObject);
 
             }
 

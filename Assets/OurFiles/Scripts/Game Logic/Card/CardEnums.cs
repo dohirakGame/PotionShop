@@ -14,7 +14,8 @@ namespace Game_Logic.CardLogic
 		Left,
 		Right,
 		Center,
-		LeftAndRight
+		LeftAndRight,
+		Empty
 	}
 
 	public enum BonusColor
