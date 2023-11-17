@@ -2,6 +2,7 @@ using Game_Logic.CardLogic;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using Game_Logic.Client;
 
 namespace Game_Logic.Table
 {
@@ -9,6 +10,7 @@ namespace Game_Logic.Table
     {
         [SerializeField] private List<Transform> _positions;
         [SerializeField] private List<GameObject> _cards;
+        [SerializeField] private GameObject _clientele;
 
         private float _width = 1080f;
 
@@ -123,8 +125,10 @@ namespace Game_Logic.Table
         public void CheckForAccrual(GameObject card)
         {
             int indexLastCard = _lastIndexOfInsertedCard;
+            // РџСЂРѕРІРµСЂРєР° РЅР° СЃРѕРѕС‚РІРµС‚СЃС‚РІРёРµ Р±РѕРЅСѓСЃРЅРѕРјСѓ С†РІРµС‚Сѓ РєР»РёРµРЅС‚Р°
+            card.GetComponent<BonusCardAccrual>().ChekingClientBonus(card, _clientele.GetComponent<CurrentClient>().GetAdded());
 
-            // Проверка бонусов на самой карте
+            // ГЏГ°Г®ГўГҐГ°ГЄГ  ГЎГ®Г­ГіГ±Г®Гў Г­Г  Г±Г Г¬Г®Г© ГЄГ Г°ГІГҐ
             if (_cards.Count > 1)
             {
                 switch (_positions[indexLastCard].GetComponent<PositionData>().GetBonusType())
@@ -155,28 +159,28 @@ namespace Game_Logic.Table
 				card.GetComponent<BonusCardAccrual>().CheckingAndAccrualYourself(_cards, indexLastCard);
 			}
             
-            // Проверка бонусов на соседних картах
+            // ГЏГ°Г®ГўГҐГ°ГЄГ  ГЎГ®Г­ГіГ±Г®Гў Г­Г  Г±Г®Г±ГҐГ¤Г­ГЁГµ ГЄГ Г°ГІГ Гµ
             if (_cards.Count > 1)
             {
                 if (indexLastCard == 0)
                 {
-                    // Проверяется только на правой карте
+                    // ГЏГ°Г®ГўГҐГ°ГїГҐГІГ±Гї ГІГ®Г«ГјГЄГ® Г­Г  ГЇГ°Г ГўГ®Г© ГЄГ Г°ГІГҐ
                     _cards[indexLastCard + 1].GetComponent<BonusCardAccrual>().CheckingBonusOnNeighbourCard(card, _cards[indexLastCard + 1]);
                 }
                 else if (indexLastCard == _cards.Count - 1)
                 {
-					// Проверяется только на левой карте
+					// ГЏГ°Г®ГўГҐГ°ГїГҐГІГ±Гї ГІГ®Г«ГјГЄГ® Г­Г  Г«ГҐГўГ®Г© ГЄГ Г°ГІГҐ
 					_cards[indexLastCard - 1].GetComponent<BonusCardAccrual>().CheckingBonusOnNeighbourCard(card, _cards[indexLastCard - 1]);
 				}
                 else
                 {
-					// Проверяется и на правой на левой карте
+					// ГЏГ°Г®ГўГҐГ°ГїГҐГІГ±Гї ГЁ Г­Г  ГЇГ°Г ГўГ®Г© Г­Г  Г«ГҐГўГ®Г© ГЄГ Г°ГІГҐ
 					_cards[indexLastCard + 1].GetComponent<BonusCardAccrual>().CheckingBonusOnNeighbourCard(card, _cards[indexLastCard + 1]);
 					_cards[indexLastCard - 1].GetComponent<BonusCardAccrual>().CheckingBonusOnNeighbourCard(card, _cards[indexLastCard - 1]);
 				}
 			}
 
-            // Поиск и добавление очков за карты с центральным бонусом
+            // ГЏГ®ГЁГ±ГЄ ГЁ Г¤Г®ГЎГ ГўГ«ГҐГ­ГЁГҐ Г®Г·ГЄГ®Гў Г§Г  ГЄГ Г°ГІГ» Г± Г¶ГҐГ­ГІГ°Г Г«ГјГ­Г»Г¬ ГЎГ®Г­ГіГ±Г®Г¬
             if (_cards.Count > 1)
             {
                 for (int i = 0; i < _cards.Count; i++)

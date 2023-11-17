@@ -3784,6 +3784,7 @@ MonoBehaviour:
   - {fileID: 1633854863}
   - {fileID: 46514075}
   _cards: []
+  _clientele: {fileID: 1634473450}
 --- !u!65 &1352782457
 BoxCollider:
   m_ObjectHideFlags: 0

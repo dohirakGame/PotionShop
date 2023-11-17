@@ -78,5 +78,16 @@ namespace Game_Logic.CardLogic
 			
 			verifiedInformation.GetComponent<UpdateVisualCardInformation>().UpdatePointsInformation();
 		}
+
+		public void ChekingClientBonus(GameObject card, CardColor Client)
+		{
+			CardInformation cardInformation = card.GetComponent<CardInformation>();
+
+			if (cardInformation.GetCardColor().ToString() == Client.ToString())
+			{
+				cardInformation.SetPoints(cardInformation.GetPoints()+1);
+			}
+			cardInformation.GetComponent<UpdateVisualCardInformation>().UpdatePointsInformation();
+		}
 	}
 }
