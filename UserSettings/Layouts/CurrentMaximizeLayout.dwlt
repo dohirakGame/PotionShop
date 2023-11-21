@@ -195,8 +195,8 @@ MonoBehaviour:
     y: 0
     width: 247
     height: 691
-  m_MinSize: {x: 200, y: 200}
-  m_MaxSize: {x: 4000, y: 4000}
+  m_MinSize: {x: 201, y: 221}
+  m_MaxSize: {x: 4001, y: 4021}
   m_ActualView: {fileID: 6}
   m_Panes:
   - {fileID: 6}
@@ -239,9 +239,9 @@ MonoBehaviour:
   m_SceneHierarchy:
     m_TreeViewState:
       scrollPos: {x: 0, y: 0}
-      m_SelectedIDs: 
-      m_LastClickedID: 0
-      m_ExpandedIDs: 16fbffffda6300000464000032650000
+      m_SelectedIDs: 0e640000
+      m_LastClickedID: 25614
+      m_ExpandedIDs: f8f9ffff526400007c640000c8640000
       m_RenameOverlay:
         m_UserAcceptedRename: 0
         m_Name: 
@@ -284,8 +284,8 @@ MonoBehaviour:
     y: 0
     width: 825
     height: 691
-  m_MinSize: {x: 200, y: 200}
-  m_MaxSize: {x: 4000, y: 4000}
+  m_MinSize: {x: 202, y: 221}
+  m_MaxSize: {x: 4002, y: 4021}
   m_ActualView: {fileID: 8}
   m_Panes:
   - {fileID: 8}
@@ -660,9 +660,9 @@ MonoBehaviour:
   m_PlayAudio: 0
   m_AudioPlay: 0
   m_Position:
-    m_Target: {x: 0.84914076, y: -4.1437216, z: 605.2756}
+    m_Target: {x: -0.4339273, y: -3.8794348, z: 605.2602}
     speed: 2
-    m_Value: {x: 0.84914076, y: -4.1437216, z: 605.2756}
+    m_Value: {x: -0.4339273, y: -3.8794348, z: 605.2602}
   m_RenderMode: 0
   m_CameraMode:
     drawMode: 0
@@ -758,8 +758,8 @@ MonoBehaviour:
     y: 0
     width: 478
     height: 691
-  m_MinSize: {x: 200, y: 200}
-  m_MaxSize: {x: 4000, y: 4000}
+  m_MinSize: {x: 202, y: 221}
+  m_MaxSize: {x: 4002, y: 4021}
   m_ActualView: {fileID: 2}
   m_Panes:
   - {fileID: 2}
@@ -837,7 +837,7 @@ MonoBehaviour:
     m_SkipHidden: 0
     m_SearchArea: 1
     m_Folders:
-    - Assets/OurFiles/Materuals/Prefabs
+    - Assets/OurFiles/Materuals/Sprites/CardCovers
     m_Globs: []
     m_OriginalText: 
     m_ImportLogFlags: 0
@@ -845,16 +845,16 @@ MonoBehaviour:
   m_ViewMode: 1
   m_StartGridSize: 64
   m_LastFolders:
-  - Assets/OurFiles/Materuals/Prefabs
+  - Assets/OurFiles/Materuals/Sprites/CardCovers
   m_LastFoldersGridSize: -1
   m_LastProjectPath: D:\GitHub\PotionShop
   m_LockTracker:
     m_IsLocked: 0
   m_FolderTreeState:
-    scrollPos: {x: 0, y: 73}
-    m_SelectedIDs: 40660000
-    m_LastClickedID: 26176
-    m_ExpandedIDs: 0000000020660000226600002466000026660000286600004666000066760000687600006a7600006c7600006e76000000ca9a3b
+    scrollPos: {x: 0, y: 193}
+    m_SelectedIDs: a6660000
+    m_LastClickedID: 26278
+    m_ExpandedIDs: 00000000786600007a6600007c6600007e66000080660000826600008466000086660000886600008a6600008c66000000ca9a3b
     m_RenameOverlay:
       m_UserAcceptedRename: 0
       m_Name: 
@@ -882,7 +882,7 @@ MonoBehaviour:
     scrollPos: {x: 0, y: 0}
     m_SelectedIDs: 
     m_LastClickedID: 0
-    m_ExpandedIDs: 0000000020660000226600002466000026660000286600004666000066760000687600006a7600006c7600006e76000000ca9a3b
+    m_ExpandedIDs: 00000000786600007a6600007c6600007e66000080660000826600008466000086660000886600008a6600008c66000000ca9a3b
     m_RenameOverlay:
       m_UserAcceptedRename: 0
       m_Name: 
@@ -907,8 +907,8 @@ MonoBehaviour:
       m_Icon: {fileID: 0}
       m_ResourceFile: 
   m_ListAreaState:
-    m_SelectedInstanceIDs: 
-    m_LastClickedInstanceID: 0
+    m_SelectedInstanceIDs: 0e640000
+    m_LastClickedInstanceID: 25614
     m_HadKeyboardFocusLastEvent: 1
     m_ExpandedInstanceIDs: c6230000
     m_RenameOverlay:
