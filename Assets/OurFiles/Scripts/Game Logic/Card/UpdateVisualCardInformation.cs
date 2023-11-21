@@ -7,6 +7,7 @@ namespace Game_Logic.CardLogic
 	public class UpdateVisualCardInformation : MonoBehaviour
 	{
 		[SerializeField] private Image _cardImage;
+		[SerializeField] private Image _itemImage;
 		[SerializeField] private Image _cardColorImage;
 		[SerializeField] private Image _cardLeftTypeImage;
 		[SerializeField] private Image _cardCenterTypeImage;
@@ -20,17 +21,19 @@ namespace Game_Logic.CardLogic
 			_cardInformation = GetComponent<CardInformation>();
 
 			_cardImage = GetComponent<Image>();
-			_cardColorImage = transform.GetChild(0).GetComponent<Image>();
-			_cardLeftTypeImage = transform.GetChild(2).GetComponent<Image>();
-			_cardCenterTypeImage = transform.GetChild(3).GetComponent<Image>();
-			_cardRightTypeImage = transform.GetChild(4).GetComponent<Image>();
+			_itemImage = transform.GetChild(0).GetComponent<Image>();
+			_cardColorImage = transform.GetChild(1).GetComponent<Image>();
+			_cardLeftTypeImage = transform.GetChild(3).GetComponent<Image>();
+			_cardCenterTypeImage = transform.GetChild(4).GetComponent<Image>();
+			_cardRightTypeImage = transform.GetChild(5).GetComponent<Image>();
 
-			_pointsText = transform.GetChild(1).GetChild(0).GetComponent<TextMeshProUGUI>();
+			_pointsText = transform.GetChild(2).GetChild(0).GetComponent<TextMeshProUGUI>();
 
 		}
 		public void UpdateCardInformation()
 		{
 			_cardImage.sprite = _cardInformation.GetCardSprite();
+			_itemImage.sprite = _cardInformation.GetItemSprite();
 			_cardColorImage.sprite = _cardInformation.GetCardColorSprite();
 			_bonusColorImage = _cardInformation.GetCardBonusColorSprite();
 

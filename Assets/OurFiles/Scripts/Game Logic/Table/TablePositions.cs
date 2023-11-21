@@ -20,8 +20,10 @@ namespace Game_Logic.Table
 
         public void Initialize()
         {
-            SetXPositionsDependingCount();
+            MoveCardPositions();
         }
+
+        public void MoveCardPositions() => SetXPositionsDependingCount();
 
 		public Transform GetAndBlockFreeTransform()
         {
@@ -164,17 +166,14 @@ namespace Game_Logic.Table
             {
                 if (indexLastCard == 0)
                 {
-                    // Ïðîâåðÿåòñÿ òîëüêî íà ïðàâîé êàðòå
                     _cards[indexLastCard + 1].GetComponent<BonusCardAccrual>().CheckingBonusOnNeighbourCard(card, _cards[indexLastCard + 1]);
                 }
                 else if (indexLastCard == _cards.Count - 1)
                 {
-					// Ïðîâåðÿåòñÿ òîëüêî íà ëåâîé êàðòå
 					_cards[indexLastCard - 1].GetComponent<BonusCardAccrual>().CheckingBonusOnNeighbourCard(card, _cards[indexLastCard - 1]);
 				}
                 else
                 {
-					// Ïðîâåðÿåòñÿ è íà ïðàâîé íà ëåâîé êàðòå
 					_cards[indexLastCard + 1].GetComponent<BonusCardAccrual>().CheckingBonusOnNeighbourCard(card, _cards[indexLastCard + 1]);
 					_cards[indexLastCard - 1].GetComponent<BonusCardAccrual>().CheckingBonusOnNeighbourCard(card, _cards[indexLastCard - 1]);
 				}
@@ -191,7 +190,10 @@ namespace Game_Logic.Table
                     }
                 }
             }
-        }
+
+            //card.GetComponent<UpdateVisualCardInformation>().UpdatePointsInformation();
+
+		}
         private IEnumerator DelayClear()
         {
             yield return new WaitForSeconds(0.3f);

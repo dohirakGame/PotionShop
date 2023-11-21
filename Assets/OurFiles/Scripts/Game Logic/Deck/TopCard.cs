@@ -17,6 +17,7 @@ namespace Game_Logic.Deck
 
 		[SerializeField] private List<Card> _deck;
 		private Sprite _cardImage;
+		private Sprite _itemImage;
 		private Sprite _cardColorImage;
 		private Sprite _bonusImage;
 		private int _bonusPosition;
@@ -39,6 +40,7 @@ namespace Game_Logic.Deck
 
 		public void FlipCard() => FlipCardOnTopDeck();
 		public List<Card> GetDeckValues() => _deck;
+
 		private void GetDeck()
 		{
 			for (int i = 0; i < _createDeck.CountCardsInList(); i++)
@@ -51,14 +53,30 @@ namespace Game_Logic.Deck
 		private List<Card> SortDeckWithBlackCards(List<Card> cards)
 		{
 			int countBlackCards = 0;
+
+			// Подсчёт количества чёрных карт
 			for (int i = 0; i < cards.Count; i++)
 			{
 				if (cards[i].GetColor() == CardColor.Black) countBlackCards++;
 			}
 
+			// Перетасовка обычных карт
+			for (int i = 0; i < cards.Count / 2; i++)
+			{
+				int rand = Random.Range(0, cards.Count - countBlackCards);
+
+				if (rand != i)
+				{
+					Card bufer = cards[rand];
+					cards[rand] = cards[i];
+					cards[i] = bufer;
+				}
+			}
+
+			// Сортировка с чёрными картами
 			for (int i = cards.Count - countBlackCards; i < cards.Count; i++)
 			{
-				int indexForBlackCard = Random.Range(1, i);
+				int indexForBlackCard = Random.Range(2, i);
 
 				if (indexForBlackCard == i - 1)
 				{
@@ -110,6 +128,7 @@ namespace Game_Logic.Deck
 			Card card = _deck[0];
 
 			LoadImage(card);
+			LoadItem(card);
 			LoadColor(card);
 			LoadBonus(card);
 			LoadPoint(card);
@@ -142,6 +161,33 @@ namespace Game_Logic.Deck
 				case CardColor.Black:
 					countImage = Random.Range(0, _dataCard.blackCardImage.Count);
 					_cardImage = _dataCard.blackCardImage[countImage];
+					break;
+			}
+		}
+		private void LoadItem(Card card)
+		{
+			int countImage;
+			switch (card.GetColor())
+			{
+				case CardColor.Red:
+					countImage = Random.Range(0, _dataCard.redItemImage.Count);
+					_itemImage = _dataCard.redItemImage[countImage];
+					break;
+				case CardColor.Green:
+					countImage = Random.Range(0, _dataCard.greenItemImage.Count);
+					_itemImage = _dataCard.greenItemImage[countImage];
+					break;
+				case CardColor.Blue:
+					countImage = Random.Range(0, _dataCard.blueItemImage.Count);
+					_itemImage = _dataCard.blueItemImage[countImage];
+					break;
+				case CardColor.Yellow:
+					countImage = Random.Range(0, _dataCard.yellowItemImage.Count);
+					_itemImage = _dataCard.yellowItemImage[countImage];
+					break;
+				case CardColor.Black:
+					countImage = Random.Range(0, _dataCard.blackItemImage.Count);
+					_itemImage = _dataCard.blackItemImage[countImage];
 					break;
 			}
 		}
@@ -296,10 +342,6 @@ namespace Game_Logic.Deck
 		}
 		private void SetCardInformation(GameObject card)
 		{
-			//card.GetComponent<Image>().sprite = _cardImage;
-			//card.transform.GetChild(0).GetComponent<Image>().sprite = _cardColorImage;
-			//card.transform.GetChild(_bonusPosition).GetComponent<Image>().sprite = _bonusImage;
-			//card.transform.GetChild(1).transform.GetChild(0).GetComponent<TextMeshProUGUI>().text = _point.ToString();
 			CardInformation cardInformation = card.GetComponent<CardInformation>();
 
 			cardInformation.SetPoints(_point);
@@ -308,6 +350,7 @@ namespace Game_Logic.Deck
 			cardInformation.SetCardBonusColor(_bonusColor);
 
 			cardInformation.SetCardSprite(_cardImage);
+			cardInformation.SetItemSprite(_itemImage);
 			cardInformation.SetCardColorSprite(_cardColorImage);
 			cardInformation.SetCardBonusColorSprite(_bonusImage);
 

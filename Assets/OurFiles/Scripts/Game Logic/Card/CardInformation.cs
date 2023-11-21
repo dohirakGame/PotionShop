@@ -11,6 +11,7 @@ namespace Game_Logic.CardLogic
 		[SerializeField] private BonusColor _bonusColor;
 
 		[SerializeField] private Sprite _cardSprite;
+		[SerializeField] private Sprite _itemSprite;
 		[SerializeField] private Sprite _cardColorSprite;
 		[SerializeField] private Sprite _cardBonusColorSprite;
 
@@ -26,10 +27,12 @@ namespace Game_Logic.CardLogic
 
 
 		public void SetCardSprite(Sprite cardSprite) => _cardSprite = cardSprite;
+		public void SetItemSprite(Sprite itemSprite) => _itemSprite = itemSprite;
 		public void SetCardColorSprite(Sprite cardColorSprite) => _cardColorSprite = cardColorSprite;
 		public void SetCardBonusColorSprite(Sprite cardBonusColorSprite) => _cardBonusColorSprite = cardBonusColorSprite;
 
 		public Sprite GetCardSprite() => _cardSprite;
+		public Sprite GetItemSprite() => _itemSprite;
 		public Sprite GetCardColorSprite() => _cardColorSprite;
 		public Sprite GetCardBonusColorSprite() => _cardBonusColorSprite;
 	}

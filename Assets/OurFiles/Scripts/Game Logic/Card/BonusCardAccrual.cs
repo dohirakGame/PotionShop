@@ -18,6 +18,7 @@ namespace Game_Logic.CardLogic
 					mainInformation.SetPoints(mainInformation.GetPoints() + 1);
 				}
 			}
+			Debug.Log("CheckingAndAccrualYourSelf center");
 			cards[indexLastCard].GetComponent<UpdateVisualCardInformation>().UpdatePointsInformation();
 		}
 		public void CheckingAndAccrualYourself(GameObject mainCard, GameObject neighbouringCard)
@@ -31,26 +32,6 @@ namespace Game_Logic.CardLogic
 			}
 
 			mainCard.GetComponent<UpdateVisualCardInformation>().UpdatePointsInformation();
-
-			//mainCard.GetComponent<UpdateVisualCardInformation>().UpdateCardInformation();
-			/*if (bonusType == CardBonusType.Left)
-			{
-				CardInformation mainInformation = mainCard.GetComponent<CardInformation>();
-				CardInformation neighbourInformation = neighbouringCard.GetComponent<CardInformation>();
-				if (mainInformation.GetBonusColor().ToString() == neighbourInformation.GetCardColor().ToString())
-				{
-					mainInformation.SetPoints(mainInformation.GetPoints() + 1);
-				}
-			}
-			else if (bonusType == CardBonusType.Right)
-			{
-				CardInformation mainInformation = mainCard.GetComponent<CardInformation>();
-				CardInformation neighbourInformation = neighbouringCard.GetComponent<CardInformation>();
-				if (mainInformation.GetBonusColor().ToString() == neighbourInformation.GetCardColor().ToString())
-				{
-					mainInformation.SetPoints(mainInformation.GetPoints() + 1);
-				}
-			}*/
 		}
 
 		public void CheckingBonusOnNeighbourCard(GameObject mainCard, GameObject neighbourCard)

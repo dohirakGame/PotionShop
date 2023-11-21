@@ -3,6 +3,7 @@ using Game_Logic.General;
 using TMPro;
 using UnityEngine;
 using Game_Logic.Client;
+using System.Collections;
 
 namespace Game_Logic.Table
 {
@@ -14,27 +15,29 @@ namespace Game_Logic.Table
         public void ProcessTableLogic(Transform card, float xPosition)
         {
             PutReceivedCard(card, xPosition);
+
             // Переделать потом под немного другую логику именно CheckFullTable()
             if (CheckOnFullTable())
             {
-                ClearTable();
+                StartCoroutine(ClearTableEnd());
             }
         }
+
+        private IEnumerator ClearTableEnd()
+        {
+            yield return new WaitForSeconds(3f);
+            ClearTable();
+        } 
         private void PutReceivedCard(Transform card, float xPosition)
         {
             TablePositions tablePos = GetComponent<TablePositions>();
+
             if (tablePos.IsThereFreePosition())
             {
-                //Transform newTransform = tablePos.GetFreeTransform();
-
-
-                /*card.transform.parent = newTransform;
-                card.transform.position = newTransform.position;*/
-
+                // ++
                 tablePos.AddCardInList(card.gameObject, xPosition);
 				tablePos.SetNewParentTransform(card.gameObject);
-				tablePos.Initialize();
-                //tablePos.SortListWithNewCard(xPosition, card);
+				tablePos.MoveCardPositions();
                 tablePos.UpdatePositionData();
 
                 tablePos.CheckForAccrual(card.gameObject);
@@ -42,7 +45,7 @@ namespace Game_Logic.Table
             }
 
             // Потом переделать, чтобы взять число, а не через текст
-            ModifyPoint(int.Parse(card.GetChild(1).transform.GetChild(0).GetComponent<TextMeshProUGUI>().text));
+            ModifyPoint(int.Parse(card.GetChild(2).transform.GetChild(0).GetComponent<TextMeshProUGUI>().text));
         }
 
         private bool CheckOnFullTable()
@@ -53,7 +56,6 @@ namespace Game_Logic.Table
                 bool found = false;
                 foreach(Transform position in GetComponent<TablePositions>().GetPositions())
                 {
-                    //Debug.Log(position);
                     if(position.gameObject.GetComponent<PositionData>().GetColor() == MainReq)
                     {
                         found = true;
@@ -63,12 +65,13 @@ namespace Game_Logic.Table
                 {
                     if (_elementsBufer.GetPointsController().GetPoints() >= 0)
                     {
-                        _elementsBufer.GetScoresController().ScoresModify(_elementsBufer.GetPointsController().GetPoints());
                         _clientele.GetComponent<CurrentClient>().NextClient();
-                        _elementsBufer.GetScoresController().UpdateScoresText();
                         _elementsBufer.GetPointsController().ResetPoints();
                         _elementsBufer.GetPointsController().UpdatePointsText();
-                    }
+                        _elementsBufer.GetScoresController().ScoresModify(_elementsBufer.GetPointsController().GetPoints());
+                        _elementsBufer.GetScoresController().UpdateScoresText();
+						Debug.Log("Очков = " + _elementsBufer.GetPointsController().GetPoints());
+					}
                     else
                     {
                         _elementsBufer._textForTests.text = "ТЫ ПРОИГРАЛ, ЗАКРЫВАЙ ИГРУ";
@@ -76,7 +79,6 @@ namespace Game_Logic.Table
                 }else{
                     _elementsBufer._textForTests.text = "ТЫ ПРОИГРАЛ, ЗАКРЫВАЙ ИГРУ";
                 }
-
                 return true;
             }
             return false;
