@@ -45,7 +45,8 @@ namespace Game_Logic.Table
             }
 
             // Потом переделать, чтобы взять число, а не через текст
-            ModifyPoint(int.Parse(card.GetChild(2).transform.GetChild(0).GetComponent<TextMeshProUGUI>().text));
+            //ModifyPoint(int.Parse(card.GetChild(2).transform.GetChild(0).GetComponent<TextMeshProUGUI>().text));
+            //ModifyPoint(card.GetComponent<CardInformation>().GetPoints());
         }
 
         private bool CheckOnFullTable()
@@ -63,20 +64,21 @@ namespace Game_Logic.Table
                 }
                 if(found)
                 {
-                    if (_elementsBufer.GetPointsController().GetPoints() >= 0)
+                    if (_elementsBufer.GetPointsController().GetPoints() > 0)
                     {
                         _clientele.GetComponent<CurrentClient>().NextClient();
-                        _elementsBufer.GetPointsController().ResetPoints();
-                        _elementsBufer.GetPointsController().UpdatePointsText();
                         _elementsBufer.GetScoresController().ScoresModify(_elementsBufer.GetPointsController().GetPoints());
                         _elementsBufer.GetScoresController().UpdateScoresText();
-						Debug.Log("Очков = " + _elementsBufer.GetPointsController().GetPoints());
+                        _elementsBufer.GetPointsController().ResetPoints();
+                        _elementsBufer.GetPointsController().UpdatePointsText();
 					}
                     else
                     {
                         _elementsBufer._textForTests.text = "ТЫ ПРОИГРАЛ, ЗАКРЫВАЙ ИГРУ";
                     }
-                }else{
+                }
+                else
+                {
                     _elementsBufer._textForTests.text = "ТЫ ПРОИГРАЛ, ЗАКРЫВАЙ ИГРУ";
                 }
                 return true;
@@ -84,7 +86,7 @@ namespace Game_Logic.Table
             return false;
         }
 
-        private void ModifyPoint(int value)
+        public void ModifyPoint(int value)
         {
             _elementsBufer.GetPointsController().ModifyPoints(value);
             _elementsBufer.GetPointsController().UpdatePointsText();

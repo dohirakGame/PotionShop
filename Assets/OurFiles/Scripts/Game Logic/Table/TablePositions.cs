@@ -127,73 +127,86 @@ namespace Game_Logic.Table
         public void CheckForAccrual(GameObject card)
         {
             int indexLastCard = _lastIndexOfInsertedCard;
-            // Проверка на соответствие бонусному цвету клиента
-            card.GetComponent<BonusCardAccrual>().ChekingClientBonus(card, _clientele.GetComponent<CurrentClient>().GetAdded());
 
-            // Ïðîâåðêà áîíóñîâ íà ñàìîé êàðòå
-            if (_cards.Count > 1)
+            //Передача очков с карты в Points (Работает корректно)
+            card.GetComponent<CardInformation>().SetPoints(card.GetComponent<CardInformation>().GetPoints());
+            card.GetComponent<UpdateVisualCardInformation>().UpdatePointsInformation();
+            FindObjectOfType<TableLogic>().ModifyPoint(card.GetComponent<CardInformation>().GetPoints());
+
+			// Проверка на соответствие бонусному цвету клиента (Работает корректно)
+			card.GetComponent<BonusCardAccrual>().ChekingClientBonus(card, _clientele.GetComponent<CurrentClient>().GetAdded());
+
+            if (_cards.Count < 2)
             {
-                switch (_positions[indexLastCard].GetComponent<PositionData>().GetBonusType())
+                if (_positions[indexLastCard].GetComponent<PositionData>().GetBonusType() == CardBonusType.Center)
                 {
-                    case CardBonusType.Left:
-                        if (indexLastCard != 0)
-                        {
-                            card.GetComponent<BonusCardAccrual>().CheckingAndAccrualYourself(card, _cards[indexLastCard-1]);
-                        }
-                        break;
-                    case CardBonusType.Right:
-						if (indexLastCard !=  _cards.Count - 1)
-                        {
-                            card.GetComponent<BonusCardAccrual>().CheckingAndAccrualYourself(card, _cards[indexLastCard+1]);
-                        }
-						break;
-                    case CardBonusType.Center:
-						card.GetComponent<BonusCardAccrual>().CheckingAndAccrualYourself(_cards, indexLastCard);
-						break;
-                    case CardBonusType.LeftAndRight:
-                        break;
-                    case CardBonusType.Empty:
-                        break;
-                }
+					card.GetComponent<BonusCardAccrual>().CheckingAndAccrualYourself(_cards, indexLastCard);
+				}
             }
-            else if (_positions[indexLastCard].GetComponent<PositionData>().GetBonusType() == CardBonusType.Center)
+            else
             {
-				card.GetComponent<BonusCardAccrual>().CheckingAndAccrualYourself(_cards, indexLastCard);
-			}
-            
-            // Ïðîâåðêà áîíóñîâ íà ñîñåäíèõ êàðòàõ
-            if (_cards.Count > 1)
-            {
-                if (indexLastCard == 0)
-                {
-                    _cards[indexLastCard + 1].GetComponent<BonusCardAccrual>().CheckingBonusOnNeighbourCard(card, _cards[indexLastCard + 1]);
-                }
-                else if (indexLastCard == _cards.Count - 1)
-                {
-					_cards[indexLastCard - 1].GetComponent<BonusCardAccrual>().CheckingBonusOnNeighbourCard(card, _cards[indexLastCard - 1]);
-				}
-                else
-                {
-					_cards[indexLastCard + 1].GetComponent<BonusCardAccrual>().CheckingBonusOnNeighbourCard(card, _cards[indexLastCard + 1]);
-					_cards[indexLastCard - 1].GetComponent<BonusCardAccrual>().CheckingBonusOnNeighbourCard(card, _cards[indexLastCard - 1]);
-				}
-			}
-
-            // Ïîèñê è äîáàâëåíèå î÷êîâ çà êàðòû ñ öåíòðàëüíûì áîíóñîì
-            if (_cards.Count > 1)
-            {
-                for (int i = 0; i < _cards.Count; i++)
-                {
-                    if (i != indexLastCard && _cards[i].GetComponent<CardInformation>().GetBonusType() == CardBonusType.Center)
-                    {
-                        _cards[i].GetComponent<BonusCardAccrual>().CheckingCenterBonusOnCard(_cards[indexLastCard], _cards[i]);
-                    }
-                }
+                CheckBonusYourselft(card, indexLastCard);
+                CheckBonusOnNeughbourCard(card, indexLastCard);
+                CheckBonusOnCenterType(indexLastCard);             
             }
 
-            //card.GetComponent<UpdateVisualCardInformation>().UpdatePointsInformation();
+        }
 
+        private void CheckBonusYourselft(GameObject card, int indexLastCard)
+        {
+			switch (_positions[indexLastCard].GetComponent<PositionData>().GetBonusType())
+			{
+				case CardBonusType.Left:
+					if (indexLastCard != 0)
+					{
+						card.GetComponent<BonusCardAccrual>().CheckingAndAccrualYourself(card, _cards[indexLastCard - 1]);
+					}
+					break;
+				case CardBonusType.Right:
+					if (indexLastCard != _cards.Count - 1)
+					{
+						card.GetComponent<BonusCardAccrual>().CheckingAndAccrualYourself(card, _cards[indexLastCard + 1]);
+					}
+					break;
+				case CardBonusType.Center:
+					card.GetComponent<BonusCardAccrual>().CheckingAndAccrualYourself(_cards, indexLastCard);
+					break;
+				case CardBonusType.LeftAndRight:
+					break;
+				case CardBonusType.Empty:
+					break;
+			}
 		}
+
+        private void CheckBonusOnNeughbourCard(GameObject card, int indexLastCard)
+        {
+			if (indexLastCard == 0)
+			{
+                _cards[indexLastCard + 1].GetComponent<BonusCardAccrual>().CheckingBonusOnNeighbourCard(card, _cards[indexLastCard + 1], indexLastCard, indexLastCard + 1);
+                _cards[indexLastCard + 1].GetComponent<UpdateVisualCardInformation>().UpdateCardInformation();
+			}
+			else if (indexLastCard == _cards.Count - 1)
+			{
+				_cards[indexLastCard - 1].GetComponent<BonusCardAccrual>().CheckingBonusOnNeighbourCard(card, _cards[indexLastCard - 1], indexLastCard, indexLastCard - 1);
+			}
+			else
+			{
+				_cards[indexLastCard + 1].GetComponent<BonusCardAccrual>().CheckingBonusOnNeighbourCard(card, _cards[indexLastCard + 1], indexLastCard, indexLastCard + 1);
+				_cards[indexLastCard - 1].GetComponent<BonusCardAccrual>().CheckingBonusOnNeighbourCard(card, _cards[indexLastCard - 1], indexLastCard, indexLastCard - 1);
+			}
+		}
+
+        private void CheckBonusOnCenterType(int indexLastCard)
+        {
+			for (int i = 0; i < _cards.Count; i++)
+			{
+				if (i != indexLastCard && _cards[i].GetComponent<CardInformation>().GetBonusType() == CardBonusType.Center)
+				{
+					_cards[i].GetComponent<BonusCardAccrual>().CheckingCenterBonusOnCard(_cards[indexLastCard], _cards[i]);
+				}
+			}
+		}
+
         private IEnumerator DelayClear()
         {
             yield return new WaitForSeconds(0.3f);

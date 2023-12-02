@@ -62,7 +62,6 @@ namespace Game_Logic.CardLogic.DragNDrop
 
 							Vector3 localMousePosition;
 							RectTransformUtility.ScreenPointToWorldPointInRectangle(_mainCanvas.GetComponent<RectTransform>(), Input.mousePosition, null, out localMousePosition);
-							//Debug.Log("LocalMousePositionOnCanvas = " + localMousePosition);
 
 							hit.transform.GetComponent<TableLogic>().ProcessTableLogic(transform, localMousePosition.x);
 
