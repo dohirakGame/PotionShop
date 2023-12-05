@@ -1,65 +1,100 @@
-using System.Collections;
-using System.Collections.Generic;
+using Game_Logic.CardLogic;
+using Game_Logic.General;
 using TMPro;
 using UnityEngine;
+using Game_Logic.Client;
+using System.Collections;
 
-public class TableLogic : MonoBehaviour
+namespace Game_Logic.Table
 {
-    [SerializeField] private ElementsBufer _elementsBufer;
-
-    public void ProcessTableLogic(Transform card)
+	public class TableLogic : MonoBehaviour
     {
-        PutReceivedCard(card);
-		// Переделать потом под немного другую логику именно CheckFullTable()
-		if (CheckOnFullTable())
+        [SerializeField] private ElementsBufer _elementsBufer;
+        [SerializeField] private GameObject _clientele;
+
+        public void ProcessTableLogic(Transform card, float xPosition)
         {
+            PutReceivedCard(card, xPosition);
+
+            // Переделать потом под немного другую логику именно CheckFullTable()
+            if (CheckOnFullTable())
+            {
+                StartCoroutine(ClearTableEnd());
+            }
+        }
+
+        private IEnumerator ClearTableEnd()
+        {
+            yield return new WaitForSeconds(3f);
             ClearTable();
-        }
-    }
-	private void PutReceivedCard(Transform card)
-    {
-        if (GetComponent<TablePositions>().IsThereFreePosition())
+        } 
+        private void PutReceivedCard(Transform card, float xPosition)
         {
-            Transform newTransform = GetComponent<TablePositions>().GetFreePosition();
+            TablePositions tablePos = GetComponent<TablePositions>();
 
-            card.transform.parent = newTransform;
-            card.transform.position = newTransform.position;
+            if (tablePos.IsThereFreePosition())
+            {
+                // ++
+                tablePos.AddCardInList(card.gameObject, xPosition);
+				tablePos.SetNewParentTransform(card.gameObject);
+				tablePos.MoveCardPositions();
+                tablePos.UpdatePositionData();
 
-            GetComponent<TablePositions>().AddCardInList(card.gameObject);
+                tablePos.CheckForAccrual(card.gameObject);
+
+            }
+
+            // Потом переделать, чтобы взять число, а не через текст
+            //ModifyPoint(int.Parse(card.GetChild(2).transform.GetChild(0).GetComponent<TextMeshProUGUI>().text));
+            //ModifyPoint(card.GetComponent<CardInformation>().GetPoints());
         }
 
-        // Потом переделать, чтобы взять число, а не через текст
-        ModifyPoint(int.Parse(card.GetChild(1).transform.GetChild(0).GetComponent<TextMeshProUGUI>().text));
-    }
-
-    private bool CheckOnFullTable()
-    {
-        if (!GetComponent<TablePositions>().IsThereFreePosition())
+        private bool CheckOnFullTable()
         {
-            if (_elementsBufer.GetPointsController().GetPoints() >= 0)
+            if (!GetComponent<TablePositions>().IsThereFreePosition())
             {
-                _elementsBufer.GetScoresController().ScoresModify(_elementsBufer.GetPointsController().GetPoints());
-                _elementsBufer.GetScoresController().UpdateScoresText();
-                _elementsBufer.GetPointsController().ResetPoints();
-                _elementsBufer.GetPointsController().UpdatePointsText();
+                CardColor MainReq = _clientele.GetComponent<CurrentClient>().GetMain();
+                bool found = false;
+                foreach(Transform position in GetComponent<TablePositions>().GetPositions())
+                {
+                    if(position.gameObject.GetComponent<PositionData>().GetColor() == MainReq)
+                    {
+                        found = true;
+                    }
+                }
+                if(found)
+                {
+                    if (_elementsBufer.GetPointsController().GetPoints() > 0)
+                    {
+                        _clientele.GetComponent<CurrentClient>().NextClient();
+                        _elementsBufer.GetScoresController().ScoresModify(_elementsBufer.GetPointsController().GetPoints());
+                        _elementsBufer.GetScoresController().UpdateScoresText();
+                        _elementsBufer.GetPointsController().ResetPoints();
+                        _elementsBufer.GetPointsController().UpdatePointsText();
+					}
+                    else
+                    {
+                        _elementsBufer._textForTests.text = "ТЫ ПРОИГРАЛ, ЗАКРЫВАЙ ИГРУ";
+                    }
+                }
+                else
+                {
+                    _elementsBufer._textForTests.text = "ТЫ ПРОИГРАЛ, ЗАКРЫВАЙ ИГРУ";
+                }
+                return true;
             }
-            else
-            {
-                _elementsBufer._textForTests.text = "ТЫ ПРОИГРАЛ, ЗАКРЫВАЙ ИГРУ";
-            }
-            return true;
+            return false;
         }
-        return false;
-    }
 
-	private void ModifyPoint(int value)
-	{
-        _elementsBufer.GetPointsController().ModifyPoints(value);
-        _elementsBufer.GetPointsController().UpdatePointsText();
-	}
+        public void ModifyPoint(int value)
+        {
+            _elementsBufer.GetPointsController().ModifyPoints(value);
+            _elementsBufer.GetPointsController().UpdatePointsText();
+        }
 
-    private void ClearTable()
-    {
-        GetComponent<TablePositions>().ClearCardsInList();
+        private void ClearTable()
+        {
+            GetComponent<TablePositions>().ClearCardsInList();
+        }
     }
 }
