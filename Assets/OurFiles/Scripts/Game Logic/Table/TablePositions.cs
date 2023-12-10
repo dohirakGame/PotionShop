@@ -49,13 +49,15 @@ namespace Game_Logic.Table
 
         public void AddCardInList(GameObject card, float xPosition)
         {
-            if (_cards.Count < 1)
+			_lastIndexOfInsertedCard = SortListWithNewCard(xPosition);
+
+			if (_cards.Count < 1)
             {
                 _cards.Add(card);
             }
             else
             {
-                _lastIndexOfInsertedCard = SortListWithNewCard(xPosition);
+                //_lastIndexOfInsertedCard = SortListWithNewCard(xPosition);
                 _cards.Insert(_lastIndexOfInsertedCard, card);
             }
         }

@@ -29,7 +29,7 @@ namespace Game_Logic.Table
 
         private IEnumerator ClearTableEnd()
         {
-            yield return new WaitForSeconds(3f);
+            yield return new WaitForSeconds(1f);
             ClearTable();
         } 
         private void PutReceivedCard(Transform card, float xPosition)
