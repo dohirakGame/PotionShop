@@ -1275,12 +1275,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a201e4bc13d4ebf4cbc3450338cbc1e5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _requaredCount: 10
+  _requaredCount: 9
   _cards:
-  - _point: 1
-    _color: 3
-    _bonus: 0
-    _bonusColor: 0
   - _point: 1
     _color: 3
     _bonus: 0
@@ -1321,11 +1317,11 @@ MonoBehaviour:
     _color: 4
     _bonus: 0
     _bonusColor: 0
-  - _point: -2
+  - _point: -1
     _color: 4
     _bonus: 0
     _bonusColor: 0
-  - _point: -3
+  - _point: -2
     _color: 4
     _bonus: 0
     _bonusColor: 0
@@ -1998,7 +1994,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a201e4bc13d4ebf4cbc3450338cbc1e5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _requaredCount: 10
+  _requaredCount: 9
   _cards:
   - _point: 1
     _color: 1
@@ -2036,8 +2032,8 @@ MonoBehaviour:
     _color: 1
     _bonus: 2
     _bonusColor: 3
-  - _point: 1
-    _color: 1
+  - _point: -1
+    _color: 4
     _bonus: 0
     _bonusColor: 4
   - _point: -1
@@ -2045,10 +2041,6 @@ MonoBehaviour:
     _bonus: 0
     _bonusColor: 0
   - _point: -2
-    _color: 4
-    _bonus: 0
-    _bonusColor: 0
-  - _point: -3
     _color: 4
     _bonus: 0
     _bonusColor: 0
@@ -4737,7 +4729,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a201e4bc13d4ebf4cbc3450338cbc1e5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _requaredCount: 10
+  _requaredCount: 9
   _cards:
   - _point: 1
     _color: 2
@@ -4775,8 +4767,8 @@ MonoBehaviour:
     _color: 2
     _bonus: 0
     _bonusColor: 0
-  - _point: 1
-    _color: 2
+  - _point: -1
+    _color: 4
     _bonus: 0
     _bonusColor: 0
   - _point: -1
@@ -4784,10 +4776,6 @@ MonoBehaviour:
     _bonus: 0
     _bonusColor: 0
   - _point: -2
-    _color: 4
-    _bonus: 0
-    _bonusColor: 0
-  - _point: -3
     _color: 4
     _bonus: 0
     _bonusColor: 0
@@ -4983,6 +4971,10 @@ MonoBehaviour:
     _addReq: 0
   - _mainReq: 3
     _addReq: 1
+  - _mainReq: 2
+    _addReq: 1
+  - _mainReq: 0
+    _addReq: 2
 --- !u!114 &1634473453
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -6695,7 +6687,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a201e4bc13d4ebf4cbc3450338cbc1e5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _requaredCount: 10
+  _requaredCount: 9
   _cards:
   - _point: 1
     _color: 0
@@ -6733,8 +6725,8 @@ MonoBehaviour:
     _color: 0
     _bonus: 2
     _bonusColor: 3
-  - _point: 1
-    _color: 0
+  - _point: -1
+    _color: 4
     _bonus: 0
     _bonusColor: 4
   - _point: -1
@@ -6742,10 +6734,6 @@ MonoBehaviour:
     _bonus: 0
     _bonusColor: 0
   - _point: -2
-    _color: 4
-    _bonus: 0
-    _bonusColor: 0
-  - _point: -3
     _color: 4
     _bonus: 0
     _bonusColor: 0

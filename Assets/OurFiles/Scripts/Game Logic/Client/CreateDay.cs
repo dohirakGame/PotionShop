@@ -10,6 +10,8 @@ namespace Game_Logic.Client
 
         public Client GetClient(int index)
         {
+            Debug.Log(index);
+            Debug.Log(_clients.Count);
             return _clients[index];
         }
 
