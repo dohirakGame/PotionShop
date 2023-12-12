@@ -1,8 +1,10 @@
+using System.Collections.Generic;
 using Game_Logic.CardLogic;
 using Game_Logic.General;
 using TMPro;
 using UnityEngine;
 using Game_Logic.Client;
+using Game_Logic.Combinations;
 using System.Collections;
 
 namespace Game_Logic.Table
@@ -12,11 +14,13 @@ namespace Game_Logic.Table
         [SerializeField] private ElementsBufer _elementsBufer;
         [SerializeField] private GameObject _clientele;
 
+        // –ö–æ–º–±–∏–Ω–∞—Ü–∏–∏ –∑–∞–ø–æ–ª–Ω—è—é—Ç—Å—è –≤ Start–µ
+        public List<CardCombinations> _combinations;
         public void ProcessTableLogic(Transform card, float xPosition)
         {
             PutReceivedCard(card, xPosition);
 
-            // œÂÂ‰ÂÎ‡Ú¸ ÔÓÚÓÏ ÔÓ‰ ÌÂÏÌÓ„Ó ‰Û„Û˛ ÎÓ„ËÍÛ ËÏÂÌÌÓ CheckFullTable()
+            // √è√•√∞√•√§√•√´√†√≤√º √Ø√Æ√≤√Æ√¨ √Ø√Æ√§ √≠√•√¨√≠√Æ√£√Æ √§√∞√≥√£√≥√æ √´√Æ√£√®√™√≥ √®√¨√•√≠√≠√Æ CheckFullTable()
             if (CheckOnFullTable())
             {
                 StartCoroutine(ClearTableEnd());
@@ -25,7 +29,7 @@ namespace Game_Logic.Table
 
         private IEnumerator ClearTableEnd()
         {
-            yield return new WaitForSeconds(3f);
+            yield return new WaitForSeconds(1f);
             ClearTable();
         } 
         private void PutReceivedCard(Transform card, float xPosition)
@@ -44,13 +48,14 @@ namespace Game_Logic.Table
 
             }
 
-            // œÓÚÓÏ ÔÂÂ‰ÂÎ‡Ú¸, ˜ÚÓ·˚ ‚ÁˇÚ¸ ˜ËÒÎÓ, ‡ ÌÂ ˜ÂÂÁ ÚÂÍÒÚ
+            // √è√Æ√≤√Æ√¨ √Ø√•√∞√•√§√•√´√†√≤√º, √∑√≤√Æ√°√ª √¢√ß√ø√≤√º √∑√®√±√´√Æ, √† √≠√• √∑√•√∞√•√ß √≤√•√™√±√≤
             //ModifyPoint(int.Parse(card.GetChild(2).transform.GetChild(0).GetComponent<TextMeshProUGUI>().text));
             //ModifyPoint(card.GetComponent<CardInformation>().GetPoints());
         }
 
         private bool CheckOnFullTable()
         {
+            Debug.Log(_combinations[0].red);
             if (!GetComponent<TablePositions>().IsThereFreePosition())
             {
                 CardColor MainReq = _clientele.GetComponent<CurrentClient>().GetMain();
@@ -64,6 +69,8 @@ namespace Game_Logic.Table
                 }
                 if(found)
                 {
+                    // –¢–æ—Ç –º–µ—Ç–æ–¥ –∫–æ—Ç–æ—Ä—ã–π —è —Å–æ–∑–¥–∞–ª
+                    CheckCombinations();
                     if (_elementsBufer.GetPointsController().GetPoints() > 0)
                     {
                         _clientele.GetComponent<CurrentClient>().NextClient();
@@ -74,12 +81,12 @@ namespace Game_Logic.Table
 					}
                     else
                     {
-                        _elementsBufer._textForTests.text = "“€ œ–Œ»√–¿À, «¿ –€¬¿… »√–”";
+                        _elementsBufer._textForTests.text = "√í√õ √è√ê√é√à√É√ê√Ä√ã, √á√Ä√ä√ê√õ√Ç√Ä√â √à√É√ê√ì";
                     }
                 }
                 else
                 {
-                    _elementsBufer._textForTests.text = "“€ œ–Œ»√–¿À, «¿ –€¬¿… »√–”";
+                    _elementsBufer._textForTests.text = "√í√õ √è√ê√é√à√É√ê√Ä√ã, √á√Ä√ä√ê√õ√Ç√Ä√â √à√É√ê√ì";
                 }
                 return true;
             }
@@ -95,6 +102,62 @@ namespace Game_Logic.Table
         private void ClearTable()
         {
             GetComponent<TablePositions>().ClearCardsInList();
+        }
+
+        private void CheckCombinations()
+        {
+            int rred = 0,ggreen = 0,bblue = 0,yyellow = 0,bblack = 0;
+            foreach(Transform position in GetComponent<TablePositions>().GetPositions())
+            {
+                switch(position.gameObject.GetComponent<PositionData>().GetColor())
+                {
+                    case CardColor.Red:
+                    rred++;
+                    break;
+                    case CardColor.Blue:
+                    bblue++;
+                    break;
+                    case CardColor.Green:
+                    ggreen++;
+                    break;
+                    case CardColor.Yellow:
+                    yyellow++;
+                    break;
+                    case CardColor.Black:
+                    bblack++;
+                    break;
+                }
+            }
+            CardCombinations tableCombination = new CardCombinations{red = rred, green = ggreen, blue = bblue, yellow = yyellow, black = bblack};
+            foreach(CardCombinations combination in _combinations)
+            {
+                if(combination.red != 0 && tableCombination.red != combination.red)
+                {
+                    continue;
+                }
+                if(combination.blue != 0 && tableCombination.blue != combination.blue)
+                {
+                    continue;
+                }
+                if(combination.green != 0 && tableCombination.green != combination.green)
+                {
+                    continue;
+                }
+                if(combination.yellow != 0 && tableCombination.yellow != combination.yellow)
+                {
+                    continue;
+                }
+                if(combination.black != 0 && tableCombination.black != combination.black)
+                {
+                    continue;
+                }
+                ModifyPoint(combination.points);
+            }
+        }
+
+        public void Start()
+        {
+            _combinations = new List<CardCombinations>{new CardCombinations{red = 2, points = 2},new CardCombinations{green = 2, points = 2}};
         }
     }
 }
