@@ -12,7 +12,7 @@ namespace Game_Logic.CardLogic.DragNDrop
 		[SerializeField] private ElementsBufer _elementsBufer;
 
 		private Canvas _mainCanvas;
-		private Transform _parentForRetun;
+		private Transform _parentForReturn;
 
 		// Переделать потом под паттерн State
 		private bool _onTable;
@@ -28,7 +28,7 @@ namespace Game_Logic.CardLogic.DragNDrop
 		{
 			if (!_onTable)
 			{
-				_parentForRetun = transform.parent;
+				_parentForReturn = transform.parent;
 				transform.parent = _mainCanvas.transform;
 			}
 		}
@@ -58,11 +58,11 @@ namespace Game_Logic.CardLogic.DragNDrop
 					switch (hit.collider.tag)
 					{
 						case "Table":
-							_parentForRetun.GetComponent<TopCard>().FlipCard();
+							_parentForReturn.GetComponent<TopCard>().FlipCard();
 
 							Vector3 localMousePosition;
 							RectTransformUtility.ScreenPointToWorldPointInRectangle(_mainCanvas.GetComponent<RectTransform>(), Input.mousePosition, null, out localMousePosition);
-
+							
 							hit.transform.GetComponent<TableLogic>().ProcessTableLogic(transform, localMousePosition.x);
 
 							_onTable = true;
@@ -81,8 +81,8 @@ namespace Game_Logic.CardLogic.DragNDrop
 
 		private void ReturnOnBackPosition()
 		{
-			transform.parent = _parentForRetun;
-			transform.position = _parentForRetun.position;
+			transform.parent = _parentForReturn;
+			transform.position = _parentForReturn.position;
 			GetComponent<BoxCollider>().enabled = true;
 		}
 	}

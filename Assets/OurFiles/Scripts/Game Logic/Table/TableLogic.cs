@@ -55,7 +55,6 @@ namespace Game_Logic.Table
 
         private bool CheckOnFullTable()
         {
-            Debug.Log(_combinations[0].red);
             if (!GetComponent<TablePositions>().IsThereFreePosition())
             {
                 CardColor MainReq = _clientele.GetComponent<CurrentClient>().GetMain();
