@@ -1,6 +1,7 @@
 using Data;
 using UnityEngine;
 using Game_Logic.CardLogic;
+using Game_Logic.Progression;
 
 namespace Game_Logic.Client
 {
@@ -9,6 +10,7 @@ namespace Game_Logic.Client
         [SerializeField] private GameObject _clientPrefab;
         [SerializeField] private GameObject _reqPrefab;
         [SerializeField] private DataClient _dataClient;
+        [SerializeField] private LeveController _levelController;
 
         private Sprite _clientSprite;
         private Sprite _reqSprite;
@@ -35,6 +37,7 @@ namespace Game_Logic.Client
                 else
                 {
                     //  Сюда выходит, если клиенты кончились
+                    _levelController.EarnXP();
                     Debug.Log("А все");
                 }
             }
