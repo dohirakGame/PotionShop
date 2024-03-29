@@ -49,9 +49,16 @@ namespace Game_Logic.CardLogic
 			CardInformation neighbourInformation = neighbourCard.GetComponent<CardInformation>();
 			CardInformation mainInformation = mainCard.GetComponent<CardInformation>();
 			
-			if (neighbourIndex > mainIndex && (neighbourInformation.GetBonusType() == CardBonusType.Left))
+			if (neighbourIndex > mainIndex && (neighbourInformation.GetBonusType() == CardBonusType.Left || neighbourInformation.GetBonusType() == CardBonusType.LeftAndRight))
 			{
 				if (neighbourInformation.GetBonusColor().ToString() == mainInformation.GetCardColor().ToString())
+				{
+					int oldPoints = neighbourInformation.GetPoints();
+					neighbourInformation.SetPoints(neighbourInformation.GetPoints() + 1);
+					int newPoints = neighbourInformation.GetPoints();
+					_tableLogic.ModifyPoint(newPoints - oldPoints);
+				}
+				if (neighbourInformation.GetSecondBonusColor().ToString() == mainInformation.GetCardColor().ToString())
 				{
 					int oldPoints = neighbourInformation.GetPoints();
 					neighbourInformation.SetPoints(neighbourInformation.GetPoints() + 1);
@@ -60,7 +67,7 @@ namespace Game_Logic.CardLogic
 				}
 			}
 			
-			if (neighbourIndex < mainIndex && (neighbourInformation.GetBonusType() == CardBonusType.Right))
+			if (neighbourIndex < mainIndex && (neighbourInformation.GetBonusType() == CardBonusType.Right || neighbourInformation.GetBonusType() == CardBonusType.LeftAndRight))
 			{
 				if (neighbourInformation.GetBonusColor().ToString() == mainInformation.GetCardColor().ToString())
 				{
@@ -69,7 +76,15 @@ namespace Game_Logic.CardLogic
 					int newPoints = neighbourInformation.GetPoints();
 					_tableLogic.ModifyPoint(newPoints - oldPoints);
 				}
+				if (neighbourInformation.GetSecondBonusColor().ToString() == mainInformation.GetCardColor().ToString())
+				{
+					int oldPoints = neighbourInformation.GetPoints();
+					neighbourInformation.SetPoints(neighbourInformation.GetPoints() + 1);
+					int newPoints = neighbourInformation.GetPoints();
+					_tableLogic.ModifyPoint(newPoints - oldPoints);
+				}
 			}
+			
 			neighbourInformation.GetComponent<UpdateVisualCardInformation>().UpdatePointsInformation();
 		}
 

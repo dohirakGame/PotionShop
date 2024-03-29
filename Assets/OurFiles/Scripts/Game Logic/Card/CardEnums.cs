@@ -26,4 +26,13 @@ namespace Game_Logic.CardLogic
 		Yellow,
 		Black
 	}
+
+	public enum SecondBonusColor
+	{
+		Red,
+		Green,
+		Blue,
+		Yellow,
+		Black
+	}
 }

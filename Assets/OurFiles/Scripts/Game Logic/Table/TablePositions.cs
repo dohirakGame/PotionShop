@@ -178,6 +178,14 @@ namespace Game_Logic.Table
 					card.GetComponent<BonusCardAccrual>().CheckingAndAccrualYourself(_cards, indexLastCard);
 					break;
 				case CardBonusType.LeftAndRight:
+					if (indexLastCard != 0)
+					{
+						card.GetComponent<BonusCardAccrual>().CheckingAndAccrualYourself(card, _cards[indexLastCard - 1]);
+					}
+					if (indexLastCard != _cards.Count - 1)
+					{
+						card.GetComponent<BonusCardAccrual>().CheckingAndAccrualYourself(card, _cards[indexLastCard + 1]);
+					}
 					break;
 				case CardBonusType.Empty:
 					break;

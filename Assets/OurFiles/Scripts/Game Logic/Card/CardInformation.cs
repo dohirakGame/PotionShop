@@ -9,31 +9,36 @@ namespace Game_Logic.CardLogic
 		[SerializeField] private CardColor _cardColor;
 		[SerializeField] private CardBonusType _bonusType;
 		[SerializeField] private BonusColor _bonusColor;
+		[SerializeField] private SecondBonusColor _secondBonusColor;
 
 		[SerializeField] private Sprite _cardSprite;
 		[SerializeField] private Sprite _itemSprite;
 		[SerializeField] private Sprite _cardColorSprite;
 		[SerializeField] private Sprite _cardBonusColorSprite;
+		[SerializeField] private Sprite _secondBonusColorSprite;
 
 		public void SetPoints(int points) => _points = points;
 		public void SetCardColor(CardColor cardColor) => _cardColor = cardColor;
 		public void SetCardBonusType(CardBonusType bonusType) => _bonusType = bonusType;
 		public void SetCardBonusColor(BonusColor bonusColor) => _bonusColor = bonusColor;
+		public void SetCardSecondBonusColor(SecondBonusColor secondBonusColor) => _secondBonusColor = secondBonusColor;
 
 		public int GetPoints() => _points;
 		public CardColor GetCardColor() => _cardColor;
 		public CardBonusType GetBonusType() => _bonusType;
 		public BonusColor GetBonusColor() => _bonusColor;
-
+		public SecondBonusColor GetSecondBonusColor() => _secondBonusColor;
 
 		public void SetCardSprite(Sprite cardSprite) => _cardSprite = cardSprite;
 		public void SetItemSprite(Sprite itemSprite) => _itemSprite = itemSprite;
 		public void SetCardColorSprite(Sprite cardColorSprite) => _cardColorSprite = cardColorSprite;
 		public void SetCardBonusColorSprite(Sprite cardBonusColorSprite) => _cardBonusColorSprite = cardBonusColorSprite;
+		public void SetCardSecondBonusColorSprite(Sprite cardSecondBonusColorSprite) => _secondBonusColorSprite = cardSecondBonusColorSprite;
 
 		public Sprite GetCardSprite() => _cardSprite;
 		public Sprite GetItemSprite() => _itemSprite;
 		public Sprite GetCardColorSprite() => _cardColorSprite;
 		public Sprite GetCardBonusColorSprite() => _cardBonusColorSprite;
+		public Sprite GetCardSecondBonusColorSprite() => _secondBonusColorSprite;
 	}
 }

@@ -198,6 +198,12 @@ MonoBehaviour:
   - {fileID: 21300000, guid: fe74d0f38a8450f46b5e3ebe3e9a563a, type: 3}
   - {fileID: 21300000, guid: 585c2cfdab7fc8b4a831f0f4671e39f1, type: 3}
   - {fileID: 21300000, guid: 41ca5e57c7a071a4bbbc58e20d82ad83, type: 3}
+  secondBonusImage:
+  - {fileID: 21300000, guid: 0e4f2cabf20aaf446b949ad126cba2f0, type: 3}
+  - {fileID: 21300000, guid: 69c2cd63e99a76649ba3d9f79361817b, type: 3}
+  - {fileID: 21300000, guid: fe74d0f38a8450f46b5e3ebe3e9a563a, type: 3}
+  - {fileID: 21300000, guid: 585c2cfdab7fc8b4a831f0f4671e39f1, type: 3}
+  - {fileID: 21300000, guid: 41ca5e57c7a071a4bbbc58e20d82ad83, type: 3}
 --- !u!4 &395091
 Transform:
   m_ObjectHideFlags: 0
@@ -1281,54 +1287,67 @@ MonoBehaviour:
     _color: 3
     _bonus: 0
     _bonusColor: 0
+    _secondBonusColor: 0
   - _point: 1
     _color: 3
     _bonus: 0
     _bonusColor: 0
+    _secondBonusColor: 0
   - _point: 1
     _color: 3
     _bonus: 0
     _bonusColor: 0
+    _secondBonusColor: 0
   - _point: 1
     _color: 3
     _bonus: 0
     _bonusColor: 0
+    _secondBonusColor: 0
   - _point: 1
     _color: 3
     _bonus: 0
     _bonusColor: 0
+    _secondBonusColor: 0
   - _point: 1
     _color: 3
     _bonus: 0
     _bonusColor: 0
+    _secondBonusColor: 0
   - _point: 1
     _color: 3
     _bonus: 0
     _bonusColor: 0
+    _secondBonusColor: 0
   - _point: 1
     _color: 3
     _bonus: 0
     _bonusColor: 0
+    _secondBonusColor: 0
   - _point: 1
     _color: 3
     _bonus: 0
     _bonusColor: 0
+    _secondBonusColor: 0
   - _point: 1
     _color: 3
     _bonus: 0
     _bonusColor: 0
+    _secondBonusColor: 0
   - _point: -1
     _color: 4
     _bonus: 0
     _bonusColor: 0
+    _secondBonusColor: 0
   - _point: -2
     _color: 4
     _bonus: 0
     _bonusColor: 0
+    _secondBonusColor: 0
   - _point: -3
     _color: 4
     _bonus: 0
     _bonusColor: 0
+    _secondBonusColor: 0
 --- !u!114 &360237517
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2004,54 +2023,67 @@ MonoBehaviour:
     _color: 1
     _bonus: 0
     _bonusColor: 0
+    _secondBonusColor: 0
   - _point: 1
     _color: 1
     _bonus: 1
     _bonusColor: 1
+    _secondBonusColor: 0
   - _point: 1
     _color: 1
     _bonus: 2
     _bonusColor: 2
+    _secondBonusColor: 0
   - _point: 1
     _color: 1
     _bonus: 0
     _bonusColor: 3
+    _secondBonusColor: 0
   - _point: 1
     _color: 1
     _bonus: 1
     _bonusColor: 4
+    _secondBonusColor: 0
   - _point: 1
     _color: 1
     _bonus: 2
     _bonusColor: 0
+    _secondBonusColor: 0
   - _point: 1
     _color: 1
     _bonus: 0
     _bonusColor: 1
+    _secondBonusColor: 0
   - _point: 1
     _color: 1
     _bonus: 1
     _bonusColor: 2
+    _secondBonusColor: 0
   - _point: 1
     _color: 1
     _bonus: 2
     _bonusColor: 3
+    _secondBonusColor: 0
   - _point: 1
     _color: 1
     _bonus: 0
     _bonusColor: 4
+    _secondBonusColor: 0
   - _point: -1
     _color: 4
     _bonus: 0
     _bonusColor: 0
+    _secondBonusColor: 0
   - _point: -2
     _color: 4
     _bonus: 0
     _bonusColor: 0
+    _secondBonusColor: 0
   - _point: -3
     _color: 4
     _bonus: 0
     _bonusColor: 0
+    _secondBonusColor: 0
 --- !u!114 &563210273
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -4801,54 +4833,67 @@ MonoBehaviour:
     _color: 2
     _bonus: 0
     _bonusColor: 0
+    _secondBonusColor: 0
   - _point: 1
     _color: 2
     _bonus: 0
     _bonusColor: 0
+    _secondBonusColor: 0
   - _point: 1
     _color: 2
     _bonus: 0
     _bonusColor: 0
+    _secondBonusColor: 0
   - _point: 1
     _color: 2
     _bonus: 0
     _bonusColor: 1
+    _secondBonusColor: 0
   - _point: 1
     _color: 2
     _bonus: 0
     _bonusColor: 1
+    _secondBonusColor: 0
   - _point: 1
     _color: 2
     _bonus: 0
     _bonusColor: 1
+    _secondBonusColor: 0
   - _point: 1
     _color: 2
     _bonus: 0
     _bonusColor: 1
+    _secondBonusColor: 0
   - _point: 1
     _color: 2
     _bonus: 0
     _bonusColor: 1
+    _secondBonusColor: 0
   - _point: 1
     _color: 2
     _bonus: 0
     _bonusColor: 0
+    _secondBonusColor: 0
   - _point: 1
     _color: 2
     _bonus: 0
     _bonusColor: 0
+    _secondBonusColor: 0
   - _point: -1
     _color: 4
     _bonus: 0
     _bonusColor: 0
+    _secondBonusColor: 0
   - _point: -2
     _color: 4
     _bonus: 0
     _bonusColor: 0
+    _secondBonusColor: 0
   - _point: -3
     _color: 4
     _bonus: 0
     _bonusColor: 0
+    _secondBonusColor: 0
 --- !u!114 &1604011742
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -6759,54 +6804,67 @@ MonoBehaviour:
     _color: 0
     _bonus: 0
     _bonusColor: 1
+    _secondBonusColor: 0
   - _point: 1
     _color: 0
     _bonus: 1
     _bonusColor: 1
+    _secondBonusColor: 0
   - _point: 1
     _color: 0
     _bonus: 2
     _bonusColor: 2
+    _secondBonusColor: 0
   - _point: 1
     _color: 0
     _bonus: 0
     _bonusColor: 3
+    _secondBonusColor: 0
   - _point: 1
     _color: 0
     _bonus: 1
     _bonusColor: 1
+    _secondBonusColor: 0
   - _point: 1
     _color: 0
     _bonus: 2
     _bonusColor: 0
+    _secondBonusColor: 0
   - _point: 1
     _color: 0
     _bonus: 0
     _bonusColor: 1
+    _secondBonusColor: 0
   - _point: 1
     _color: 0
     _bonus: 1
     _bonusColor: 2
+    _secondBonusColor: 0
   - _point: 1
     _color: 0
     _bonus: 2
     _bonusColor: 3
+    _secondBonusColor: 0
   - _point: 1
     _color: 0
     _bonus: 0
     _bonusColor: 4
+    _secondBonusColor: 0
   - _point: -1
     _color: 4
     _bonus: 0
     _bonusColor: 0
+    _secondBonusColor: 0
   - _point: -2
     _color: 4
     _bonus: 0
     _bonusColor: 0
+    _secondBonusColor: 0
   - _point: -3
     _color: 4
     _bonus: 0
     _bonusColor: 0
+    _secondBonusColor: 0
 --- !u!114 &2147335213
 MonoBehaviour:
   m_ObjectHideFlags: 0

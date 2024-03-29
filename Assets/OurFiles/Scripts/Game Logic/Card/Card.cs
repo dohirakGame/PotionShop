@@ -20,16 +20,19 @@ namespace Game_Logic.CardLogic
         [SerializeField] private CardColor _color;
         [SerializeField] private CardBonusType _bonus;
         [SerializeField] private BonusColor _bonusColor;
+        [SerializeField] private SecondBonusColor _secondBonusColor;
 
         public void SetState(CardState state) => _state = state;
         public void SetColor(CardColor color) => _color = color;
         public void SetBonus(CardBonusType bonus) => _bonus = bonus;
         public void SetBonusColor(BonusColor bonusColor) => _bonusColor = bonusColor;
+        public void SetSecondBonusColor(SecondBonusColor secondBonusColor) => _secondBonusColor = secondBonusColor;
         public void SetPointMinus() => _point *= -1;
 
         public CardColor GetColor() => _color;
         public CardBonusType GetBonusType() => _bonus;
         public BonusColor GetBonusColor() => _bonusColor;
+        public SecondBonusColor GetSecondBonusColor() => _secondBonusColor;
 
         public int GetPoint() => _point;
     }

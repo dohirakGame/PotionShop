@@ -13,6 +13,7 @@ namespace Game_Logic.CardLogic
 		[SerializeField] private Image _cardCenterTypeImage;
 		[SerializeField] private Image _cardRightTypeImage;
 		[SerializeField] private Sprite _bonusColorImage;
+		[SerializeField] private Sprite _secondBonusColorImage;
 		[SerializeField] private TextMeshProUGUI _pointsText;
 
 		[SerializeField] private CardInformation _cardInformation;
@@ -36,6 +37,7 @@ namespace Game_Logic.CardLogic
 			_itemImage.sprite = _cardInformation.GetItemSprite();
 			_cardColorImage.sprite = _cardInformation.GetCardColorSprite();
 			_bonusColorImage = _cardInformation.GetCardBonusColorSprite();
+			_secondBonusColorImage = _cardInformation.GetCardSecondBonusColorSprite();
 
 			switch (_cardInformation.GetBonusType())
 			{
@@ -49,7 +51,13 @@ namespace Game_Logic.CardLogic
 					_cardRightTypeImage.sprite = _bonusColorImage;
 					break;
 				case CardBonusType.LeftAndRight:
-
+					_cardLeftTypeImage.sprite = _bonusColorImage;
+					_cardRightTypeImage.sprite = _secondBonusColorImage;
+					break;
+				case CardBonusType.Empty:
+					_cardLeftTypeImage = null;
+					_cardCenterTypeImage = null;
+					_cardRightTypeImage = null;
 					break;
 			}
 

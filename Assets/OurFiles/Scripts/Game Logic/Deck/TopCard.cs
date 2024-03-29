@@ -20,11 +20,13 @@ namespace Game_Logic.Deck
 		private Sprite _itemImage;
 		private Sprite _cardColorImage;
 		private Sprite _bonusImage;
+		private Sprite _secondBonusImage;
 		private int _bonusPosition;
 		private int _point;
 		private CardColor _cardColor;
 		private CardBonusType _bonusType;
 		private BonusColor _bonusColor;
+		private SecondBonusColor _secondBonusColor;
 
 		private void OnValidate()
 		{
@@ -47,6 +49,9 @@ namespace Game_Logic.Deck
 			{
 				_deck.Add(_createDeck.GetCard(i));
 			}
+
+			RandomBonusOnCard randomBonus = new RandomBonusOnCard();
+			_deck = randomBonus.SetBonus(_deck);
 
 			_deck = SortDeckWithBlackCards(_deck);
 		}
@@ -306,6 +311,63 @@ namespace Game_Logic.Deck
 					break;
 			}
 
+			if (card.GetBonusType() == CardBonusType.LeftAndRight)
+			{
+				switch (card.GetSecondBonusColor())
+				{
+					case SecondBonusColor.Red:
+						_secondBonusColor = SecondBonusColor.Red;
+						foreach (Sprite item in _dataCard.secondBonusImage)
+						{
+							if (item.name == "Red")
+							{
+								_secondBonusImage = item;
+							}
+						}
+						break;
+					case SecondBonusColor.Green:
+						_secondBonusColor = SecondBonusColor.Green;
+						foreach (Sprite item in _dataCard.secondBonusImage)
+						{
+							if (item.name == "Green")
+							{
+								_secondBonusImage = item;
+							}
+						}
+						break;
+					case SecondBonusColor.Blue:
+						_secondBonusColor = SecondBonusColor.Blue;
+						foreach (Sprite item in _dataCard.secondBonusImage)
+						{
+							if (item.name == "Blue")
+							{
+								_secondBonusImage = item;
+							}
+						}
+						break;
+					case SecondBonusColor.Yellow:
+						_secondBonusColor = SecondBonusColor.Yellow;
+						foreach (Sprite item in _dataCard.secondBonusImage)
+						{
+							if (item.name == "Yellow")
+							{
+								_secondBonusImage = item;
+							}
+						}
+						break;
+					case SecondBonusColor.Black:
+						_secondBonusColor = SecondBonusColor.Black;
+						foreach (Sprite item in _dataCard.secondBonusImage)
+						{
+							if (item.name == "Black")
+							{
+								_secondBonusImage = item;
+							}
+						}
+						break;
+				}
+			}
+
 			switch (card.GetBonusType())
 			{
 				case CardBonusType.Left:
@@ -323,6 +385,10 @@ namespace Game_Logic.Deck
 				case CardBonusType.LeftAndRight:
 					_bonusType = CardBonusType.LeftAndRight;
 					_bonusPosition = 5;
+					break;
+				case CardBonusType.Empty:
+					_bonusType = CardBonusType.Empty;
+					_bonusPosition = 6;
 					break;
 			}
 		}
@@ -348,11 +414,13 @@ namespace Game_Logic.Deck
 			cardInformation.SetCardColor(_cardColor);
 			cardInformation.SetCardBonusType(_bonusType);
 			cardInformation.SetCardBonusColor(_bonusColor);
+			cardInformation.SetCardSecondBonusColor(_secondBonusColor);
 
 			cardInformation.SetCardSprite(_cardImage);
 			cardInformation.SetItemSprite(_itemImage);
 			cardInformation.SetCardColorSprite(_cardColorImage);
 			cardInformation.SetCardBonusColorSprite(_bonusImage);
+			cardInformation.SetCardSecondBonusColorSprite(_secondBonusImage);
 
 			card.GetComponent<UpdateVisualCardInformation>().UpdateCardInformation();
 		}
