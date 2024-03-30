@@ -458,6 +458,7 @@ MonoBehaviour:
   _cardColor: 0
   _cardBonusType: 0
   _cardBonusColor: 0
+  _secondBonusColor: 5
 --- !u!1 &76823145
 GameObject:
   m_ObjectHideFlags: 0
@@ -897,6 +898,7 @@ MonoBehaviour:
   _cardColor: 0
   _cardBonusType: 0
   _cardBonusColor: 0
+  _secondBonusColor: 5
 --- !u!1 &180146911
 GameObject:
   m_ObjectHideFlags: 0
@@ -5018,6 +5020,7 @@ MonoBehaviour:
   _cardColor: 0
   _cardBonusType: 0
   _cardBonusColor: 0
+  _secondBonusColor: 5
 --- !u!1 &1634473450
 GameObject:
   m_ObjectHideFlags: 0
@@ -6572,6 +6575,7 @@ MonoBehaviour:
   _cardColor: 0
   _cardBonusType: 0
   _cardBonusColor: 0
+  _secondBonusColor: 5
 --- !u!1 &2122881116
 GameObject:
   m_ObjectHideFlags: 0

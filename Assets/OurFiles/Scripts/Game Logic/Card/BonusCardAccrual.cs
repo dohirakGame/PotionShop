@@ -19,6 +19,7 @@ namespace Game_Logic.CardLogic
 			for (int i = 0; i < cards.Count; i++)
 			{
 				CardInformation checkedCardInformation = cards[i].GetComponent<CardInformation>();
+
 				if (mainInformation.GetBonusColor().ToString() == checkedCardInformation.GetCardColor().ToString())
 				{
 					int oldPoints = mainInformation.GetPoints();
@@ -29,10 +30,10 @@ namespace Game_Logic.CardLogic
 			}
 			cards[indexLastCard].GetComponent<UpdateVisualCardInformation>().UpdatePointsInformation();
 		}
-		public void CheckingAndAccrualYourself(GameObject mainCard, GameObject neighbouringCard)
+		public void CheckingAndAccrualYourself(GameObject mainCard, GameObject leftNeighbouringCard)
 		{
 			CardInformation mainInformation = mainCard.GetComponent<CardInformation>();
-			CardInformation neighbourInformation = neighbouringCard.GetComponent<CardInformation>();
+			CardInformation neighbourInformation = leftNeighbouringCard.GetComponent<CardInformation>();
 
 			if (mainInformation.GetBonusColor().ToString() == neighbourInformation.GetCardColor().ToString())
 			{
@@ -43,45 +44,84 @@ namespace Game_Logic.CardLogic
 			}
 			mainCard.GetComponent<UpdateVisualCardInformation>().UpdatePointsInformation();
 		}
+		public void CheckingAndAccrualYourself(GameObject mainCard, GameObject leftNeighbouringCard, GameObject rightNeighbouringCard)
+		{
+			CardInformation mainInformation = mainCard.GetComponent<CardInformation>();
+			if (leftNeighbouringCard != null)
+			{
+				CardInformation leftNeighbourInformation = leftNeighbouringCard.GetComponent<CardInformation>();
+				if (mainInformation.GetBonusColor().ToString() == leftNeighbourInformation.GetCardColor().ToString())
+				{
+					int oldPoints = mainInformation.GetPoints();
+					mainInformation.SetPoints(mainInformation.GetPoints() + 1);
+					int newPoints = mainInformation.GetPoints();
+					_tableLogic.ModifyPoint(newPoints - oldPoints);
+				}
+			}
+			if (rightNeighbouringCard != null)
+			{
+				CardInformation rightNeighbourInformation = rightNeighbouringCard.GetComponent<CardInformation>();
+				if (mainInformation.GetSecondBonusColor().ToString() == rightNeighbourInformation.GetCardColor().ToString())
+				{
+					int oldPoints = mainInformation.GetPoints();
+					mainInformation.SetPoints(mainInformation.GetPoints() + 1);
+					int newPoints = mainInformation.GetPoints();
+					_tableLogic.ModifyPoint(newPoints - oldPoints);
+				}
+			}
+			mainCard.GetComponent<UpdateVisualCardInformation>().UpdatePointsInformation();
+		}
 
 		public void CheckingBonusOnNeighbourCard(GameObject mainCard, GameObject neighbourCard, int mainIndex, int neighbourIndex)
 		{
 			CardInformation neighbourInformation = neighbourCard.GetComponent<CardInformation>();
 			CardInformation mainInformation = mainCard.GetComponent<CardInformation>();
 			
-			if (neighbourIndex > mainIndex && (neighbourInformation.GetBonusType() == CardBonusType.Left || neighbourInformation.GetBonusType() == CardBonusType.LeftAndRight))
+			if (neighbourIndex > mainIndex)
 			{
-				if (neighbourInformation.GetBonusColor().ToString() == mainInformation.GetCardColor().ToString())
+				if (neighbourInformation.GetBonusType() == CardBonusType.Left)
 				{
-					int oldPoints = neighbourInformation.GetPoints();
-					neighbourInformation.SetPoints(neighbourInformation.GetPoints() + 1);
-					int newPoints = neighbourInformation.GetPoints();
-					_tableLogic.ModifyPoint(newPoints - oldPoints);
+					if (neighbourInformation.GetBonusColor().ToString() == mainInformation.GetCardColor().ToString())
+					{
+						int oldPoints = neighbourInformation.GetPoints();
+						neighbourInformation.SetPoints(neighbourInformation.GetPoints() + 1);
+						int newPoints = neighbourInformation.GetPoints();
+						_tableLogic.ModifyPoint(newPoints - oldPoints);
+					}
 				}
-				if (neighbourInformation.GetSecondBonusColor().ToString() == mainInformation.GetCardColor().ToString())
+				if (neighbourInformation.GetBonusType() == CardBonusType.LeftAndRight)
 				{
-					int oldPoints = neighbourInformation.GetPoints();
-					neighbourInformation.SetPoints(neighbourInformation.GetPoints() + 1);
-					int newPoints = neighbourInformation.GetPoints();
-					_tableLogic.ModifyPoint(newPoints - oldPoints);
+					if (neighbourInformation.GetBonusColor().ToString() == mainInformation.GetCardColor().ToString())
+					{
+						int oldPoints = neighbourInformation.GetPoints();
+						neighbourInformation.SetPoints(neighbourInformation.GetPoints() + 1);
+						int newPoints = neighbourInformation.GetPoints();
+						_tableLogic.ModifyPoint(newPoints - oldPoints);
+					}
 				}
 			}
 			
-			if (neighbourIndex < mainIndex && (neighbourInformation.GetBonusType() == CardBonusType.Right || neighbourInformation.GetBonusType() == CardBonusType.LeftAndRight))
+			if (neighbourIndex < mainIndex)
 			{
-				if (neighbourInformation.GetBonusColor().ToString() == mainInformation.GetCardColor().ToString())
+				if (neighbourInformation.GetBonusType() == CardBonusType.Right)
 				{
-					int oldPoints = neighbourInformation.GetPoints();
-					neighbourInformation.SetPoints(neighbourInformation.GetPoints() + 1);
-					int newPoints = neighbourInformation.GetPoints();
-					_tableLogic.ModifyPoint(newPoints - oldPoints);
+					if (neighbourInformation.GetBonusColor().ToString() == mainInformation.GetCardColor().ToString())
+					{
+						int oldPoints = neighbourInformation.GetPoints();
+						neighbourInformation.SetPoints(neighbourInformation.GetPoints() + 1);
+						int newPoints = neighbourInformation.GetPoints();
+						_tableLogic.ModifyPoint(newPoints - oldPoints);
+					}
 				}
-				if (neighbourInformation.GetSecondBonusColor().ToString() == mainInformation.GetCardColor().ToString())
+				if (neighbourInformation.GetBonusType() == CardBonusType.LeftAndRight)
 				{
-					int oldPoints = neighbourInformation.GetPoints();
-					neighbourInformation.SetPoints(neighbourInformation.GetPoints() + 1);
-					int newPoints = neighbourInformation.GetPoints();
-					_tableLogic.ModifyPoint(newPoints - oldPoints);
+					if (neighbourInformation.GetSecondBonusColor().ToString() == mainInformation.GetCardColor().ToString())
+					{
+						int oldPoints = neighbourInformation.GetPoints();
+						neighbourInformation.SetPoints(neighbourInformation.GetPoints() + 1);
+						int newPoints = neighbourInformation.GetPoints();
+						_tableLogic.ModifyPoint(newPoints - oldPoints);
+					}
 				}
 			}
 			

@@ -1,8 +1,8 @@
-using Game_Logic.CardLogic;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using Game_Logic.Client;
+using Game_Logic.CardLogic;
 
 namespace Game_Logic.Table
 {
@@ -12,7 +12,7 @@ namespace Game_Logic.Table
         [SerializeField] private List<GameObject> _cards;
         [SerializeField] private GameObject _clientele;
 
-        private float _width = Screen.width;
+        private float _width;
         private float _k; // koef
         private float _defRes = 1080f;
 
@@ -22,6 +22,7 @@ namespace Game_Logic.Table
 
         public void Initialize()
         {
+            _width = Screen.width;
             _k = Mathf.Round(_width / _defRes * 100);
             _k /= 100f;
             MoveCardPositions();
@@ -118,6 +119,7 @@ namespace Game_Logic.Table
                     _positions[i].GetComponent<PositionData>().SetCardColor(card.GetCardColor());
                     _positions[i].GetComponent<PositionData>().SetBonusType(card.GetBonusType());
                     _positions[i].GetComponent<PositionData>().SetBonusColor(card.GetBonusColor());
+                    _positions[i].GetComponent<PositionData>().SetSecondBonusColor(card.GetSecondBonusColor());
                 }
             }
         }
@@ -178,13 +180,15 @@ namespace Game_Logic.Table
 					card.GetComponent<BonusCardAccrual>().CheckingAndAccrualYourself(_cards, indexLastCard);
 					break;
 				case CardBonusType.LeftAndRight:
-					if (indexLastCard != 0)
-					{
-						card.GetComponent<BonusCardAccrual>().CheckingAndAccrualYourself(card, _cards[indexLastCard - 1]);
-					}
-					if (indexLastCard != _cards.Count - 1)
-					{
-						card.GetComponent<BonusCardAccrual>().CheckingAndAccrualYourself(card, _cards[indexLastCard + 1]);
+                    if (indexLastCard != 0 && indexLastCard != _cards.Count - 1)
+                    {
+						card.GetComponent<BonusCardAccrual>().CheckingAndAccrualYourself(card, _cards[indexLastCard - 1], _cards[indexLastCard + 1]);
+					} else if (indexLastCard != 0)
+                    {
+						card.GetComponent<BonusCardAccrual>().CheckingAndAccrualYourself(card, _cards[indexLastCard - 1], null);
+					} else if (indexLastCard != _cards.Count - 1)
+                    {
+						card.GetComponent<BonusCardAccrual>().CheckingAndAccrualYourself(card, null, _cards[indexLastCard + 1]);
 					}
 					break;
 				case CardBonusType.Empty:
