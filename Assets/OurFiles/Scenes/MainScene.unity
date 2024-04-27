@@ -2544,7 +2544,9 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 654687543}
-  - component: {fileID: 654687542}
+  - component: {fileID: 654687546}
+  - component: {fileID: 654687545}
+  - component: {fileID: 654687544}
   m_Layer: 0
   m_Name: JSONController
   m_TagString: Untagged
@@ -2552,32 +2554,6 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!114 &654687542
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 654687541}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 474be57e4b3310248955275e6459248a, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  player:
-    currentday: 0
-    currency: 0
-    experience: 0
-  daynclients:
-    ammount: 0
-    colors: 01000000
-    specialID: 0
-    mission: 0
-    experience: 0
-  specialclients:
-    id: 0
-    sprite: {fileID: 0}
-    request: 0
 --- !u!4 &654687543
 Transform:
   m_ObjectHideFlags: 0
@@ -2593,6 +2569,59 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &654687544
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 654687541}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c583a017365deb94a99d650763e42088, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  specialclients:
+    id: 0
+    sprite: {fileID: 0}
+    request: 0
+--- !u!114 &654687545
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 654687541}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 642d60cd78ebe9448acbb73baeb85b8a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  player:
+    currentday: 0
+    currency: 0
+    premium_currency: 0
+    experience: 0
+--- !u!114 &654687546
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 654687541}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d576442edc1d37842a42c71fdf555315, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  daynclients:
+    ammount: 0
+    guests:
+    - main: 0
+      add: 0
+    specialID: 0
+    mission: 0
+    experience: 0
 --- !u!1 &691465876
 GameObject:
   m_ObjectHideFlags: 0
