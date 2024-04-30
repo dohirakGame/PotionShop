@@ -1381,6 +1381,51 @@ MonoBehaviour:
   _topCard: {fileID: 0}
   _countCards: {fileID: 959336892}
   _countBlackCards: {fileID: 1233258010}
+--- !u!1 &406369788
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 406369790}
+  - component: {fileID: 406369789}
+  m_Layer: 0
+  m_Name: ProgressionController
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &406369789
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 406369788}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0ecb0f80cd11e484885aa07065c83a60, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  levelThreshhold: 
+--- !u!4 &406369790
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 406369788}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: -0.77118826, y: 0.7097223, z: -1.3196148}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &408348551
 GameObject:
   m_ObjectHideFlags: 0
@@ -2533,7 +2578,9 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 654687543}
-  - component: {fileID: 654687542}
+  - component: {fileID: 654687546}
+  - component: {fileID: 654687545}
+  - component: {fileID: 654687544}
   m_Layer: 0
   m_Name: JSONController
   m_TagString: Untagged
@@ -2541,32 +2588,6 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!114 &654687542
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 654687541}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 474be57e4b3310248955275e6459248a, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  player:
-    currentday: 0
-    currency: 0
-    experience: 0
-  daynclients:
-    ammount: 0
-    colors: 01000000
-    specialID: 0
-    mission: 0
-    experience: 0
-  specialclients:
-    id: 0
-    sprite: {fileID: 0}
-    request: 0
 --- !u!4 &654687543
 Transform:
   m_ObjectHideFlags: 0
@@ -2582,6 +2603,59 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &654687544
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 654687541}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c583a017365deb94a99d650763e42088, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  specialclients:
+    id: 0
+    sprite: {fileID: 0}
+    request: 0
+--- !u!114 &654687545
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 654687541}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 642d60cd78ebe9448acbb73baeb85b8a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  player:
+    currentday: 0
+    currency: 0
+    premium_currency: 0
+    experience: 0
+--- !u!114 &654687546
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 654687541}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d576442edc1d37842a42c71fdf555315, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  daynclients:
+    ammount: 0
+    guests:
+    - main: 0
+      add: 0
+    specialID: 0
+    mission: 0
+    experience: 0
 --- !u!1 &691465876
 GameObject:
   m_ObjectHideFlags: 0
@@ -5104,6 +5178,7 @@ MonoBehaviour:
   _clientPrefab: {fileID: 695645859945445499, guid: bb8c72fd7066c83458092a140e75909e, type: 3}
   _reqPrefab: {fileID: 6234578311032212347, guid: d25473212d78362458aab8a38444df63, type: 3}
   _dataClient: {fileID: 1493780955}
+  _levelController: {fileID: 406369789}
 --- !u!1 &1642988349
 GameObject:
   m_ObjectHideFlags: 0
@@ -6913,3 +6988,4 @@ SceneRoots:
   - {fileID: 564201502}
   - {fileID: 1220509015}
   - {fileID: 654687543}
+  - {fileID: 406369790}
