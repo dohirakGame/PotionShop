@@ -25,5 +25,6 @@ namespace Data
 
         [Header("Изображения под цвет бонуса карты")]
         public List<Sprite> bonusImage;
+        public List<Sprite> secondBonusImage;
     }
 }

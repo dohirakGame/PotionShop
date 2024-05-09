@@ -10,6 +10,7 @@ namespace Game_Logic.Table
         [SerializeField] private CardColor _cardColor;
         [SerializeField] private CardBonusType _cardBonusType;
         [SerializeField] private BonusColor _cardBonusColor;
+        [SerializeField] private SecondBonusColor _secondBonusColor;
 
         public void Initialize()
         {
@@ -20,11 +21,13 @@ namespace Game_Logic.Table
         public CardColor GetColor() => _cardColor;
         public CardBonusType GetBonusType() => _cardBonusType;
         public BonusColor GetBonusColor() => _cardBonusColor;
+        public SecondBonusColor GetSecondBonusColor() => _secondBonusColor;
 
         public void SetFreeStatus(bool status) => _isFree = status;
         public void SetXPosition(float xPos) => _xPosition = xPos;
         public void SetCardColor(CardColor color) => _cardColor = color;
         public void SetBonusType(CardBonusType bonusType) => _cardBonusType = bonusType;
         public void SetBonusColor(BonusColor bonusColor) => _cardBonusColor = bonusColor;
+        public void SetSecondBonusColor(SecondBonusColor secondBonusColor) => _secondBonusColor = secondBonusColor;
     }
 }

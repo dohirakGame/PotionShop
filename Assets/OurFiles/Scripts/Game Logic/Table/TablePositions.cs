@@ -1,8 +1,8 @@
-using Game_Logic.CardLogic;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using Game_Logic.Client;
+using Game_Logic.CardLogic;
 
 namespace Game_Logic.Table
 {
@@ -12,7 +12,9 @@ namespace Game_Logic.Table
         [SerializeField] private List<GameObject> _cards;
         [SerializeField] private GameObject _clientele;
 
-        private float _width = 1080f;
+        private float _width;
+        private float _k; // koef
+        private float _defRes = 1080f;
 
         private int _indexFreePosition;
         private int _lastIndexOfInsertedCard;
@@ -20,6 +22,9 @@ namespace Game_Logic.Table
 
         public void Initialize()
         {
+            _width = Screen.width;
+            _k = Mathf.Round(_width / _defRes * 100);
+            _k /= 100f;
             MoveCardPositions();
         }
 
@@ -114,6 +119,7 @@ namespace Game_Logic.Table
                     _positions[i].GetComponent<PositionData>().SetCardColor(card.GetCardColor());
                     _positions[i].GetComponent<PositionData>().SetBonusType(card.GetBonusType());
                     _positions[i].GetComponent<PositionData>().SetBonusColor(card.GetBonusColor());
+                    _positions[i].GetComponent<PositionData>().SetSecondBonusColor(card.GetSecondBonusColor());
                 }
             }
         }
@@ -174,6 +180,16 @@ namespace Game_Logic.Table
 					card.GetComponent<BonusCardAccrual>().CheckingAndAccrualYourself(_cards, indexLastCard);
 					break;
 				case CardBonusType.LeftAndRight:
+                    if (indexLastCard != 0 && indexLastCard != _cards.Count - 1)
+                    {
+						card.GetComponent<BonusCardAccrual>().CheckingAndAccrualYourself(card, _cards[indexLastCard - 1], _cards[indexLastCard + 1]);
+					} else if (indexLastCard != 0)
+                    {
+						card.GetComponent<BonusCardAccrual>().CheckingAndAccrualYourself(card, _cards[indexLastCard - 1], null);
+					} else if (indexLastCard != _cards.Count - 1)
+                    {
+						card.GetComponent<BonusCardAccrual>().CheckingAndAccrualYourself(card, null, _cards[indexLastCard + 1]);
+					}
 					break;
 				case CardBonusType.Empty:
 					break;
@@ -229,35 +245,38 @@ namespace Game_Logic.Table
         }
         private void SetXPositionsDependingCount()
         {
-            int count = CountUnFreePositions();
+			//x position * K, like K = 1080/_width, but _width != 0 
+			int count = CountUnFreePositions();
             switch (count)
             {
                 case 0:
                     for (int i = count; i < _positions.Count; i++)
                     {
                         _positions[i].localPosition = new Vector2(0f, _positions[i].localPosition.y);
-                        _positions[i].GetComponent<PositionData>().SetXPosition(0f + _width/2);
+                        _positions[i].GetComponent<PositionData>().SetXPosition((_defRes / 2) * _k);
                     }
                     break;
 				case 1:
 					_positions[0].localPosition = new Vector2(0f, _positions[0].localPosition.y);
-					_positions[0].GetComponent<PositionData>().SetXPosition(0f + _width / 2);
+					_positions[0].GetComponent<PositionData>().SetXPosition((_defRes / 2) * _k);
+
 					for (int i = count; i < _positions.Count; i++)
                     {
 						_positions[i].localPosition = new Vector2(0f, _positions[i].localPosition.y);
-						_positions[i].GetComponent<PositionData>().SetXPosition(0f + _width / 2);
+						_positions[i].GetComponent<PositionData>().SetXPosition((_defRes / 2) * _k);
 					}
 					break;
                 case 2:
 					_positions[0].localPosition = new Vector2(-145f, _positions[0].localPosition.y);
                     _positions[1].localPosition = new Vector2(145f, _positions[1].localPosition.y);
 
-					_positions[0].GetComponent<PositionData>().SetXPosition(-145f + _width / 2);
-					_positions[1].GetComponent<PositionData>().SetXPosition(145f + _width / 2);
+					_positions[0].GetComponent<PositionData>().SetXPosition((-145f + _defRes/2) * _k);
+					_positions[1].GetComponent<PositionData>().SetXPosition((145f + _defRes/2) * _k);
+
 					for (int i = count; i < _positions.Count; i++)
                     {
 						_positions[i].localPosition = new Vector2(0f, _positions[i].localPosition.y);
-						_positions[i].GetComponent<PositionData>().SetXPosition(0f + _width / 2);
+						_positions[i].GetComponent<PositionData>().SetXPosition((_defRes / 2) * _k);
 					}
 					break;
                 case 3:
@@ -266,10 +285,10 @@ namespace Game_Logic.Table
                     _positions[2].localPosition = new Vector2(260f, _positions[2].localPosition.y);
                     _positions[3].localPosition = new Vector2(0f, _positions[3].localPosition.y);
 
-					_positions[0].GetComponent<PositionData>().SetXPosition(-260f + _width / 2);
-					_positions[1].GetComponent<PositionData>().SetXPosition(0f + _width / 2);
-					_positions[2].GetComponent<PositionData>().SetXPosition(260f + _width / 2);
-					_positions[3].GetComponent<PositionData>().SetXPosition(0f + _width / 2);
+					_positions[0].GetComponent<PositionData>().SetXPosition((-260f + _defRes / 2) * _k);
+					_positions[1].GetComponent<PositionData>().SetXPosition((_defRes / 2) * _k);
+					_positions[2].GetComponent<PositionData>().SetXPosition((260f + _defRes / 2) * _k);
+					_positions[3].GetComponent<PositionData>().SetXPosition((_defRes / 2) * _k);
 					break;
                 case 4:
 					_positions[0].localPosition = new Vector2(-375f, _positions[0].localPosition.y);
@@ -277,12 +296,12 @@ namespace Game_Logic.Table
 					_positions[2].localPosition = new Vector2(125f, _positions[2].localPosition.y);
 					_positions[3].localPosition = new Vector2(375f, _positions[3].localPosition.y);
 
-					_positions[0].GetComponent<PositionData>().SetXPosition(-375f + _width / 2);
-					_positions[1].GetComponent<PositionData>().SetXPosition(-125f + _width / 2);
-					_positions[2].GetComponent<PositionData>().SetXPosition(125f + _width / 2);
-					_positions[3].GetComponent<PositionData>().SetXPosition(375f + _width / 2);
+					_positions[0].GetComponent<PositionData>().SetXPosition((-375f + _defRes / 2) * _k);
+					_positions[1].GetComponent<PositionData>().SetXPosition((-125f + _defRes / 2) * _k);
+					_positions[2].GetComponent<PositionData>().SetXPosition((125f + _defRes / 2) * _k);
+					_positions[3].GetComponent<PositionData>().SetXPosition((375f + _defRes / 2) * _k);
 					break;
 			}
         }
-    }
+	}
 }
