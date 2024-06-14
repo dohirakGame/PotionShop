@@ -1,7 +1,10 @@
 using UnityEngine;
 
-public interface ISwapBackground 
+namespace UI
 {
-    public void SelectCurrently();
-    public void SwapBackground();
+    public interface ISwapBackground
+    {
+        public void SelectCurrently();
+        public void SwapBackground();
+    }
 }

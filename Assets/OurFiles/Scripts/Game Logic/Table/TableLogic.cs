@@ -14,7 +14,7 @@ namespace Game_Logic.Table
         [SerializeField] private ElementsBufer _elementsBufer;
         [SerializeField] private GameObject _clientele;
 
-        // Комбинации заполняются в Startе
+        // set combinations in Start
         public List<CardCombinations> _combinations;
         public void ProcessTableLogic(Transform card, float xPosition)
         {
@@ -80,14 +80,16 @@ namespace Game_Logic.Table
 					}
                     else
                     {
-                        _elementsBufer._textForTests.text = "ÒÛ ÏÐÎÈÃÐÀË, ÇÀÊÐÛÂÀÉ ÈÃÐÓ";
-                    }
-                }
+                        //metod s porazheniem
+                        _elementsBufer.GetLoseCanvas();
+					}
+				}
                 else
                 {
-                    _elementsBufer._textForTests.text = "ÒÛ ÏÐÎÈÃÐÀË, ÇÀÊÐÛÂÀÉ ÈÃÐÓ";
-                }
-                return true;
+					//metod s porazheniem
+					_elementsBufer.GetLoseCanvas();
+				}
+				return true;
             }
             return false;
         }

@@ -4,7 +4,7 @@ using UnityEngine;
 
 namespace Game_Logic.Progression
 {
-    public class LeveController : MonoBehaviour
+    public class LevelController : MonoBehaviour
     {
         // Текущий уровень игрока
         private int _currentLevel = 1;
@@ -17,7 +17,7 @@ namespace Game_Logic.Progression
 
         public void EarnXP()
         {
-                if (_currentXP + _earnedXP >= levelThreshhold[_currentLevel-1]){
+                /*if (_currentXP + _earnedXP >= levelThreshhold[_currentLevel-1]){
                     // Не знаю, как мы хотим: оставлять опыт или обнулять при левелапе, но это можно исправить быстро
                     _currentXP = _currentXP + _earnedXP - levelThreshhold[_currentLevel-1];
                     _currentLevel++;
@@ -25,9 +25,7 @@ namespace Game_Logic.Progression
                 else
                 {
                     _currentXP += _earnedXP;
-                }
-        }
-
-        
+                }*/
+        }       
     }
 }

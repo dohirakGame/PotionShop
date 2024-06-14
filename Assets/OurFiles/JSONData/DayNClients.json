@@ -1,0 +1,21 @@
+{
+    "dayNclients": [
+        {
+            "dayID": 1,
+            "guests": [
+                {
+                    "mainColor": 3,
+                    "additionalColor": 0
+                },
+                {
+                    "mainColor": 0,
+                    "additionalColor": 4
+                },
+                {
+                    "mainColor": 1,
+                    "additionalColor": 2
+                }
+            ]
+        }
+    ]
+}

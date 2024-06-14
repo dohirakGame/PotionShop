@@ -1,14 +1,9 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
-using UnityEngine.UI;
-using TMPro;
-using System;
 
 namespace Menu
 {
-    public class MenuScript : MonoBehaviour
+	public class MenuScript : MonoBehaviour
     {
 
 

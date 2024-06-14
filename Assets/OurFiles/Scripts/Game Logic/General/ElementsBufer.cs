@@ -17,12 +17,26 @@ namespace Game_Logic.General
         [SerializeField] private TextMeshProUGUI _pointsText;
         [SerializeField] private TextMeshProUGUI _scoresText;
 
-        public TextMeshProUGUI _textForTests;
+        [Header("Канвасы")]
+        [SerializeField] private GameObject _canvasForPause;
+        [SerializeField] private GameObject _canvasForReward;
 
         public Canvas GetMainCanvas() => _mainCanvas;
         public PointsController GetPointsController() => _pointsController;
         public ScoresController GetScoresController() => _scoresController;
         public TextMeshProUGUI GetPointsText() => _pointsText;
         public TextMeshProUGUI GetScoresText() => _scoresText;
+
+        public GameObject GetPauseCanvas() => _canvasForPause;
+        public void GetLoseCanvas()
+        {
+            _canvasForReward?.SetActive(true);
+            _canvasForReward.GetComponent<RewardMenu>()?.ShowLoseOption();
+        }
+        public void GetWinCanvas()
+        {
+            _canvasForReward?.SetActive(true);
+            _canvasForReward.GetComponent<RewardMenu>()?.ShowWinOption();
+        }
     }
 }

@@ -42,15 +42,20 @@ namespace Game_Logic.CardLogic
 			switch (_cardInformation.GetBonusType())
 			{
 				case CardBonusType.Left:
+					_cardLeftTypeImage.gameObject.SetActive(true);
 					_cardLeftTypeImage.sprite = _bonusColorImage;
 					break;
 				case CardBonusType.Center:
+					_cardCenterTypeImage.gameObject.SetActive(true);
 					_cardCenterTypeImage.sprite = _bonusColorImage;
 					break;
 				case CardBonusType.Right:
+					_cardRightTypeImage.gameObject.SetActive(true);
 					_cardRightTypeImage.sprite = _bonusColorImage;
 					break;
 				case CardBonusType.LeftAndRight:
+					_cardLeftTypeImage.gameObject.SetActive(true);
+					_cardRightTypeImage.gameObject.SetActive(true);
 					_cardLeftTypeImage.sprite = _bonusColorImage;
 					_cardRightTypeImage.sprite = _secondBonusColorImage;
 					break;
