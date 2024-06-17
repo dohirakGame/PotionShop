@@ -2581,6 +2581,8 @@ GameObject:
   - component: {fileID: 654687546}
   - component: {fileID: 654687545}
   - component: {fileID: 654687544}
+  - component: {fileID: 654687548}
+  - component: {fileID: 654687547}
   m_Layer: 0
   m_Name: JSONController
   m_TagString: Untagged
@@ -2656,6 +2658,43 @@ MonoBehaviour:
     specialID: 0
     mission: 0
     experience: 0
+--- !u!114 &654687547
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 654687541}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7631836101337da4a974b78f89115df6, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  galclients:
+    clients:
+    - state: 0
+      description: 
+    - state: 0
+      description: 
+--- !u!114 &654687548
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 654687541}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0de2f05c2bec7e74299a9e41d0ae5e12, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  galpotions:
+    potions:
+    - potions:
+      - potions:
+        - potions:
+          - potions:
+            - potions: []
 --- !u!1 &691465876
 GameObject:
   m_ObjectHideFlags: 0
