@@ -3,10 +3,10 @@ using UnityEngine;
 
 namespace Data
 {
-	public class SaveCurrentDay : MonoBehaviour
+	public class SaveCurrentDayJSON : MonoBehaviour
 	{
-		[SerializeField] private string _savePath;
 		[SerializeField] private string _fileName = "CurrentDay.json";
+		[SerializeField] private string _savePath;
 
 		public void SaveDay(int dayNumber)
 		{
@@ -20,7 +20,6 @@ namespace Data
 
 			try
 			{
-				Debug.Log("file is writen");
 				File.WriteAllText(_savePath, json);
 			}
 			catch (System.Exception e)

@@ -638,21 +638,47 @@ MonoBehaviour:
   m_GameObject: {fileID: 413356268}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 73166f6dacb678b42ac98fc691206f5d, type: 3}
+  m_Script: {fileID: 11500000, guid: 92ea2fd96d5386d46abece47e7782135, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   _fileName: DayNClients.json
-  _saveJSONPath: C:/Users/dohir/AppData/LocalLow/DefaultCompany/Baba Yaga\DayNClients.json
+  _saveJSONPath: C:/Users/dohir/AppData/LocalLow/AstraGames/Baba Yaga\DayNClients.json
   _dayJson:
     dayNclients:
     - dayID: 1
       guests:
-      - mainColor: 3
-        additionalColor: 0
-      - mainColor: 0
-        additionalColor: 4
       - mainColor: 1
         additionalColor: 2
+      - mainColor: 2
+        additionalColor: 1
+      - mainColor: 0
+        additionalColor: 0
+    - dayID: 2
+      guests:
+      - mainColor: 4
+        additionalColor: 3
+      - mainColor: 3
+        additionalColor: 3
+      - mainColor: 2
+        additionalColor: 2
+      - mainColor: 1
+        additionalColor: 1
+    - dayID: 3
+      guests:
+      - mainColor: 4
+        additionalColor: 4
+      - mainColor: 1
+        additionalColor: 0
+      - mainColor: 0
+        additionalColor: 1
+      - mainColor: 0
+        additionalColor: 0
+      - mainColor: 2
+        additionalColor: 2
+    - dayID: 4
+      guests:
+      - mainColor: 3
+        additionalColor: 3
 --- !u!4 &413356270
 Transform:
   m_ObjectHideFlags: 0

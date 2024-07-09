@@ -5,10 +5,10 @@ using UnityEngine;
 
 namespace Data
 {
-    public class TestSaveClient : MonoBehaviour
+    public class SaveClientsJSON : MonoBehaviour
     {
         [Header("File Name")]
-		[SerializeField] private string _fileName;
+		[SerializeField] private string _fileName = "DayNClients.json";
 
         [Header("Data")]
         [SerializeField] private string _saveJSONPath;

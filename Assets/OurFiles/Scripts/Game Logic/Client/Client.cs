@@ -3,7 +3,6 @@ using Game_Logic.CardLogic;
 
 namespace Game_Logic.Client
 {
-
     [System.Serializable]
     public class Client
     {
@@ -12,5 +11,8 @@ namespace Game_Logic.Client
 
         public CardColor GetMain() => _mainReq;
         public CardColor GetAdd() => _addReq;
+
+        public void SetMain(CardColor value) { _mainReq = value; }
+        public void SetAdd(CardColor value) { _addReq = value; }
     }
 }

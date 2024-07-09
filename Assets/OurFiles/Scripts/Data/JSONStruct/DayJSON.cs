@@ -13,11 +13,11 @@ namespace Data.JSONStruct
     public struct DayNClients
     {
         public int dayID;
-        public List<Client> guests;
+        public List<ClientColors> guests;
     }
 
     [System.Serializable]
-    public struct Client
+    public struct ClientColors
     {
         public CardColor mainColor;
         public CardColor additionalColor;
