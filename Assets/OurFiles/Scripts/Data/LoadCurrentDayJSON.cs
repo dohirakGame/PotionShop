@@ -12,9 +12,9 @@ namespace Data
 
 		public void Initialize()
 		{
-			TestLoad();
+			LoadJSON();
 		}
-		private void TestLoad()
+		private void LoadJSON()
 		{
 			string _filePath = Path.Combine(Application.persistentDataPath, _fileName);
 			 

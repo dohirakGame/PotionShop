@@ -3,6 +3,7 @@ using System;
 using UnityEngine;
 using Data.JSONStruct;
 using System.Collections.Generic;
+using TMPro;
 
 namespace Data
 {
@@ -14,7 +15,6 @@ namespace Data
 
 		public List<ClientColors> Initialize()
 		{
-			GetCurrentDay();
 			LoadClients();
 			return _dayClients;
 		}
