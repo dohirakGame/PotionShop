@@ -44,7 +44,7 @@ namespace Game_Logic.Client
             GameObject client = Instantiate(_clientPrefab, new Vector3(gameObject.transform.position.x, gameObject.transform.position.y, 0), Quaternion.identity);
             client.transform.SetParent(gameObject.transform);
             client.transform.localScale = new Vector3(1, 1, 1);
-            client.transform.localPosition = new Vector3(transform.position.x, transform.position.y - 600f, 0);
+            //client.transform.localPosition = new Vector3(transform.position.x, transform.position.y, 0);
 
             SetClientInformation(client);
         }

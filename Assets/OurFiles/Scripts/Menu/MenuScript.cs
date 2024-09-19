@@ -5,8 +5,6 @@ namespace Menu
 {
 	public class MenuScript : MonoBehaviour
     {
-
-
         // Стартует игру(переходит на сцену игры по счелчку на соответствующую кнопку)
         public void Play()
         {
