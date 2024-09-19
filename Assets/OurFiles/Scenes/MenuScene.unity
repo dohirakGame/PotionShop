@@ -2673,12 +2673,12 @@ MonoBehaviour:
   m_GameObject: {fileID: 2009492646}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 710fb552799eed04b9a36de1bcedf45b, type: 3}
+  m_Script: {fileID: 11500000, guid: 11dd011c8e450904d9e43ebb8349469c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   _unselected: {r: 0.3773585, g: 0.3773585, b: 0.3773585, a: 1}
   _selected: {r: 1, g: 1, b: 1, a: 1}
-  _lastSelected: {fileID: 0}
+  _lastSelected: {fileID: 1237109456}
 --- !u!1 &2064469756
 GameObject:
   m_ObjectHideFlags: 0
