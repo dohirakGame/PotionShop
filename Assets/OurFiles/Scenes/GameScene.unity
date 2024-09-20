@@ -1053,7 +1053,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 229559801}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 649693e724dd195459e237327558677d, type: 3}
+  m_Script: {fileID: 11500000, guid: 4e652b203d09d634d8fb1cba0e9bffb3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   _fileName: CurrentDay.json
@@ -1081,7 +1081,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 229559801}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: d16474ef261979741b281c4fae334ec5, type: 3}
+  m_Script: {fileID: 11500000, guid: d1e8e8919c5a0c44fa24634d701cc592, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   _fileName: DayNClients.json
@@ -1385,9 +1385,10 @@ MonoBehaviour:
   m_GameObject: {fileID: 406369788}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: d95bae0e00f03714db4c3a6e0a0b80e0, type: 3}
+  m_Script: {fileID: 11500000, guid: 554538c509fe54246a3ee1beb0175d2f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  levelThreshhold: 
 --- !u!1 &408348551
 GameObject:
   m_ObjectHideFlags: 0
@@ -2575,9 +2576,13 @@ MonoBehaviour:
   m_GameObject: {fileID: 654687541}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: d0cf11189e83ede4dbe9b7c25d3f7ac3, type: 3}
+  m_Script: {fileID: 11500000, guid: af4f43dfbbd75b849a5e7429da5d35ab, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  specialclients:
+    id: 0
+    sprite: {fileID: 0}
+    request: 0
 --- !u!114 &654687545
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2587,9 +2592,14 @@ MonoBehaviour:
   m_GameObject: {fileID: 654687541}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 0}
+  m_Script: {fileID: 11500000, guid: 533eec4cc4ba2024fad7be471e88fd85, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  player:
+    currentday: 0
+    currency: 0
+    premium_currency: 0
+    experience: 0
 --- !u!1 &691465876
 GameObject:
   m_ObjectHideFlags: 0
@@ -3971,7 +3981,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 1121234655}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 9cceabcaebbf97840899affde13a935a, type: 3}
+  m_Script: {fileID: 11500000, guid: c22efcb43e30f324eaf09f6f22d875a6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   _loadCurrentDayJSON: {fileID: 229559802}
@@ -5496,7 +5506,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 1543714674}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 9c124c71b36d82741b1749043434bf8d, type: 3}
+  m_Script: {fileID: 11500000, guid: 6893d443eaf994f4a87e94d0738fb732, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   _titleText: {fileID: 736086550}
@@ -6681,7 +6691,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 1863642176}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 710815d7904167644954d1058d15d39c, type: 3}
+  m_Script: {fileID: 11500000, guid: bfbcff926cfec1347a88a7261ec96608, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   _elementsBufer: {fileID: 1220509014}

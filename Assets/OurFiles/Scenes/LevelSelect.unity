@@ -649,10 +649,9 @@ MonoBehaviour:
   m_GameObject: {fileID: 536255468}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: b42571aa09d4f504eb6c9ad48b0a69c5, type: 3}
+  m_Script: {fileID: 11500000, guid: 4e652b203d09d634d8fb1cba0e9bffb3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _savePath: 
   _fileName: CurrentDay.json
 --- !u!1 &608755621
 GameObject:
