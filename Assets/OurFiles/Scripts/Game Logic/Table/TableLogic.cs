@@ -11,10 +11,10 @@ namespace Game_Logic.Table
 {
 	public class TableLogic : MonoBehaviour
     {
-        [SerializeField] private ElementsBufer _elementsBufer;
+        [SerializeField] private ElementsBuferInGame _elementsBufer;
         [SerializeField] private GameObject _clientele;
 
-        // Комбинации заполняются в Startе
+        // set combinations in Start
         public List<CardCombinations> _combinations;
         public void ProcessTableLogic(Transform card, float xPosition)
         {
@@ -29,7 +29,7 @@ namespace Game_Logic.Table
 
         private IEnumerator ClearTableEnd()
         {
-            yield return new WaitForSeconds(1f);
+            yield return new WaitForSeconds(0.4f);
             ClearTable();
         } 
         private void PutReceivedCard(Transform card, float xPosition)
@@ -80,14 +80,16 @@ namespace Game_Logic.Table
 					}
                     else
                     {
-                        _elementsBufer._textForTests.text = "ÒÛ ÏÐÎÈÃÐÀË, ÇÀÊÐÛÂÀÉ ÈÃÐÓ";
-                    }
-                }
+                        //metod s porazheniem
+                        _elementsBufer.GetLoseCanvas();
+					}
+				}
                 else
                 {
-                    _elementsBufer._textForTests.text = "ÒÛ ÏÐÎÈÃÐÀË, ÇÀÊÐÛÂÀÉ ÈÃÐÓ";
-                }
-                return true;
+					//metod s porazheniem
+					_elementsBufer.GetLoseCanvas();
+				}
+				return true;
             }
             return false;
         }

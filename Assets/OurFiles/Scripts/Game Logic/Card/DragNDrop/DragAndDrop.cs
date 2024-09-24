@@ -9,7 +9,7 @@ namespace Game_Logic.CardLogic.DragNDrop
 	public class DragAndDrop : MonoBehaviour, IDragHandler, IBeginDragHandler, IEndDragHandler
 	{
 		[Header("Буфер элементов")]
-		[SerializeField] private ElementsBufer _elementsBufer;
+		[SerializeField] private ElementsBuferInGame _elementsBufer;
 
 		private Canvas _mainCanvas;
 		private Transform _parentForReturn;
@@ -20,7 +20,7 @@ namespace Game_Logic.CardLogic.DragNDrop
 		private void Start()
 		{
 			_onTable = false;
-			_elementsBufer = FindObjectOfType<ElementsBufer>();
+			_elementsBufer = FindObjectOfType<ElementsBuferInGame>();
 			_mainCanvas = _elementsBufer.GetMainCanvas();
 		}
 

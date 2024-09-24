@@ -34,7 +34,7 @@ namespace Game_Logic.Deck
 			_createDeck = gameObject.GetComponent<CreateDeck>();
 		}
 
-		private void Start()
+		public void Initialize()
 		{
 			GetDeck();
 			FlipCardOnTopDeck();
@@ -50,8 +50,9 @@ namespace Game_Logic.Deck
 				_deck.Add(_createDeck.GetCard(i));
 			}
 
-			RandomBonusOnCard randomBonus = new RandomBonusOnCard();
-			_deck = randomBonus.SetBonus(_deck);
+			//poka dlya prototype ubral random, no potom nujno budet vernut
+			//RandomBonusOnCard randomBonus = new RandomBonusOnCard();
+			//_deck = randomBonus.SetBonus(_deck);
 
 			_deck = SortDeckWithBlackCards(_deck);
 		}

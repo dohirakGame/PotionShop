@@ -1,7 +1,9 @@
 using Data;
 using UnityEngine;
+using UnityEngine.UI;
 using Game_Logic.CardLogic;
 using Game_Logic.Progression;
+using Game_Logic.General;
 
 namespace Game_Logic.Client
 {
@@ -10,131 +12,96 @@ namespace Game_Logic.Client
         [SerializeField] private GameObject _clientPrefab;
         [SerializeField] private GameObject _reqPrefab;
         [SerializeField] private DataClient _dataClient;
-        [SerializeField] private LeveController _levelController;
-
-        private Sprite _clientSprite;
-        private Sprite _reqSprite;
+        [SerializeField] private LevelController _levelController;
 
         private CardColor _main;
         private CardColor _added;
 
-        private int _currentclient = 0;
+        private int _currentclient;
 
         private void Start()
         {
+            _currentclient = 0;
             NextClient();
         }
 
         public void NextClient()
         {
-            if (gameObject.transform.childCount > 0)
+            if (_currentclient < gameObject.GetComponent<CreateDay>().GetCountClientsInList())
             {
+                if (gameObject.transform.childCount > 0) Destroy(gameObject.transform.GetChild(0).gameObject);
+                InstantiateClient();
                 _currentclient++;
-                if (_currentclient < 8)
-                {
-                    Destroy(gameObject.transform.GetChild(0).gameObject);
-                }
-                else
-                {
-                    //  Сюда выходит, если клиенты кончились
-                    _levelController.EarnXP();
-                    Debug.Log("А все");
-                }
             }
-            LoadClientIformationFromData();
-            InstantiateClient();
-
-        }
-
-        private void LoadClientIformationFromData()
-        {
-            _clientSprite = _dataClient.clientSprite[Random.Range(0, _dataClient.clientSprite.Count)];
-            // Добавить выбор спрайтов, если решим отдельные спрайты на цвета делать
-            _reqSprite = _dataClient.requestSprite[0];
+            else
+            {
+                FindObjectOfType<ElementsBuferInGame>().GetWinCanvas();
+            }
         }
 
         private void InstantiateClient()
         {
-            GameObject client = Instantiate(_clientPrefab, new Vector3(gameObject.transform.position.x, gameObject.transform.position.y - 1.15f, 0), Quaternion.identity);
-            GameObject mainReq = Instantiate(_reqPrefab, new Vector3(gameObject.transform.position.x, gameObject.transform.position.y, 0), Quaternion.identity);
-            GameObject addReq = Instantiate(_reqPrefab, new Vector3(gameObject.transform.position.x, gameObject.transform.position.y, 0), Quaternion.identity);
-            mainReq.transform.localScale = new Vector3(100, 100, 1);
-            addReq.transform.localScale = new Vector3(80, 80, 1);
-            mainReq.transform.SetParent(client.transform);
-            addReq.transform.SetParent(client.transform);
-            mainReq.transform.Translate(-200f, 500f, 1f);
-            addReq.transform.Translate(-80f, 500f, 1f);
+            GameObject client = Instantiate(_clientPrefab, new Vector3(gameObject.transform.position.x, gameObject.transform.position.y, 0), Quaternion.identity);
             client.transform.SetParent(gameObject.transform);
-            client.transform.localScale = new Vector3(500, 800, 1);
+            client.transform.localScale = new Vector3(1, 1, 1);
+            //client.transform.localPosition = new Vector3(transform.position.x, transform.position.y, 0);
 
-            SetClientInformation(client, mainReq, addReq);
+            SetClientInformation(client);
         }
 
-        private void SetClientInformation(GameObject client, GameObject mainReq, GameObject addReq)
+        private void SetClientInformation(GameObject client)
         {
             // Нужно будет переписать весь блок - вылгядит не очень
-            SpriteRenderer clientImage = client.GetComponent<SpriteRenderer>();
-            SpriteRenderer mainImage = mainReq.GetComponent<SpriteRenderer>();
-            SpriteRenderer addImage = addReq.GetComponent<SpriteRenderer>();
-            clientImage.sprite = _clientSprite;
-            mainImage.sprite = _reqSprite;
-            addImage.sprite = _reqSprite;
-            switch (Random.Range(0, 2))
-            {
-                case 0:
-                    clientImage.color = new Color(0, 0, 1, 1);
-                    break;
-                case 1:
-                    clientImage.color = new Color(0, 1, 0, 1);
-                    break;
-                case 2:
-                    clientImage.color = new Color(1, 0, 0, 1);
-                    break;
-            }
+            Image clientImage = client.GetComponent<Image>();
+            Image mainImage = client.transform.GetChild(0).GetComponent<Image>();
+            Image addImage = client.transform.GetChild(1).GetComponent<Image>();
+
+            clientImage.sprite = _dataClient.clientSprite[Random.Range(0, _dataClient.clientSprite.Count)];
+
             Client reqs = this.GetComponent<CreateDay>().GetClient(_currentclient);
             switch (reqs.GetMain())
             {
                 case CardColor.Red:
-                    mainImage.color = new Color(1, 0, 0, 1);
+                    mainImage.sprite = _dataClient.requestSprite[0];
                     _main = CardColor.Red;
                     break;
                 case CardColor.Green:
-                    mainImage.color = new Color(0, 1, 0, 1);
-                    _main = CardColor.Green;
+					mainImage.sprite = _dataClient.requestSprite[1];
+					_main = CardColor.Green;
                     break;
                 case CardColor.Blue:
-                    mainImage.color = new Color(0, 0, 1, 1);
-                    _main = CardColor.Blue;
+					mainImage.sprite = _dataClient.requestSprite[2];
+					_main = CardColor.Blue;
                     break;
                 case CardColor.Yellow:
-                    mainImage.color = new Color(1, 1, 0, 1);
+                    mainImage.sprite = _dataClient.requestSprite[3];
                     _main = CardColor.Yellow;
                     break;
                 case CardColor.Black:
-                    mainImage.color = new Color(0, 0, 0, 1);
+                    mainImage.sprite = _dataClient.requestSprite[4];
                     _main = CardColor.Black;
                     break;
             }
             switch (reqs.GetAdd())
             {
                 case CardColor.Red:
-                    addImage.color = new Color(1, 0, 0, 1);
+                    addImage.sprite = _dataClient.requestSprite[0];
                     _added = CardColor.Red;
                     break;
                 case CardColor.Green:
-                    addImage.color = new Color(0, 1, 0, 1);
+                    addImage.sprite = _dataClient.requestSprite[1];
                     _added = CardColor.Green;
                     break;
                 case CardColor.Blue:
-                    addImage.color = new Color(0, 0, 1, 1);
+                    addImage.sprite = _dataClient.requestSprite[2];
                     _added = CardColor.Blue;
                     break;
                 case CardColor.Yellow:
-                    addImage.color = new Color(1, 1, 0, 1);
+                    addImage.sprite = _dataClient.requestSprite[3];
                     _added = CardColor.Yellow;
                     break;
                 case CardColor.Black:
-                    addImage.color = new Color(0, 0, 0, 1);
+                    addImage.sprite = _dataClient.requestSprite[4];
                     _added = CardColor.Black;
                     break;
             }
