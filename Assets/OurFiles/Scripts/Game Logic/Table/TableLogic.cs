@@ -11,7 +11,7 @@ namespace Game_Logic.Table
 {
 	public class TableLogic : MonoBehaviour
     {
-        [SerializeField] private ElementsBufer _elementsBufer;
+        [SerializeField] private ElementsBuferInGame _elementsBufer;
         [SerializeField] private GameObject _clientele;
 
         // set combinations in Start
@@ -29,7 +29,7 @@ namespace Game_Logic.Table
 
         private IEnumerator ClearTableEnd()
         {
-            yield return new WaitForSeconds(1f);
+            yield return new WaitForSeconds(0.4f);
             ClearTable();
         } 
         private void PutReceivedCard(Transform card, float xPosition)

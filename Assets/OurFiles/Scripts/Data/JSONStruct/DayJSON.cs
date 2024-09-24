@@ -17,6 +17,20 @@ namespace Data.JSONStruct
     }
 
     [System.Serializable]
+    public struct DayNCards
+    {
+        public int dayID;
+		//List<Card> cards;
+		public List<CardProperties> cardsProperties;
+	}
+
+	[System.Serializable]
+    public struct CardProperties
+    {
+        public List<Card> cards;
+    }
+
+    [System.Serializable]
     public struct ClientColors
     {
         public CardColor mainColor;

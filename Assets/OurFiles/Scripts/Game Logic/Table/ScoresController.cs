@@ -6,7 +6,7 @@ namespace Game_Logic.Table
 {
 	public class ScoresController : MonoBehaviour
 	{
-		[SerializeField] private ElementsBufer _elementsBufer;
+		[SerializeField] private ElementsBuferInGame _elementsBufer;
 
 		private int _scores;
 

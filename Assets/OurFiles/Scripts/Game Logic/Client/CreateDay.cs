@@ -12,21 +12,21 @@ namespace Game_Logic.Client
 
         public Client GetClient(int index)
         {
-            return _clients[index];
+            return _clients2[index];
         }
 
         public int GetCountClientsInList()
         {
-            return _clients.Count;
+            return _clients2.Count;
         }
 
         public void LoadFromJSON(List<ClientColors> clients)
         {
             for (int i = 0; i < clients.Count; i++)
             {
-                _clients.Add(new Client());
-                _clients[i].SetMain(clients[i].mainColor);
-                _clients[i].SetAdd(clients[i].additionalColor);
+                _clients2.Add(new Client());
+                _clients2[i].SetMain(clients[i].mainColor);
+                _clients2[i].SetAdd(clients[i].additionalColor);
             }
         }
     }

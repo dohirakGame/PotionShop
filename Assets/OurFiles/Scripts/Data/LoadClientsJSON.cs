@@ -15,7 +15,8 @@ namespace Data
 
 		public List<ClientColors> Initialize()
 		{
-			LoadClients();
+			//LoadClients();
+			ClientsCurrentDay();
 			return _dayClients;
 		}
 		private int GetCurrentDay()
@@ -41,9 +42,25 @@ namespace Data
 				}
 			}
 		}
-
+		//for prototype
+		private void ClientsCurrentDay()
+		{
+			List<DayNClients> clients = FindObjectOfType<ClientsForPrototype>().clients;
+			for (int i = 0; i < clients.Count; i++)
+			{
+				if (clients[i].dayID == GetCurrentDay())
+				{
+					for (int j = 0; j < clients[i].guests.Count; j++)
+					{
+						_dayClients.Add(clients[i].guests[j]);
+					}
+					return;
+				}
+			}
+		}
 		private void ClientsCurrentDay(DayJSON dayJSON)
 		{
+			// Pod JSON ne gotovo na prototype
 			for (int i = 0; i < dayJSON.dayNclients.Count; i++)
 			{
 				if (dayJSON.dayNclients[i].dayID == GetCurrentDay())

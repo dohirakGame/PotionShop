@@ -1,6 +1,6 @@
-using UnityEngine;
 using System;
 using System.IO;
+using UnityEngine;
 
 namespace Data
 {
@@ -17,7 +17,7 @@ namespace Data
 		private void LoadJSON()
 		{
 			string _filePath = Path.Combine(Application.persistentDataPath, _fileName);
-			 
+
 			if (File.Exists(_filePath))
 			{
 				try

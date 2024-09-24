@@ -5,7 +5,7 @@ namespace UI
 {
     public class Pause : MonoBehaviour
     {
-        [SerializeField] private ElementsBufer _elementsBufer;
+        [SerializeField] private ElementsBuferInGame _elementsBufer;
 
         public void SetPauseInGame()
         {

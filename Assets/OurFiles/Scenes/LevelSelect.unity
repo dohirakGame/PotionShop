@@ -207,7 +207,7 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls:
       - m_Target: {fileID: 536255471}
-        m_TargetAssemblyTypeName: SaveCurrentDay, Assembly-CSharp
+        m_TargetAssemblyTypeName: Data.SaveCurrentDayJSON, Assembly-CSharp
         m_MethodName: SaveDay
         m_Mode: 3
         m_Arguments:
@@ -218,7 +218,7 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
-      - m_Target: {fileID: 622779937}
+      - m_Target: {fileID: 622779942}
         m_TargetAssemblyTypeName: Menu.MenuScript, Assembly-CSharp
         m_MethodName: LevelSelect
         m_Mode: 3
@@ -547,7 +547,7 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls:
       - m_Target: {fileID: 536255471}
-        m_TargetAssemblyTypeName: SaveCurrentDay, Assembly-CSharp
+        m_TargetAssemblyTypeName: Data.SaveCurrentDayJSON, Assembly-CSharp
         m_MethodName: SaveDay
         m_Mode: 3
         m_Arguments:
@@ -558,8 +558,8 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
-      - m_Target: {fileID: 622779937}
-        m_TargetAssemblyTypeName: MenuScript, Assembly-CSharp
+      - m_Target: {fileID: 622779942}
+        m_TargetAssemblyTypeName: Menu.MenuScript, Assembly-CSharp
         m_MethodName: LevelSelect
         m_Mode: 3
         m_Arguments:
@@ -649,10 +649,11 @@ MonoBehaviour:
   m_GameObject: {fileID: 536255468}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 4e652b203d09d634d8fb1cba0e9bffb3, type: 3}
+  m_Script: {fileID: 11500000, guid: 05b7c9e84237f4649b579d3943082a96, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   _fileName: CurrentDay.json
+  _savePath: 
 --- !u!1 &608755621
 GameObject:
   m_ObjectHideFlags: 0
@@ -733,7 +734,7 @@ GameObject:
   - component: {fileID: 622779940}
   - component: {fileID: 622779939}
   - component: {fileID: 622779938}
-  - component: {fileID: 622779937}
+  - component: {fileID: 622779942}
   m_Layer: 5
   m_Name: Menu (canvas)
   m_TagString: Untagged
@@ -741,18 +742,6 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!114 &622779937
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 622779936}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: f99d86566cb0892499291d055c56d951, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!114 &622779938
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -840,6 +829,18 @@ RectTransform:
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0, y: 0}
+--- !u!114 &622779942
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 622779936}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f99d86566cb0892499291d055c56d951, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &793077962
 GameObject:
   m_ObjectHideFlags: 0
@@ -898,7 +899,7 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls: []
   m_text: "\u0414\u0435\u043D\u044C \u0447\u0435\u0442\u0432\u0451\u0440\u0442\u044B\u0439:
-    \u0425 \u043A\u043B\u0438\u0435\u043D\u0442\u043E\u0432"
+    10 \u043A\u043B\u0438\u0435\u043D\u0442\u043E\u0432"
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
@@ -1107,8 +1108,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: "\u0414\u0435\u043D\u044C \u0442\u0440\u0435\u0442\u0438\u0439: \u0425
-    \u043A\u043B\u0438\u0435\u043D\u0442\u043E\u0432"
+  m_text: "\u0414\u0435\u043D\u044C \u0442\u0440\u0435\u0442\u0438\u0439: 10 \u043A\u043B\u0438\u0435\u043D\u0442\u043E\u0432"
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
@@ -1403,7 +1403,7 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls:
       - m_Target: {fileID: 536255471}
-        m_TargetAssemblyTypeName: Data.SaveCurrentDay, Assembly-CSharp
+        m_TargetAssemblyTypeName: Data.SaveCurrentDayJSON, Assembly-CSharp
         m_MethodName: SaveDay
         m_Mode: 3
         m_Arguments:
@@ -1414,7 +1414,7 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
-      - m_Target: {fileID: 622779937}
+      - m_Target: {fileID: 622779942}
         m_TargetAssemblyTypeName: Menu.MenuScript, Assembly-CSharp
         m_MethodName: LevelSelect
         m_Mode: 3
@@ -1521,7 +1521,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: "\u0414\u0435\u043D\u044C \u0432\u0442\u043E\u0440\u043E\u0439: 11 \u043A\u043B\u0438\u0435\u043D\u0442\u043E\u0432"
+  m_text: "\u0414\u0435\u043D\u044C \u0432\u0442\u043E\u0440\u043E\u0439: 10 \u043A\u043B\u0438\u0435\u043D\u0442\u043E\u0432"
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
@@ -1789,7 +1789,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: "\u0414\u0435\u043D\u044C \u043F\u044F\u0442\u044B\u0439: \u0425 \u043A\u043B\u0438\u0435\u043D\u0442\u043E\u0432"
+  m_text: "\u0414\u0435\u043D\u044C \u043F\u044F\u0442\u044B\u0439: 11 \u043A\u043B\u0438\u0435\u043D\u0442\u043E\u0432"
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
@@ -1949,7 +1949,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 622779937}
+      - m_Target: {fileID: 622779942}
         m_TargetAssemblyTypeName: Menu.MenuScript, Assembly-CSharp
         m_MethodName: ToMenu
         m_Mode: 1
@@ -2083,7 +2083,7 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls:
       - m_Target: {fileID: 536255471}
-        m_TargetAssemblyTypeName: Data.SaveCurrentDay, Assembly-CSharp
+        m_TargetAssemblyTypeName: Data.SaveCurrentDayJSON, Assembly-CSharp
         m_MethodName: SaveDay
         m_Mode: 3
         m_Arguments:
@@ -2094,7 +2094,7 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
-      - m_Target: {fileID: 622779937}
+      - m_Target: {fileID: 622779942}
         m_TargetAssemblyTypeName: Menu.MenuScript, Assembly-CSharp
         m_MethodName: LevelSelect
         m_Mode: 3
@@ -2228,7 +2228,7 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls:
       - m_Target: {fileID: 536255471}
-        m_TargetAssemblyTypeName: Data.SaveCurrentDay, Assembly-CSharp
+        m_TargetAssemblyTypeName: Data.SaveCurrentDayJSON, Assembly-CSharp
         m_MethodName: SaveDay
         m_Mode: 3
         m_Arguments:
@@ -2239,7 +2239,7 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
-      - m_Target: {fileID: 622779937}
+      - m_Target: {fileID: 622779942}
         m_TargetAssemblyTypeName: Menu.MenuScript, Assembly-CSharp
         m_MethodName: LevelSelect
         m_Mode: 3

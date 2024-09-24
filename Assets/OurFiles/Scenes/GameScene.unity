@@ -1313,6 +1313,8 @@ MonoBehaviour:
     _bonus: 0
     _bonusColor: 0
     _secondBonusColor: 0
+  _cardsForPrototype: []
+  _color: 3
 --- !u!114 &360237517
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1491,6 +1493,140 @@ Canvas:
   m_SortingLayerID: 0
   m_SortingOrder: 10
   m_TargetDisplay: 0
+--- !u!1 &411461677
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 411461678}
+  - component: {fileID: 411461680}
+  - component: {fileID: 411461679}
+  m_Layer: 5
+  m_Name: Text (TMP)
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!224 &411461678
+RectTransform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 411461677}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 719910222}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_AnchorMin: {x: 0, y: 0}
+  m_AnchorMax: {x: 1, y: 1}
+  m_AnchoredPosition: {x: 0, y: 0}
+  m_SizeDelta: {x: 0, y: 0}
+  m_Pivot: {x: 0.5, y: 0.5}
+--- !u!114 &411461679
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 411461677}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f4688fdb7df04437aeb418b961361dc5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Material: {fileID: 0}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_RaycastTarget: 1
+  m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
+  m_Maskable: 1
+  m_OnCullStateChanged:
+    m_PersistentCalls:
+      m_Calls: []
+  m_text: "\u0417\u0430\u043A\u0440\u044B\u0442\u044C"
+  m_isRightToLeft: 0
+  m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
+  m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
+  m_fontSharedMaterials: []
+  m_fontMaterial: {fileID: 0}
+  m_fontMaterials: []
+  m_fontColor32:
+    serializedVersion: 2
+    rgba: 4281479730
+  m_fontColor: {r: 0.19607843, g: 0.19607843, b: 0.19607843, a: 1}
+  m_enableVertexGradient: 0
+  m_colorMode: 3
+  m_fontColorGradient:
+    topLeft: {r: 1, g: 1, b: 1, a: 1}
+    topRight: {r: 1, g: 1, b: 1, a: 1}
+    bottomLeft: {r: 1, g: 1, b: 1, a: 1}
+    bottomRight: {r: 1, g: 1, b: 1, a: 1}
+  m_fontColorGradientPreset: {fileID: 0}
+  m_spriteAsset: {fileID: 0}
+  m_tintAllSprites: 0
+  m_StyleSheet: {fileID: 0}
+  m_TextStyleHashCode: -1183493901
+  m_overrideHtmlColors: 0
+  m_faceColor:
+    serializedVersion: 2
+    rgba: 4294967295
+  m_fontSize: 47.7
+  m_fontSizeBase: 47.7
+  m_fontWeight: 400
+  m_enableAutoSizing: 0
+  m_fontSizeMin: 18
+  m_fontSizeMax: 72
+  m_fontStyle: 1
+  m_HorizontalAlignment: 2
+  m_VerticalAlignment: 512
+  m_textAlignment: 65535
+  m_characterSpacing: 0
+  m_wordSpacing: 0
+  m_lineSpacing: 0
+  m_lineSpacingMax: 0
+  m_paragraphSpacing: 0
+  m_charWidthMaxAdj: 0
+  m_enableWordWrapping: 1
+  m_wordWrappingRatios: 0.4
+  m_overflowMode: 0
+  m_linkedTextComponent: {fileID: 0}
+  parentLinkedComponent: {fileID: 0}
+  m_enableKerning: 1
+  m_enableExtraPadding: 0
+  checkPaddingRequired: 0
+  m_isRichText: 1
+  m_parseCtrlCharacters: 1
+  m_isOrthographic: 1
+  m_isCullingEnabled: 0
+  m_horizontalMapping: 0
+  m_verticalMapping: 0
+  m_uvLineOffset: 0
+  m_geometrySortingOrder: 0
+  m_IsTextObjectScaleStatic: 0
+  m_VertexBufferAutoSizeReduction: 0
+  m_useMaxVisibleDescender: 1
+  m_pageToDisplay: 1
+  m_margin: {x: 0, y: 0, z: 0, w: 0}
+  m_isUsingLegacyAnimationComponent: 0
+  m_isVolumetricText: 0
+  m_hasFontAssetChanged: 0
+  m_baseMaterial: {fileID: 0}
+  m_maskOffset: {x: 0, y: 0, z: 0, w: 0}
+--- !u!222 &411461680
+CanvasRenderer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 411461677}
+  m_CullTransparentMesh: 1
 --- !u!1 &435581233
 GameObject:
   m_ObjectHideFlags: 0
@@ -2094,6 +2230,8 @@ MonoBehaviour:
     _bonus: 0
     _bonusColor: 0
     _secondBonusColor: 0
+  _cardsForPrototype: []
+  _color: 1
 --- !u!114 &563210273
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2225,6 +2363,7 @@ RectTransform:
   - {fileID: 1428372348}
   - {fileID: 739777687}
   - {fileID: 31990467}
+  - {fileID: 986511959}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
@@ -2733,6 +2872,139 @@ CanvasRenderer:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 691465876}
+  m_CullTransparentMesh: 1
+--- !u!1 &719910221
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 719910222}
+  - component: {fileID: 719910225}
+  - component: {fileID: 719910224}
+  - component: {fileID: 719910223}
+  m_Layer: 5
+  m_Name: BackButton
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!224 &719910222
+RectTransform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 719910221}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1.0008001, y: 1.0008001, z: 1.0008001}
+  m_ConstrainProportionsScale: 0
+  m_Children:
+  - {fileID: 411461678}
+  m_Father: {fileID: 986511959}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_AnchorMin: {x: 1, y: 1}
+  m_AnchorMax: {x: 1, y: 1}
+  m_AnchoredPosition: {x: -146, y: -82}
+  m_SizeDelta: {x: 256.94, y: 137.4}
+  m_Pivot: {x: 0.5, y: 0.5}
+--- !u!114 &719910223
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 719910221}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4e29b1a8efbd4b44bb3f3716e73f07ff, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Navigation:
+    m_Mode: 3
+    m_WrapAround: 0
+    m_SelectOnUp: {fileID: 0}
+    m_SelectOnDown: {fileID: 0}
+    m_SelectOnLeft: {fileID: 0}
+    m_SelectOnRight: {fileID: 0}
+  m_Transition: 1
+  m_Colors:
+    m_NormalColor: {r: 1, g: 1, b: 1, a: 1}
+    m_HighlightedColor: {r: 0.9607843, g: 0.9607843, b: 0.9607843, a: 1}
+    m_PressedColor: {r: 0.78431374, g: 0.78431374, b: 0.78431374, a: 1}
+    m_SelectedColor: {r: 0.9607843, g: 0.9607843, b: 0.9607843, a: 1}
+    m_DisabledColor: {r: 0.78431374, g: 0.78431374, b: 0.78431374, a: 0.5019608}
+    m_ColorMultiplier: 1
+    m_FadeDuration: 0.1
+  m_SpriteState:
+    m_HighlightedSprite: {fileID: 0}
+    m_PressedSprite: {fileID: 0}
+    m_SelectedSprite: {fileID: 0}
+    m_DisabledSprite: {fileID: 0}
+  m_AnimationTriggers:
+    m_NormalTrigger: Normal
+    m_HighlightedTrigger: Highlighted
+    m_PressedTrigger: Pressed
+    m_SelectedTrigger: Selected
+    m_DisabledTrigger: Disabled
+  m_Interactable: 1
+  m_TargetGraphic: {fileID: 719910224}
+  m_OnClick:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 986511962}
+        m_TargetAssemblyTypeName: UI.TutorialMenu, Assembly-CSharp
+        m_MethodName: CloseTutorial
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+--- !u!114 &719910224
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 719910221}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fe87c0e1cc204ed48ad3b37840f39efc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Material: {fileID: 0}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_RaycastTarget: 1
+  m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
+  m_Maskable: 1
+  m_OnCullStateChanged:
+    m_PersistentCalls:
+      m_Calls: []
+  m_Sprite: {fileID: 21300000, guid: 57a559dddd1853d449f83256ecbef255, type: 3}
+  m_Type: 0
+  m_PreserveAspect: 0
+  m_FillCenter: 1
+  m_FillMethod: 4
+  m_FillAmount: 1
+  m_FillClockwise: 1
+  m_FillOrigin: 0
+  m_UseSpriteMesh: 0
+  m_PixelsPerUnitMultiplier: 1
+--- !u!222 &719910225
+CanvasRenderer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 719910221}
   m_CullTransparentMesh: 1
 --- !u!1 &728896360
 GameObject:
@@ -3645,6 +3917,1188 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 959336890}
   m_CullTransparentMesh: 1
+--- !u!1 &985234640
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 985234641}
+  - component: {fileID: 985234642}
+  - component: {fileID: 985234643}
+  m_Layer: 0
+  m_Name: CardsForPrototype
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &985234641
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 985234640}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 1.9854176, y: 3.6090732, z: 90}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &985234642
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 985234640}
+  m_Enabled: 0
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9dfbb98724708e849b70a04819f14815, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  score: {fileID: 0}
+  step: 0
+  goal: 500
+  nachalo: 0
+--- !u!114 &985234643
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 985234640}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 29e0a2a69e83ee5488baa9d600619903, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  cards:
+  - dayID: 1
+    cardsProperties:
+    - cards:
+      - _point: 1
+        _color: 0
+        _bonus: 4
+        _bonusColor: 0
+        _secondBonusColor: 0
+      - _point: 1
+        _color: 0
+        _bonus: 4
+        _bonusColor: 0
+        _secondBonusColor: 0
+      - _point: 1
+        _color: 0
+        _bonus: 4
+        _bonusColor: 0
+        _secondBonusColor: 0
+      - _point: 1
+        _color: 0
+        _bonus: 4
+        _bonusColor: 0
+        _secondBonusColor: 0
+      - _point: 1
+        _color: 0
+        _bonus: 4
+        _bonusColor: 0
+        _secondBonusColor: 0
+      - _point: 1
+        _color: 0
+        _bonus: 4
+        _bonusColor: 0
+        _secondBonusColor: 0
+      - _point: 1
+        _color: 0
+        _bonus: 4
+        _bonusColor: 0
+        _secondBonusColor: 0
+      - _point: 1
+        _color: 0
+        _bonus: 4
+        _bonusColor: 0
+        _secondBonusColor: 0
+      - _point: 1
+        _color: 0
+        _bonus: 4
+        _bonusColor: 0
+        _secondBonusColor: 0
+    - cards:
+      - _point: 1
+        _color: 1
+        _bonus: 4
+        _bonusColor: 0
+        _secondBonusColor: 0
+      - _point: 1
+        _color: 1
+        _bonus: 4
+        _bonusColor: 0
+        _secondBonusColor: 0
+      - _point: 1
+        _color: 1
+        _bonus: 4
+        _bonusColor: 0
+        _secondBonusColor: 0
+      - _point: 1
+        _color: 1
+        _bonus: 4
+        _bonusColor: 0
+        _secondBonusColor: 0
+      - _point: 1
+        _color: 1
+        _bonus: 4
+        _bonusColor: 0
+        _secondBonusColor: 0
+      - _point: 1
+        _color: 1
+        _bonus: 4
+        _bonusColor: 0
+        _secondBonusColor: 0
+      - _point: 1
+        _color: 1
+        _bonus: 4
+        _bonusColor: 0
+        _secondBonusColor: 0
+      - _point: 1
+        _color: 1
+        _bonus: 4
+        _bonusColor: 0
+        _secondBonusColor: 0
+      - _point: 1
+        _color: 1
+        _bonus: 4
+        _bonusColor: 0
+        _secondBonusColor: 0
+    - cards:
+      - _point: 1
+        _color: 2
+        _bonus: 4
+        _bonusColor: 0
+        _secondBonusColor: 0
+      - _point: 1
+        _color: 2
+        _bonus: 4
+        _bonusColor: 0
+        _secondBonusColor: 0
+      - _point: 1
+        _color: 2
+        _bonus: 4
+        _bonusColor: 0
+        _secondBonusColor: 0
+      - _point: 1
+        _color: 2
+        _bonus: 4
+        _bonusColor: 0
+        _secondBonusColor: 0
+      - _point: 1
+        _color: 2
+        _bonus: 4
+        _bonusColor: 0
+        _secondBonusColor: 0
+      - _point: 1
+        _color: 2
+        _bonus: 4
+        _bonusColor: 0
+        _secondBonusColor: 0
+      - _point: 1
+        _color: 2
+        _bonus: 4
+        _bonusColor: 0
+        _secondBonusColor: 0
+      - _point: 1
+        _color: 2
+        _bonus: 4
+        _bonusColor: 0
+        _secondBonusColor: 0
+      - _point: 1
+        _color: 2
+        _bonus: 4
+        _bonusColor: 0
+        _secondBonusColor: 0
+    - cards:
+      - _point: 1
+        _color: 3
+        _bonus: 4
+        _bonusColor: 0
+        _secondBonusColor: 0
+      - _point: 1
+        _color: 3
+        _bonus: 4
+        _bonusColor: 0
+        _secondBonusColor: 0
+      - _point: 1
+        _color: 3
+        _bonus: 4
+        _bonusColor: 0
+        _secondBonusColor: 0
+      - _point: 1
+        _color: 3
+        _bonus: 4
+        _bonusColor: 0
+        _secondBonusColor: 0
+      - _point: 1
+        _color: 3
+        _bonus: 4
+        _bonusColor: 0
+        _secondBonusColor: 0
+      - _point: 1
+        _color: 3
+        _bonus: 4
+        _bonusColor: 0
+        _secondBonusColor: 0
+      - _point: 1
+        _color: 3
+        _bonus: 4
+        _bonusColor: 0
+        _secondBonusColor: 0
+      - _point: 1
+        _color: 3
+        _bonus: 4
+        _bonusColor: 0
+        _secondBonusColor: 0
+      - _point: 1
+        _color: 3
+        _bonus: 4
+        _bonusColor: 0
+        _secondBonusColor: 0
+  - dayID: 2
+    cardsProperties:
+    - cards:
+      - _point: 1
+        _color: 0
+        _bonus: 4
+        _bonusColor: 2
+        _secondBonusColor: 0
+      - _point: 1
+        _color: 0
+        _bonus: 4
+        _bonusColor: 0
+        _secondBonusColor: 0
+      - _point: 1
+        _color: 0
+        _bonus: 4
+        _bonusColor: 0
+        _secondBonusColor: 0
+      - _point: 1
+        _color: 0
+        _bonus: 4
+        _bonusColor: 0
+        _secondBonusColor: 0
+      - _point: 1
+        _color: 0
+        _bonus: 4
+        _bonusColor: 0
+        _secondBonusColor: 0
+      - _point: 1
+        _color: 0
+        _bonus: 4
+        _bonusColor: 0
+        _secondBonusColor: 0
+      - _point: 1
+        _color: 0
+        _bonus: 4
+        _bonusColor: 0
+        _secondBonusColor: 0
+      - _point: 1
+        _color: 0
+        _bonus: 4
+        _bonusColor: 0
+        _secondBonusColor: 0
+      - _point: -1
+        _color: 4
+        _bonus: 4
+        _bonusColor: 0
+        _secondBonusColor: 0
+      - _point: -2
+        _color: 4
+        _bonus: 4
+        _bonusColor: 0
+        _secondBonusColor: 0
+    - cards:
+      - _point: 1
+        _color: 1
+        _bonus: 4
+        _bonusColor: 0
+        _secondBonusColor: 0
+      - _point: 1
+        _color: 1
+        _bonus: 4
+        _bonusColor: 0
+        _secondBonusColor: 0
+      - _point: 1
+        _color: 1
+        _bonus: 4
+        _bonusColor: 0
+        _secondBonusColor: 0
+      - _point: 1
+        _color: 1
+        _bonus: 4
+        _bonusColor: 0
+        _secondBonusColor: 0
+      - _point: 1
+        _color: 1
+        _bonus: 4
+        _bonusColor: 0
+        _secondBonusColor: 0
+      - _point: 1
+        _color: 1
+        _bonus: 4
+        _bonusColor: 0
+        _secondBonusColor: 0
+      - _point: 1
+        _color: 1
+        _bonus: 4
+        _bonusColor: 0
+        _secondBonusColor: 0
+      - _point: 1
+        _color: 1
+        _bonus: 4
+        _bonusColor: 0
+        _secondBonusColor: 0
+      - _point: -1
+        _color: 4
+        _bonus: 4
+        _bonusColor: 0
+        _secondBonusColor: 0
+      - _point: -2
+        _color: 4
+        _bonus: 4
+        _bonusColor: 0
+        _secondBonusColor: 0
+    - cards:
+      - _point: 1
+        _color: 2
+        _bonus: 4
+        _bonusColor: 0
+        _secondBonusColor: 0
+      - _point: 1
+        _color: 2
+        _bonus: 4
+        _bonusColor: 0
+        _secondBonusColor: 0
+      - _point: 1
+        _color: 2
+        _bonus: 4
+        _bonusColor: 0
+        _secondBonusColor: 0
+      - _point: 1
+        _color: 2
+        _bonus: 4
+        _bonusColor: 0
+        _secondBonusColor: 0
+      - _point: 1
+        _color: 2
+        _bonus: 4
+        _bonusColor: 0
+        _secondBonusColor: 0
+      - _point: 1
+        _color: 2
+        _bonus: 4
+        _bonusColor: 0
+        _secondBonusColor: 0
+      - _point: 1
+        _color: 2
+        _bonus: 4
+        _bonusColor: 0
+        _secondBonusColor: 0
+      - _point: 1
+        _color: 2
+        _bonus: 4
+        _bonusColor: 0
+        _secondBonusColor: 0
+      - _point: -1
+        _color: 4
+        _bonus: 4
+        _bonusColor: 0
+        _secondBonusColor: 0
+      - _point: -2
+        _color: 4
+        _bonus: 4
+        _bonusColor: 0
+        _secondBonusColor: 0
+    - cards:
+      - _point: 1
+        _color: 3
+        _bonus: 4
+        _bonusColor: 0
+        _secondBonusColor: 0
+      - _point: 1
+        _color: 3
+        _bonus: 4
+        _bonusColor: 0
+        _secondBonusColor: 0
+      - _point: 1
+        _color: 3
+        _bonus: 4
+        _bonusColor: 0
+        _secondBonusColor: 0
+      - _point: 1
+        _color: 3
+        _bonus: 4
+        _bonusColor: 0
+        _secondBonusColor: 0
+      - _point: 1
+        _color: 3
+        _bonus: 4
+        _bonusColor: 0
+        _secondBonusColor: 0
+      - _point: 1
+        _color: 3
+        _bonus: 4
+        _bonusColor: 0
+        _secondBonusColor: 0
+      - _point: 1
+        _color: 3
+        _bonus: 4
+        _bonusColor: 0
+        _secondBonusColor: 0
+      - _point: 1
+        _color: 3
+        _bonus: 4
+        _bonusColor: 0
+        _secondBonusColor: 0
+      - _point: -1
+        _color: 4
+        _bonus: 4
+        _bonusColor: 0
+        _secondBonusColor: 0
+      - _point: -2
+        _color: 4
+        _bonus: 4
+        _bonusColor: 0
+        _secondBonusColor: 0
+  - dayID: 3
+    cardsProperties:
+    - cards:
+      - _point: 1
+        _color: 0
+        _bonus: 0
+        _bonusColor: 2
+        _secondBonusColor: 0
+      - _point: 1
+        _color: 0
+        _bonus: 0
+        _bonusColor: 3
+        _secondBonusColor: 0
+      - _point: 1
+        _color: 0
+        _bonus: 1
+        _bonusColor: 1
+        _secondBonusColor: 0
+      - _point: 1
+        _color: 0
+        _bonus: 1
+        _bonusColor: 0
+        _secondBonusColor: 0
+      - _point: 1
+        _color: 0
+        _bonus: 2
+        _bonusColor: 1
+        _secondBonusColor: 0
+      - _point: 1
+        _color: 0
+        _bonus: 2
+        _bonusColor: 3
+        _secondBonusColor: 0
+      - _point: 1
+        _color: 0
+        _bonus: 4
+        _bonusColor: 0
+        _secondBonusColor: 0
+      - _point: 1
+        _color: 0
+        _bonus: 4
+        _bonusColor: 0
+        _secondBonusColor: 0
+      - _point: -1
+        _color: 4
+        _bonus: 4
+        _bonusColor: 0
+        _secondBonusColor: 0
+      - _point: -2
+        _color: 4
+        _bonus: 4
+        _bonusColor: 0
+        _secondBonusColor: 0
+    - cards:
+      - _point: 1
+        _color: 1
+        _bonus: 0
+        _bonusColor: 0
+        _secondBonusColor: 0
+      - _point: 1
+        _color: 1
+        _bonus: 0
+        _bonusColor: 2
+        _secondBonusColor: 0
+      - _point: 1
+        _color: 1
+        _bonus: 1
+        _bonusColor: 3
+        _secondBonusColor: 0
+      - _point: 1
+        _color: 1
+        _bonus: 1
+        _bonusColor: 1
+        _secondBonusColor: 0
+      - _point: 1
+        _color: 1
+        _bonus: 2
+        _bonusColor: 2
+        _secondBonusColor: 0
+      - _point: 1
+        _color: 1
+        _bonus: 2
+        _bonusColor: 0
+        _secondBonusColor: 0
+      - _point: 1
+        _color: 1
+        _bonus: 4
+        _bonusColor: 0
+        _secondBonusColor: 0
+      - _point: 1
+        _color: 1
+        _bonus: 4
+        _bonusColor: 0
+        _secondBonusColor: 0
+      - _point: -1
+        _color: 4
+        _bonus: 4
+        _bonusColor: 0
+        _secondBonusColor: 0
+      - _point: -2
+        _color: 4
+        _bonus: 4
+        _bonusColor: 0
+        _secondBonusColor: 0
+    - cards:
+      - _point: 1
+        _color: 2
+        _bonus: 0
+        _bonusColor: 1
+        _secondBonusColor: 0
+      - _point: 1
+        _color: 2
+        _bonus: 0
+        _bonusColor: 0
+        _secondBonusColor: 0
+      - _point: 1
+        _color: 2
+        _bonus: 1
+        _bonusColor: 2
+        _secondBonusColor: 0
+      - _point: 1
+        _color: 2
+        _bonus: 1
+        _bonusColor: 1
+        _secondBonusColor: 0
+      - _point: 1
+        _color: 2
+        _bonus: 2
+        _bonusColor: 3
+        _secondBonusColor: 0
+      - _point: 1
+        _color: 2
+        _bonus: 2
+        _bonusColor: 0
+        _secondBonusColor: 0
+      - _point: 1
+        _color: 2
+        _bonus: 4
+        _bonusColor: 0
+        _secondBonusColor: 0
+      - _point: 1
+        _color: 2
+        _bonus: 4
+        _bonusColor: 0
+        _secondBonusColor: 0
+      - _point: -1
+        _color: 4
+        _bonus: 4
+        _bonusColor: 0
+        _secondBonusColor: 0
+      - _point: -2
+        _color: 4
+        _bonus: 4
+        _bonusColor: 0
+        _secondBonusColor: 0
+    - cards:
+      - _point: 1
+        _color: 3
+        _bonus: 0
+        _bonusColor: 3
+        _secondBonusColor: 0
+      - _point: 1
+        _color: 3
+        _bonus: 0
+        _bonusColor: 2
+        _secondBonusColor: 0
+      - _point: 1
+        _color: 3
+        _bonus: 1
+        _bonusColor: 0
+        _secondBonusColor: 0
+      - _point: 1
+        _color: 3
+        _bonus: 1
+        _bonusColor: 3
+        _secondBonusColor: 0
+      - _point: 1
+        _color: 3
+        _bonus: 2
+        _bonusColor: 1
+        _secondBonusColor: 0
+      - _point: 1
+        _color: 3
+        _bonus: 2
+        _bonusColor: 3
+        _secondBonusColor: 0
+      - _point: 1
+        _color: 3
+        _bonus: 4
+        _bonusColor: 0
+        _secondBonusColor: 0
+      - _point: 1
+        _color: 3
+        _bonus: 4
+        _bonusColor: 0
+        _secondBonusColor: 0
+      - _point: -1
+        _color: 4
+        _bonus: 4
+        _bonusColor: 0
+        _secondBonusColor: 0
+      - _point: -2
+        _color: 4
+        _bonus: 4
+        _bonusColor: 0
+        _secondBonusColor: 0
+  - dayID: 4
+    cardsProperties:
+    - cards:
+      - _point: 1
+        _color: 0
+        _bonus: 0
+        _bonusColor: 0
+        _secondBonusColor: 0
+      - _point: 1
+        _color: 0
+        _bonus: 0
+        _bonusColor: 0
+        _secondBonusColor: 0
+      - _point: 1
+        _color: 0
+        _bonus: 0
+        _bonusColor: 1
+        _secondBonusColor: 0
+      - _point: 1
+        _color: 0
+        _bonus: 4
+        _bonusColor: 0
+        _secondBonusColor: 0
+      - _point: 1
+        _color: 0
+        _bonus: 2
+        _bonusColor: 3
+        _secondBonusColor: 0
+      - _point: 1
+        _color: 0
+        _bonus: 4
+        _bonusColor: 2
+        _secondBonusColor: 0
+      - _point: 1
+        _color: 0
+        _bonus: 3
+        _bonusColor: 1
+        _secondBonusColor: 3
+      - _point: 1
+        _color: 0
+        _bonus: 4
+        _bonusColor: 0
+        _secondBonusColor: 0
+      - _point: -1
+        _color: 4
+        _bonus: 4
+        _bonusColor: 0
+        _secondBonusColor: 0
+      - _point: -2
+        _color: 4
+        _bonus: 4
+        _bonusColor: 0
+        _secondBonusColor: 0
+    - cards:
+      - _point: 1
+        _color: 1
+        _bonus: 1
+        _bonusColor: 0
+        _secondBonusColor: 0
+      - _point: 1
+        _color: 1
+        _bonus: 2
+        _bonusColor: 2
+        _secondBonusColor: 0
+      - _point: 1
+        _color: 1
+        _bonus: 3
+        _bonusColor: 3
+        _secondBonusColor: 2
+      - _point: 1
+        _color: 1
+        _bonus: 4
+        _bonusColor: 0
+        _secondBonusColor: 0
+      - _point: 1
+        _color: 1
+        _bonus: 0
+        _bonusColor: 1
+        _secondBonusColor: 0
+      - _point: 1
+        _color: 1
+        _bonus: 4
+        _bonusColor: 0
+        _secondBonusColor: 0
+      - _point: 1
+        _color: 1
+        _bonus: 4
+        _bonusColor: 0
+        _secondBonusColor: 0
+      - _point: 1
+        _color: 1
+        _bonus: 4
+        _bonusColor: 0
+        _secondBonusColor: 0
+      - _point: -1
+        _color: 4
+        _bonus: 4
+        _bonusColor: 0
+        _secondBonusColor: 0
+      - _point: -2
+        _color: 4
+        _bonus: 4
+        _bonusColor: 0
+        _secondBonusColor: 0
+    - cards:
+      - _point: 1
+        _color: 2
+        _bonus: 3
+        _bonusColor: 2
+        _secondBonusColor: 1
+      - _point: 1
+        _color: 2
+        _bonus: 0
+        _bonusColor: 2
+        _secondBonusColor: 0
+      - _point: 1
+        _color: 2
+        _bonus: 1
+        _bonusColor: 1
+        _secondBonusColor: 0
+      - _point: 1
+        _color: 2
+        _bonus: 3
+        _bonusColor: 0
+        _secondBonusColor: 1
+      - _point: 1
+        _color: 2
+        _bonus: 0
+        _bonusColor: 0
+        _secondBonusColor: 0
+      - _point: 1
+        _color: 2
+        _bonus: 4
+        _bonusColor: 0
+        _secondBonusColor: 0
+      - _point: 1
+        _color: 2
+        _bonus: 4
+        _bonusColor: 0
+        _secondBonusColor: 0
+      - _point: 1
+        _color: 2
+        _bonus: 4
+        _bonusColor: 0
+        _secondBonusColor: 0
+      - _point: -1
+        _color: 4
+        _bonus: 4
+        _bonusColor: 0
+        _secondBonusColor: 0
+      - _point: -2
+        _color: 4
+        _bonus: 4
+        _bonusColor: 0
+        _secondBonusColor: 0
+    - cards:
+      - _point: 1
+        _color: 3
+        _bonus: 2
+        _bonusColor: 1
+        _secondBonusColor: 0
+      - _point: 1
+        _color: 3
+        _bonus: 1
+        _bonusColor: 2
+        _secondBonusColor: 0
+      - _point: 1
+        _color: 3
+        _bonus: 0
+        _bonusColor: 1
+        _secondBonusColor: 0
+      - _point: 1
+        _color: 3
+        _bonus: 3
+        _bonusColor: 0
+        _secondBonusColor: 0
+      - _point: 1
+        _color: 3
+        _bonus: 2
+        _bonusColor: 1
+        _secondBonusColor: 0
+      - _point: 1
+        _color: 3
+        _bonus: 4
+        _bonusColor: 0
+        _secondBonusColor: 0
+      - _point: 1
+        _color: 3
+        _bonus: 4
+        _bonusColor: 0
+        _secondBonusColor: 0
+      - _point: 1
+        _color: 3
+        _bonus: 4
+        _bonusColor: 0
+        _secondBonusColor: 0
+      - _point: -1
+        _color: 4
+        _bonus: 4
+        _bonusColor: 0
+        _secondBonusColor: 0
+      - _point: -2
+        _color: 4
+        _bonus: 4
+        _bonusColor: 0
+        _secondBonusColor: 0
+  - dayID: 5
+    cardsProperties:
+    - cards:
+      - _point: 1
+        _color: 0
+        _bonus: 4
+        _bonusColor: 0
+        _secondBonusColor: 0
+      - _point: 1
+        _color: 0
+        _bonus: 2
+        _bonusColor: 0
+        _secondBonusColor: 0
+      - _point: 1
+        _color: 0
+        _bonus: 3
+        _bonusColor: 1
+        _secondBonusColor: 4
+      - _point: 1
+        _color: 0
+        _bonus: 0
+        _bonusColor: 4
+        _secondBonusColor: 0
+      - _point: 1
+        _color: 0
+        _bonus: 3
+        _bonusColor: 1
+        _secondBonusColor: 1
+      - _point: 1
+        _color: 0
+        _bonus: 4
+        _bonusColor: 0
+        _secondBonusColor: 0
+      - _point: 1
+        _color: 0
+        _bonus: 4
+        _bonusColor: 0
+        _secondBonusColor: 0
+      - _point: 1
+        _color: 0
+        _bonus: 4
+        _bonusColor: 0
+        _secondBonusColor: 0
+      - _point: -1
+        _color: 4
+        _bonus: 4
+        _bonusColor: 0
+        _secondBonusColor: 0
+      - _point: -2
+        _color: 4
+        _bonus: 0
+        _bonusColor: 4
+        _secondBonusColor: 0
+      - _point: -3
+        _color: 4
+        _bonus: 1
+        _bonusColor: 0
+        _secondBonusColor: 0
+    - cards:
+      - _point: 1
+        _color: 1
+        _bonus: 2
+        _bonusColor: 3
+        _secondBonusColor: 0
+      - _point: 1
+        _color: 1
+        _bonus: 1
+        _bonusColor: 1
+        _secondBonusColor: 0
+      - _point: 1
+        _color: 1
+        _bonus: 1
+        _bonusColor: 1
+        _secondBonusColor: 0
+      - _point: 1
+        _color: 1
+        _bonus: 0
+        _bonusColor: 2
+        _secondBonusColor: 0
+      - _point: 1
+        _color: 1
+        _bonus: 0
+        _bonusColor: 4
+        _secondBonusColor: 0
+      - _point: 1
+        _color: 1
+        _bonus: 4
+        _bonusColor: 0
+        _secondBonusColor: 0
+      - _point: 1
+        _color: 1
+        _bonus: 4
+        _bonusColor: 0
+        _secondBonusColor: 0
+      - _point: 1
+        _color: 1
+        _bonus: 4
+        _bonusColor: 0
+        _secondBonusColor: 0
+      - _point: -1
+        _color: 4
+        _bonus: 4
+        _bonusColor: 0
+        _secondBonusColor: 0
+      - _point: -2
+        _color: 4
+        _bonus: 1
+        _bonusColor: 3
+        _secondBonusColor: 0
+      - _point: -3
+        _color: 4
+        _bonus: 4
+        _bonusColor: 0
+        _secondBonusColor: 0
+    - cards:
+      - _point: 1
+        _color: 2
+        _bonus: 4
+        _bonusColor: 0
+        _secondBonusColor: 0
+      - _point: 1
+        _color: 2
+        _bonus: 4
+        _bonusColor: 0
+        _secondBonusColor: 0
+      - _point: 1
+        _color: 2
+        _bonus: 1
+        _bonusColor: 2
+        _secondBonusColor: 0
+      - _point: 1
+        _color: 2
+        _bonus: 1
+        _bonusColor: 0
+        _secondBonusColor: 0
+      - _point: 1
+        _color: 2
+        _bonus: 0
+        _bonusColor: 1
+        _secondBonusColor: 0
+      - _point: 1
+        _color: 2
+        _bonus: 4
+        _bonusColor: 0
+        _secondBonusColor: 0
+      - _point: 1
+        _color: 2
+        _bonus: 4
+        _bonusColor: 0
+        _secondBonusColor: 0
+      - _point: 1
+        _color: 2
+        _bonus: 4
+        _bonusColor: 0
+        _secondBonusColor: 0
+      - _point: -1
+        _color: 4
+        _bonus: 4
+        _bonusColor: 0
+        _secondBonusColor: 0
+      - _point: -2
+        _color: 4
+        _bonus: 2
+        _bonusColor: 4
+        _secondBonusColor: 0
+      - _point: -3
+        _color: 4
+        _bonus: 1
+        _bonusColor: 3
+        _secondBonusColor: 0
+    - cards:
+      - _point: 1
+        _color: 3
+        _bonus: 1
+        _bonusColor: 0
+        _secondBonusColor: 0
+      - _point: 1
+        _color: 3
+        _bonus: 1
+        _bonusColor: 0
+        _secondBonusColor: 0
+      - _point: 1
+        _color: 3
+        _bonus: 3
+        _bonusColor: 3
+        _secondBonusColor: 1
+      - _point: 1
+        _color: 3
+        _bonus: 2
+        _bonusColor: 4
+        _secondBonusColor: 0
+      - _point: 1
+        _color: 3
+        _bonus: 1
+        _bonusColor: 3
+        _secondBonusColor: 0
+      - _point: 1
+        _color: 3
+        _bonus: 4
+        _bonusColor: 0
+        _secondBonusColor: 0
+      - _point: 1
+        _color: 3
+        _bonus: 4
+        _bonusColor: 0
+        _secondBonusColor: 0
+      - _point: 1
+        _color: 3
+        _bonus: 4
+        _bonusColor: 0
+        _secondBonusColor: 0
+      - _point: -1
+        _color: 4
+        _bonus: 4
+        _bonusColor: 0
+        _secondBonusColor: 0
+      - _point: -2
+        _color: 4
+        _bonus: 4
+        _bonusColor: 0
+        _secondBonusColor: 0
+      - _point: -3
+        _color: 4
+        _bonus: 4
+        _bonusColor: 0
+        _secondBonusColor: 0
+--- !u!1 &986511958
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 986511959}
+  - component: {fileID: 986511961}
+  - component: {fileID: 986511960}
+  - component: {fileID: 986511962}
+  m_Layer: 5
+  m_Name: Tutorial
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!224 &986511959
+RectTransform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 986511958}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children:
+  - {fileID: 719910222}
+  m_Father: {fileID: 564201502}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_AnchorMin: {x: 0, y: 0}
+  m_AnchorMax: {x: 1, y: 1}
+  m_AnchoredPosition: {x: 0, y: 0}
+  m_SizeDelta: {x: 0, y: 0}
+  m_Pivot: {x: 0.5, y: 0.5}
+--- !u!114 &986511960
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 986511958}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fe87c0e1cc204ed48ad3b37840f39efc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Material: {fileID: 0}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_RaycastTarget: 1
+  m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
+  m_Maskable: 1
+  m_OnCullStateChanged:
+    m_PersistentCalls:
+      m_Calls: []
+  m_Sprite: {fileID: 21300000, guid: a3bfbf57929afca4da52199cc57be25c, type: 3}
+  m_Type: 0
+  m_PreserveAspect: 0
+  m_FillCenter: 1
+  m_FillMethod: 4
+  m_FillAmount: 1
+  m_FillClockwise: 1
+  m_FillOrigin: 0
+  m_UseSpriteMesh: 0
+  m_PixelsPerUnitMultiplier: 1
+--- !u!222 &986511961
+CanvasRenderer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 986511958}
+  m_CullTransparentMesh: 1
+--- !u!114 &986511962
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 986511958}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8176a87f245615b4395eb461f8e37c60, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _tutorialPanel: {fileID: 986511958}
 --- !u!1 &988804798
 GameObject:
   m_ObjectHideFlags: 0
@@ -3987,6 +5441,15 @@ MonoBehaviour:
   _loadCurrentDayJSON: {fileID: 229559802}
   _loadClientsJSON: {fileID: 229559804}
   _createDay: {fileID: 1634473452}
+  _redCreateDeck: {fileID: 2147335212}
+  _greenCreateDeck: {fileID: 563210272}
+  _blueCreateDeck: {fileID: 1604011741}
+  _yellowCreateDeck: {fileID: 360237516}
+  _redDeck: {fileID: 2147335213}
+  _greenDeck: {fileID: 563210273}
+  _blueDeck: {fileID: 1604011742}
+  _yellowDeck: {fileID: 360237517}
+  _tutorial: {fileID: 986511962}
 --- !u!1 &1196858622
 GameObject:
   m_ObjectHideFlags: 0
@@ -4147,10 +5610,11 @@ MonoBehaviour:
   m_GameObject: {fileID: 1220509013}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: f578186daa6b3e1428d2c57fc56d9090, type: 3}
+  m_Script: {fileID: 11500000, guid: b557216956513fb41aa3a271f16fbfa0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   _mainCanvas: {fileID: 564201501}
+  _settingsCanvas: {fileID: 564201501}
   _pointsController: {fileID: 1428372351}
   _scoresController: {fileID: 180146915}
   _pointsText: {fileID: 691465878}
@@ -4440,6 +5904,161 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1233258008}
   m_CullTransparentMesh: 1
+--- !u!1 &1233616257
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1233616259}
+  - component: {fileID: 1233616258}
+  m_Layer: 0
+  m_Name: ClientsForPrototype
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &1233616258
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1233616257}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 17902940943a5a54096d04675cbcdf64, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  clients:
+  - dayID: 1
+    guests:
+    - mainColor: 0
+      additionalColor: 1
+    - mainColor: 0
+      additionalColor: 2
+    - mainColor: 1
+      additionalColor: 0
+    - mainColor: 1
+      additionalColor: 2
+    - mainColor: 2
+      additionalColor: 0
+    - mainColor: 2
+      additionalColor: 1
+    - mainColor: 2
+      additionalColor: 3
+    - mainColor: 3
+      additionalColor: 0
+    - mainColor: 3
+      additionalColor: 1
+  - dayID: 2
+    guests:
+    - mainColor: 0
+      additionalColor: 2
+    - mainColor: 0
+      additionalColor: 3
+    - mainColor: 1
+      additionalColor: 0
+    - mainColor: 1
+      additionalColor: 2
+    - mainColor: 2
+      additionalColor: 1
+    - mainColor: 2
+      additionalColor: 3
+    - mainColor: 3
+      additionalColor: 0
+    - mainColor: 3
+      additionalColor: 2
+    - mainColor: 1
+      additionalColor: 3
+    - mainColor: 2
+      additionalColor: 1
+  - dayID: 3
+    guests:
+    - mainColor: 0
+      additionalColor: 2
+    - mainColor: 1
+      additionalColor: 0
+    - mainColor: 2
+      additionalColor: 1
+    - mainColor: 3
+      additionalColor: 0
+    - mainColor: 2
+      additionalColor: 1
+    - mainColor: 3
+      additionalColor: 2
+    - mainColor: 1
+      additionalColor: 3
+    - mainColor: 2
+      additionalColor: 3
+    - mainColor: 3
+      additionalColor: 1
+    - mainColor: 0
+      additionalColor: 2
+  - dayID: 4
+    guests:
+    - mainColor: 0
+      additionalColor: 3
+    - mainColor: 1
+      additionalColor: 2
+    - mainColor: 0
+      additionalColor: 2
+    - mainColor: 1
+      additionalColor: 0
+    - mainColor: 1
+      additionalColor: 3
+    - mainColor: 2
+      additionalColor: 1
+    - mainColor: 2
+      additionalColor: 0
+    - mainColor: 0
+      additionalColor: 1
+    - mainColor: 2
+      additionalColor: 1
+    - mainColor: 3
+      additionalColor: 2
+  - dayID: 5
+    guests:
+    - mainColor: 3
+      additionalColor: 0
+    - mainColor: 1
+      additionalColor: 2
+    - mainColor: 2
+      additionalColor: 0
+    - mainColor: 3
+      additionalColor: 1
+    - mainColor: 1
+      additionalColor: 2
+    - mainColor: 3
+      additionalColor: 0
+    - mainColor: 0
+      additionalColor: 1
+    - mainColor: 1
+      additionalColor: 2
+    - mainColor: 4
+      additionalColor: 3
+    - mainColor: 3
+      additionalColor: 2
+    - mainColor: 2
+      additionalColor: 0
+--- !u!4 &1233616259
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1233616257}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 1.3951683, y: -1.0383315, z: 89.97645}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1234105601
 GameObject:
   m_ObjectHideFlags: 0
@@ -5670,6 +7289,8 @@ MonoBehaviour:
     _bonus: 0
     _bonusColor: 0
     _secondBonusColor: 0
+  _cardsForPrototype: []
+  _color: 2
 --- !u!114 &1604011742
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -8053,6 +9674,8 @@ MonoBehaviour:
     _bonus: 0
     _bonusColor: 0
     _secondBonusColor: 0
+  _cardsForPrototype: []
+  _color: 0
 --- !u!114 &2147335213
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -8100,3 +9723,5 @@ SceneRoots:
   - {fileID: 654687543}
   - {fileID: 406369790}
   - {fileID: 87543479}
+  - {fileID: 1233616259}
+  - {fileID: 985234641}

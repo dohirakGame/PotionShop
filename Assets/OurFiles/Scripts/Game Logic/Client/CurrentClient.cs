@@ -35,7 +35,7 @@ namespace Game_Logic.Client
             }
             else
             {
-                FindObjectOfType<ElementsBufer>().GetWinCanvas();
+                FindObjectOfType<ElementsBuferInGame>().GetWinCanvas();
             }
         }
 
